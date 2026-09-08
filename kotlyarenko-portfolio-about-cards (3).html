@@ -1,0 +1,2377 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Портфолио Владислава Котляренко — Product Manager" />
+  <title>Котляренко Владислав — Product Manager</title>
+
+
+  <!-- ===== IMAGE / ARTIFACT ASSETS =====
+       Paste image URLs into the values below. -->
+  <script>
+    const PORTFOLIO_ASSETS = {
+      profilePhoto: "",
+
+      homeLowcode: "",
+      homeOrigami: "",
+      homeObblic: "",
+      homeKlever: "",
+      homeSpaceSoda: "",
+
+      lowcode01: "",
+      lowcode02: "",
+      lowcode03: "",
+      lowcode04: "",
+      lowcode05: "",
+      lowcode06: "",
+
+      origami01: "",
+      origami02: "",
+      origami03: "",
+      origami04: "",
+      origami05: "",
+      origami06: "",
+      origami07: "",
+      origami08: "",
+
+      obblic01: "",
+      obblic02: "",
+      obblic03: "",
+      obblic04: "",
+      obblic05: "",
+      obblic06: "",
+      obblic07: "",
+      obblic08: "",
+
+      klever01: "",
+      klever02: "",
+      klever03: "",
+      klever04: "",
+      klever05: "",
+      klever06: "",
+      klever07: "",
+      klever08: "",
+
+      spacesoda01: "",
+      spacesoda02: "",
+      spacesoda03: "",
+      spacesoda04: ""
+    };
+  </script>
+
+  <style>
+    :root{
+      --red:#ff0000;
+      --black:#000000;
+      --gray:#d9d6d6;
+      --light:#f4f3f3;
+      --white:#ffffff;
+      --cyan:#20eae7;
+      --sidebar:min(20.4vw, 323px);
+      --pad:clamp(28px,4.5vw,72px);
+      --content:1240px;
+      --font-display:"Styrene A","Arial Black","Helvetica Neue",Arial,sans-serif;
+      --font-body:"Styrene B","Helvetica Neue",Arial,sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      min-width:320px;
+      color:var(--black);
+      background:var(--white);
+      font-family:var(--font-body);
+      font-size:16px;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:geometricPrecision;
+    }
+
+    a{color:inherit;text-decoration:none}
+    a:hover{text-decoration:none}
+    ::selection{background:var(--cyan);color:var(--black)}
+
+    .sidebar{
+      position:fixed;
+      inset:0 auto 0 0;
+      z-index:40;
+      width:var(--sidebar);
+      height:100dvh;
+      overflow-y:auto;
+      color:var(--white);
+      background:var(--black);
+      border-right:1px solid rgba(255,255,255,.14);
+    }
+
+    .sidebar__inner{
+      min-height:100%;
+      padding:18px 20px 22px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+
+    .photo{
+      position:relative;
+      display:grid;
+      place-items:center;
+      width:65%;
+      margin:0 auto 0 0;
+      aspect-ratio:1/1;
+      min-height:0;
+      overflow:hidden;
+      background:#151515;
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .photo::before,
+    .photo::after{content:none}
+
+    .photo.has-image span{display:none}
+
+    .photo span{
+      position:relative;
+      z-index:1;
+      font:700 11px/1 var(--font-display);
+      letter-spacing:.14em;
+    }
+    .asset-image{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .asset-image[src=""]{display:none}
+
+    .photo .asset-image{
+      position:absolute;
+      inset:0;
+      z-index:2;
+    }
+
+    .artifact .asset-image,
+    .flow-artifact .asset-image{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .artifact .asset-image{
+      position:absolute;
+      inset:0;
+      z-index:2;
+    }
+
+    .artifact.has-image .artifact__shape,
+    .artifact.has-image .space-can,
+    .artifact.has-image .klever-pack,
+    .artifact.has-image .klever-sheet,
+    .artifact.has-image .klever-handle{
+      opacity:0;
+    }
+
+    .artifact.has-image .artifact__label,
+    .flow-artifact.has-image .artifact__label{display:none}
+
+    .artifact.has-image,
+    .flow-artifact.has-image{
+      padding:0;
+      display:block;
+      background:transparent !important;
+      border:0 !important;
+      box-shadow:none !important;
+    }
+
+    .artifact.has-image > :not(.asset-image),
+    .flow-artifact.has-image > :not(.asset-image){
+      display:none !important;
+    }
+
+    .artifact.has-image .asset-image,
+    .flow-artifact.has-image .asset-image{
+      position:absolute;
+      inset:0;
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .eyebrow{
+      margin:0;
+      font:700 10px/1.2 var(--font-display);
+      letter-spacing:.15em;
+      text-transform:uppercase;
+      opacity:.55;
+    }
+
+    .name{
+      margin:10px 0 0;
+      max-width:9ch;
+      font:700 clamp(30px,2.15vw,40px)/.95 var(--font-display);
+      letter-spacing:-.05em;
+    }
+
+    .contact{
+      display:grid;
+      gap:7px;
+      margin-top:12px;
+      font-size:13px;
+      line-height:1.35;
+      word-break:break-word;
+    }
+
+    .role-block,
+    .sidebar-section{
+      padding-top:15px;
+      border-top:1px solid rgba(255,255,255,.2);
+    }
+
+    .role{
+      margin:6px 0 0;
+      font:500 20px/1.05 var(--font-display);
+    }
+
+    .role-secondary{
+      margin:10px 0 0;
+      max-width:30ch;
+      color:rgba(255,255,255,.7);
+      font-size:12.5px;
+      line-height:1.45;
+    }
+
+    .sidebar-section h3{
+      margin:0 0 8px;
+      font:500 14px/1.1 var(--font-display);
+    }
+
+    .sidebar-section p,
+    .sidebar-section li{
+      font-size:11.5px;
+      line-height:1.4;
+      color:rgba(255,255,255,.8);
+    }
+
+    .sidebar-section p{margin:0}
+    .sidebar-section ul{
+      margin:0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:5px;
+    }
+
+    .sidebar-section li{
+      position:relative;
+      padding-left:14px;
+    }
+
+    .sidebar-section li::before{
+      content:"";
+      position:absolute;
+      top:.68em;
+      left:0;
+      width:5px;
+      height:5px;
+      background:var(--cyan);
+    }
+
+    .route-back{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:8px;
+      font:500 12px/1 var(--font-display);
+    }
+
+    .route-back::before{
+      content:"←";
+      color:var(--cyan);
+    }
+
+    .main{
+      margin-left:var(--sidebar);
+      min-height:100vh;
+    }
+
+    .page{
+      display:none;
+      min-height:100vh;
+    }
+
+    .page.is-active{display:block}
+
+    .progress{
+      position:fixed;
+      top:0;
+      left:var(--sidebar);
+      right:0;
+      z-index:80;
+      height:4px;
+      pointer-events:none;
+    }
+
+    .progress span{
+      display:block;
+      width:0;
+      height:100%;
+      background:var(--cyan);
+    }
+
+    .intro{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      display:grid;
+      align-items:end;
+      padding:var(--pad);
+      background:var(--white);
+    }
+
+    .intro::before{
+      content:"";
+      position:absolute;
+      top:-8vh;
+      right:-12vw;
+      width:58vw;
+      height:44vh;
+      background:var(--red);
+      clip-path:polygon(20% 0,100% 0,100% 78%,0 100%);
+    }
+
+    .intro::after{
+      content:"";
+      position:absolute;
+      right:8vw;
+      bottom:6vh;
+      width:18vw;
+      min-width:180px;
+      aspect-ratio:1;
+      background:var(--cyan);
+      clip-path:polygon(10% 0,100% 15%,85% 100%,0 77%);
+    }
+
+    .intro__content{
+      position:relative;
+      z-index:2;
+      width:min(100%,var(--content));
+      display:grid;
+      gap:28px;
+    }
+
+    .intro h2{
+      margin:0;
+      max-width:11ch;
+      font:700 clamp(58px,8.4vw,148px)/.84 var(--font-display);
+      letter-spacing:-.03em;
+      text-transform:uppercase;
+    }
+
+    .intro__copy{
+      max-width:760px;
+      margin:0;
+      font-size:clamp(17px,1.5vw,22px);
+      line-height:1.42;
+    }
+
+    .chapter{
+      position:relative;
+      min-height:100vh;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      padding:clamp(64px,8vh,110px) var(--pad);
+      border-top:1px solid rgba(0,0,0,.14);
+    }
+
+    .chapter--gray{background:var(--light)}
+    .chapter--dark{background:var(--black);color:var(--white)}
+    .chapter--red{background:var(--red);color:var(--white)}
+
+    .chapter--red::after{
+      content:"";
+      position:absolute;
+      right:-13%;
+      bottom:-17%;
+      width:34vw;
+      aspect-ratio:1;
+      background:var(--black);
+      clip-path:polygon(18% 0,100% 14%,82% 100%,0 82%);
+    }
+
+    .chapter__number{
+      position:absolute;
+      top:3vh;
+      right:2vw;
+      z-index:0;
+      pointer-events:none;
+      color:rgba(0,0,0,.07);
+      font:700 clamp(82px,12vw,190px)/1 var(--font-display);
+      letter-spacing:-.08em;
+    }
+
+    .chapter--dark .chapter__number,
+    .chapter--red .chapter__number{
+      color:rgba(255,255,255,.09);
+    }
+
+    .chapter__inner{
+      position:relative;
+      z-index:2;
+      width:min(100%,var(--content));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:minmax(0,1.06fr) minmax(330px,.94fr);
+      gap:clamp(42px,5vw,82px);
+      align-items:center;
+    }
+
+    .chapter__kicker{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px 18px;
+      margin-bottom:20px;
+      font:700 10px/1.25 var(--font-display);
+      letter-spacing:.11em;
+      text-transform:uppercase;
+      opacity:.58;
+    }
+
+    .chapter__company{
+      margin:0;
+      max-width:9ch;
+      font:700 clamp(54px,7vw,116px)/.84 var(--font-display);
+      letter-spacing:-.065em;
+      text-transform:uppercase;
+      overflow-wrap:normal;
+      word-break:normal;
+      hyphens:none;
+    }
+
+    .chapter__position{
+      margin:18px 0 0;
+      max-width:29ch;
+      font:500 clamp(20px,2vw,30px)/1.08 var(--font-display);
+    }
+
+    .metrics{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      margin-top:36px;
+      border:1px solid currentColor;
+    }
+
+    .metric{
+      min-height:116px;
+      padding:16px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border-right:1px solid currentColor;
+    }
+
+    .metric:last-child{border-right:0}
+
+    .metric strong{
+      font:700 clamp(28px,3vw,46px)/.92 var(--font-display);
+      letter-spacing:-.04em;
+      white-space:nowrap;
+    }
+
+    .metric span{
+      max-width:16ch;
+      font-size:10px;
+      line-height:1.3;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      opacity:.62;
+    }
+
+    .metrics--two{
+      grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
+    .metrics--two .metric:last-child{
+      border-right:0;
+    }
+
+    .chapter-copy{
+      margin-top:28px;
+      max-width:64ch;
+      padding-top:22px;
+      border-top:1px solid currentColor;
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    .story{
+      display:grid;
+      margin-top:36px;
+      border-top:1px solid currentColor;
+    }
+
+    .story__row{
+      display:grid;
+      grid-template-columns:126px 1fr;
+      gap:24px;
+      padding:19px 0;
+      border-bottom:1px solid currentColor;
+    }
+
+    .story__row small{
+      font:700 10px/1.2 var(--font-display);
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      opacity:.5;
+    }
+
+    .story__row p{
+      margin:0;
+      max-width:68ch;
+      font-size:14px;
+      line-height:1.55;
+    }
+
+    .project-cta{
+      display:inline-flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:26px;
+      width:min(100%,520px);
+      margin-top:28px;
+      padding:17px 18px;
+      color:var(--black);
+      background:var(--cyan);
+      border:1px solid var(--black);
+      font:500 13px/1.2 var(--font-display);
+      transition:transform .2s ease,box-shadow .2s ease;
+    }
+
+    .project-cta:hover{
+      transform:translate(-3px,-3px);
+      box-shadow:6px 6px 0 var(--black);
+    }
+
+    .project-cta span:last-child{font-size:19px}
+
+    .artifact{
+      position:relative;
+      min-height:470px;
+      aspect-ratio:1;
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.16);
+      border:1px solid currentColor;
+    }
+
+    .chapter--dark .artifact{
+      background:#111;
+      border-color:rgba(255,255,255,.28);
+    }
+
+    .artifact__shape{
+      position:relative;
+      width:68%;
+      aspect-ratio:1;
+      background:var(--gray);
+      border-radius:30%;
+      box-shadow:0 34px 80px rgba(0,0,0,.18);
+      transform:rotate(-12deg);
+    }
+
+    .artifact__shape::before{
+      content:"";
+      position:absolute;
+      top:10%;
+      left:10%;
+      width:52%;
+      aspect-ratio:1;
+      background:var(--cyan);
+      border:1px solid var(--black);
+      border-radius:50%;
+    }
+
+    .artifact__shape::after{
+      content:"";
+      position:absolute;
+      right:10%;
+      bottom:8%;
+      width:34%;
+      height:46%;
+      background:var(--red);
+      border:1px solid var(--black);
+      border-radius:24px;
+    }
+
+    .chapter--red .artifact__shape::after{background:var(--white)}
+
+    .artifact--klever{
+      background:#111;
+    }
+    .artifact--space{
+      background:linear-gradient(145deg,#f4f3f3 0%,#d9d6d6 55%,#ffffff 100%);
+    }
+
+    .space-can{
+      position:relative;
+      width:42%;
+      height:68%;
+      min-width:150px;
+      border-radius:18% 18% 14% 14%;
+      border:2px solid var(--black);
+      background:var(--white);
+      transform:rotate(-9deg);
+      box-shadow:18px 28px 45px rgba(0,0,0,.2);
+    }
+
+    .space-can::before,
+    .space-can::after{
+      content:"";
+      position:absolute;
+      left:7%;
+      right:7%;
+      height:8%;
+      border:2px solid var(--black);
+      border-radius:50%;
+      background:var(--gray);
+    }
+
+    .space-can::before{top:-4%}
+    .space-can::after{bottom:-3%}
+
+    .space-can__label{
+      position:absolute;
+      inset:22% 10% 18%;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      color:var(--black);
+      background:var(--cyan);
+      border:1px solid var(--black);
+      font:700 22px/.9 var(--font-display);
+      letter-spacing:-.04em;
+    }
+
+    .space-can__ring{
+      position:absolute;
+      left:50%;
+      top:8%;
+      width:34%;
+      aspect-ratio:1;
+      transform:translateX(-50%);
+      border:3px solid var(--black);
+      border-radius:50%;
+    }
+
+    .project-hero--space{background:var(--light)}
+
+
+    .klever-sheet{
+      position:absolute;
+      width:62%;
+      height:76%;
+      left:19%;
+      top:12%;
+      background:var(--light);
+      border:2px solid var(--white);
+      border-radius:16% 16% 10% 10%;
+      transform:rotate(-7deg);
+      box-shadow:0 24px 50px rgba(0,0,0,.35);
+    }
+
+    .klever-sheet::before,
+    .klever-sheet::after{
+      content:"";
+      position:absolute;
+      left:12%;
+      right:12%;
+      height:9px;
+      background:var(--red);
+    }
+
+    .klever-sheet::before{top:20%}
+    .klever-sheet::after{bottom:18%}
+
+    .klever-pack{
+      position:absolute;
+      z-index:3;
+      width:22%;
+      height:34%;
+      right:11%;
+      bottom:13%;
+      background:var(--red);
+      border:2px solid var(--white);
+      border-radius:14px;
+      transform:rotate(12deg);
+    }
+
+    .klever-pack::after{
+      content:"K";
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      color:var(--white);
+      font:700 52px/1 var(--font-display);
+    }
+
+    .klever-handle{
+      position:absolute;
+      z-index:4;
+      width:11%;
+      height:18%;
+      border:8px solid var(--cyan);
+      border-bottom:0;
+      border-radius:40px 40px 0 0;
+    }
+
+    .klever-handle--a{left:12%;top:23%;transform:rotate(-12deg)}
+    .klever-handle--b{right:17%;top:23%;transform:rotate(12deg)}
+
+    .artifact__label{
+      position:absolute;
+      left:18px;
+      bottom:16px;
+      font:700 10px/1.2 var(--font-display);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      opacity:.65;
+    }
+
+    .project-hero{
+      position:relative;
+      min-height:92vh;
+      overflow:hidden;
+      padding:var(--pad);
+      display:flex;
+      align-items:flex-end;
+      background:var(--light);
+    }
+
+    .project-hero::after{
+      content:"";
+      position:absolute;
+      top:-10%;
+      right:-8%;
+      width:46vw;
+      height:42vh;
+      background:var(--red);
+      clip-path:polygon(18% 0,100% 0,100% 75%,0 100%);
+    }
+
+    .project-hero__inner{
+      position:relative;
+      z-index:2;
+      width:min(100%,var(--content));
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:56px;
+      align-items:end;
+    }
+
+    .project-hero h1{
+      margin:12px 0 0;
+      max-width:9ch;
+      font:700 clamp(58px,8vw,138px)/.84 var(--font-display);
+      letter-spacing:-.07em;
+      text-transform:uppercase;
+    }
+
+    .project-hero__lead{
+      margin:0;
+      max-width:56ch;
+      font-size:clamp(17px,1.5vw,22px);
+      line-height:1.45;
+    }
+
+    .project-body{
+      padding:72px var(--pad) 100px;
+    }
+
+    .timeline-band{
+      width:min(100%,var(--content));
+      margin:0 auto 64px;
+      padding:28px;
+      background:var(--black);
+      color:var(--white);
+    }
+
+    .timeline-band__grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:rgba(255,255,255,.2);
+    }
+
+    .timeline-step{
+      min-height:132px;
+      padding:16px;
+      background:var(--black);
+    }
+
+    .timeline-step strong{
+      display:block;
+      margin-bottom:28px;
+      font:700 11px/1 var(--font-display);
+      color:var(--cyan);
+    }
+
+    .timeline-step span{
+      font-size:13px;
+      line-height:1.4;
+    }
+
+    .project-flow{
+      width:min(100%,var(--content));
+      margin:0 auto;
+      display:grid;
+      gap:0;
+    }
+
+    .flow-section{
+      display:grid;
+      grid-template-columns:160px minmax(0,1fr);
+      gap:42px;
+      padding:58px 0;
+      border-top:1px solid var(--black);
+    }
+
+    .flow-section__index{
+      font:700 12px/1 var(--font-display);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .flow-section__content{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(260px,.65fr);
+      gap:42px;
+      align-items:start;
+    }
+
+    .flow-section h2{
+      margin:0;
+      font:500 clamp(30px,4vw,58px)/.96 var(--font-display);
+      letter-spacing:-.045em;
+      max-width:16ch;
+    }
+
+    .flow-section p{
+      margin:18px 0 0;
+      max-width:68ch;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .flow-callout{
+      margin-top:26px;
+      padding:18px 20px;
+      background:var(--cyan);
+      border:1px solid var(--black);
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .flow-artifact{
+      min-height:260px;
+      padding:18px;
+      display:flex;
+      align-items:flex-end;
+      background:var(--gray);
+      border:1px solid var(--black);
+      font:700 10px/1.2 var(--font-display);
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .footer{
+      margin-left:var(--sidebar);
+      padding:28px var(--pad);
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      color:var(--white);
+      background:var(--black);
+      font:700 10px/1 var(--font-display);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    @media(max-width:1080px){
+      :root{--sidebar:290px}
+      .chapter__inner,.project-hero__inner{grid-template-columns:1fr}
+      .artifact{max-width:540px;min-height:390px}
+      .flow-section__content{grid-template-columns:1fr}
+    }
+
+    @media(max-width:820px){
+      :root{--sidebar:100%}
+      .sidebar{position:relative;width:100%;height:auto}
+      .sidebar__inner{padding:20px}
+      .photo{max-width:225px}
+      .main,.footer{margin-left:0}
+      .progress{left:0}
+      .intro{min-height:72vh}
+      .chapter{min-height:auto}
+      .metrics{grid-template-columns:1fr}
+      .metric{border-right:0;border-bottom:1px solid currentColor}
+      .metric:last-child{border-bottom:0}
+      .flow-section{grid-template-columns:1fr;gap:18px}
+      .timeline-band__grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:560px){
+      body{font-size:15px}
+      .intro h2,.project-hero h1{font-size:clamp(48px,17vw,78px)}
+      .chapter__company{font-size:clamp(48px,15vw,78px)}
+      .artifact{min-height:300px}
+      .story__row{grid-template-columns:1fr;gap:8px}
+      .chapter__number{font-size:70px}
+      .timeline-band__grid{grid-template-columns:1fr}
+      .footer{flex-direction:column}
+    }
+  
+    /* ===== NAVIGATION ===== */
+    .top-nav{
+      position:sticky;
+      top:0;
+      z-index:35;
+      margin-left:var(--sidebar);
+      display:flex;
+      justify-content:center;
+      padding:10px var(--pad);
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(0,0,0,.1);
+    }
+
+    .top-nav__inner{
+      width:min(100%,var(--content));
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .top-nav__brand{
+      font:700 11px/1 var(--font-display);
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .top-nav__links{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .top-nav__links a{
+      padding:10px 12px;
+      border:1px solid transparent;
+      font:500 11px/1 var(--font-display);
+      transition:.2s ease;
+    }
+
+    .top-nav__links a:hover{
+      border-color:var(--black);
+      transform:translateY(-1px);
+    }
+
+    .top-nav__links a.is-active{
+      color:var(--white);
+      background:var(--black);
+      border-color:var(--black);
+    }
+
+    /* ===== ABOUT PROMO ON HOME ===== */
+    .about-promo{padding:72px var(--pad) 84px;background:var(--white);border-top:1px solid rgba(0,0,0,.14)}
+    .about-promo__inner{width:min(100%,var(--content));margin:0 auto;display:grid;grid-template-columns:minmax(240px,.42fr) minmax(0,1.58fr);gap:clamp(34px,5vw,76px);align-items:center}
+    .about-promo__photo{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--black);border:1px solid var(--black)}
+    .about-promo__photo.has-image{background:transparent;border:0}
+    .about-promo__photo.has-image > :not(.asset-image){display:none !important}
+    .about-promo__photo .asset-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .about-promo__photo:not(.has-image)::before{content:"PHOTO / 3:4";position:absolute;inset:0;display:grid;place-items:center;color:var(--white);font:700 11px/1 var(--font-display);letter-spacing:.14em}
+    .about-promo__copy h2{margin:0;max-width:9ch;font:700 clamp(46px,6vw,92px)/.88 var(--font-display);letter-spacing:-.06em;text-transform:uppercase}
+    .about-promo__copy p{margin:22px 0 0;max-width:54ch;font-size:16px;line-height:1.6}
+    .about-promo__button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;width:min(100%,420px);margin-top:26px;padding:18px;color:var(--white);background:var(--black);border:1px solid var(--black);font:500 13px/1.2 var(--font-display);transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s cubic-bezier(.2,.8,.2,1)}
+    .about-promo__button:hover,.about-promo__button:focus-visible{transform:translate(-6px,-6px);box-shadow:10px 10px 0 var(--red)}
+
+    /* ===== ABOUT ===== */
+    .about-hero{
+      position:relative;
+      min-height:70vh;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:var(--pad);
+      background:var(--light);
+    }
+
+    .about-hero::after{
+      content:"";
+      position:absolute;
+      right:-8vw;
+      top:-8vh;
+      width:42vw;
+      height:34vh;
+      background:var(--red);
+      clip-path:polygon(18% 0,100% 0,100% 74%,0 100%);
+    }
+
+    .about-hero__inner{
+      position:relative;
+      z-index:2;
+      width:min(100%,var(--content));
+      display:grid;
+      grid-template-columns:1.05fr .95fr;
+      gap:56px;
+      align-items:end;
+    }
+
+    .about-hero h1{
+      margin:12px 0 0;
+      max-width:9ch;
+      font:700 clamp(58px,8vw,138px)/.84 var(--font-display);
+      letter-spacing:-.07em;
+      text-transform:uppercase;
+    }
+
+    .about-hero p{
+      margin:0;
+      max-width:58ch;
+      font-size:clamp(17px,1.5vw,22px);
+      line-height:1.5;
+    }
+
+    .about-body{
+      padding:72px var(--pad) 100px;
+    }
+
+    .about-grid{
+      width:min(100%,var(--content));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:56px;
+      align-items:start;
+    }
+
+    .about-copy h2{
+      margin:0;
+      font:500 clamp(32px,4vw,56px)/1 var(--font-display);
+      letter-spacing:-.04em;
+    }
+
+    .about-copy p{
+      margin:20px 0 0;
+      max-width:58ch;
+      font-size:16px;
+      line-height:1.65;
+    }
+
+    .hobby-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+
+    .hobby-card{
+      position:relative;
+      min-height:190px;
+      padding:18px;
+      overflow:hidden;
+      cursor:pointer;
+      border:1px solid var(--black);
+      background:var(--white);
+      transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+
+    .hobby-card:hover,
+    .hobby-card.is-open{
+      transform:translate(-4px,-4px);
+      box-shadow:7px 7px 0 var(--black);
+      background:var(--cyan);
+    }
+
+    .hobby-card__index{
+      font:700 10px/1 var(--font-display);
+      letter-spacing:.12em;
+      opacity:.5;
+    }
+
+    .hobby-card h3{
+      margin:54px 0 0;
+      max-width:9ch;
+      font:500 24px/1 var(--font-display);
+      letter-spacing:-.03em;
+    }
+
+    .hobby-card p{
+      margin:16px 0 0;
+      max-height:0;
+      overflow:hidden;
+      opacity:0;
+      transition:max-height .3s ease, opacity .25s ease;
+      font-size:13px;
+      line-height:1.5;
+    }
+
+    .hobby-card.is-open p{
+      max-height:180px;
+      opacity:1;
+    }
+
+    /* ===== ABOUT PRINCIPLES ===== */
+    .about-principles{padding:0 var(--pad) 92px;background:var(--white)}
+    .about-principles__inner{width:min(100%,var(--content));margin:0 auto;border-top:1px solid var(--black);padding-top:28px}
+    .about-principles__head{max-width:760px}
+    .about-principles__head h2{margin:12px 0 0;max-width:12ch;font:500 clamp(38px,5vw,72px)/.92 var(--font-display);letter-spacing:-.05em}
+    .about-principles__grid{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--black);border-left:1px solid var(--black)}
+    .about-principles__grid article{min-height:250px;padding:22px;border-right:1px solid var(--black);border-bottom:1px solid var(--black)}
+    .about-principles__grid article span{font:700 10px/1.2 var(--font-display);letter-spacing:.12em;opacity:.5}
+    .about-principles__grid h3{margin:42px 0 0;max-width:14ch;font:500 25px/1 var(--font-display);letter-spacing:-.03em}
+    .about-principles__grid p{margin:18px 0 0;max-width:52ch;font-size:14px;line-height:1.6}
+
+    /* ===== CONTACT / CALL ===== */
+    .callout-contact{
+      position:relative;
+      overflow:hidden;
+      padding:72px var(--pad);
+      color:var(--white);
+      background:var(--black);
+      border-top:1px solid rgba(255,255,255,.15);
+    }
+
+    .callout-contact::after{
+      content:"";
+      position:absolute;
+      right:-8vw;
+      top:-10vh;
+      width:30vw;
+      aspect-ratio:1;
+      background:var(--red);
+      clip-path:polygon(18% 0,100% 14%,82% 100%,0 82%);
+    }
+
+    .callout-contact__inner{
+      position:relative;
+      z-index:2;
+      width:min(100%,var(--content));
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:48px;
+      align-items:start;
+    }
+
+    .callout-contact h2{
+      margin:0;
+      max-width:11ch;
+      font:700 clamp(42px,5.5vw,82px)/.9 var(--font-display);
+      letter-spacing:-.055em;
+      text-transform:uppercase;
+    }
+
+    .callout-contact p{
+      margin:0;
+      max-width:48ch;
+      color:rgba(255,255,255,.75);
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .callout-contact__actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .call-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 16px;
+      border:1px solid var(--white);
+      font:500 12px/1 var(--font-display);
+      transition:.2s ease;
+    }
+
+    .call-button--primary{
+      color:var(--black);
+      background:var(--cyan);
+      border-color:var(--cyan);
+    }
+
+    .call-button:hover{
+      transform:translate(-2px,-2px);
+      box-shadow:5px 5px 0 var(--red);
+    }
+
+    /* ===== ORIGAMI COMMERCIAL CTA ===== */
+    .shop-cta{
+      width:min(100%,var(--content));
+      margin:0 auto 72px;
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+      background:var(--cyan);
+      border:1px solid var(--black);
+    }
+
+    .shop-cta h2{
+      margin:0;
+      font:700 clamp(34px,4vw,58px)/.95 var(--font-display);
+      letter-spacing:-.045em;
+      text-transform:uppercase;
+    }
+
+    .shop-cta p{
+      margin:12px 0 0;
+      max-width:54ch;
+      font-size:15px;
+      line-height:1.55;
+    }
+
+    .shop-cta__actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      justify-content:flex-end;
+    }
+
+    .shop-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:48px;
+      padding:0 16px;
+      color:var(--white);
+      background:var(--black);
+      border:1px solid var(--black);
+      font:500 12px/1 var(--font-display);
+    }
+
+    .shop-button--ghost{
+      color:var(--black);
+      background:transparent;
+    }
+
+    @media(max-width:820px){
+      .top-nav{margin-left:0}
+      .top-nav__inner{align-items:flex-start}
+      .top-nav__links{justify-content:flex-end}
+      .about-hero__inner,
+      .about-grid,
+      .callout-contact__inner,
+      .shop-cta,
+      .about-promo__inner{
+        grid-template-columns:1fr;
+      }
+      .about-promo__photo{max-width:360px}
+      .hobby-grid{grid-template-columns:1fr}
+      .about-principles__grid{grid-template-columns:1fr}
+      .shop-cta__actions{justify-content:flex-start}
+    }
+
+    @media(max-width:560px){
+      .top-nav__inner{display:grid}
+      .top-nav__links{justify-content:flex-start}
+      .top-nav__links a{padding:8px 9px}
+    }
+
+  
+    .callout-contact__inner > div{
+      min-width:0;
+    }
+
+    .callout-contact__inner > div:last-child{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:flex-end;
+    }
+
+    .callout-contact__actions{
+      width:100%;
+      align-items:stretch;
+    }
+
+    .callout-contact__actions .call-button{
+      flex:0 1 auto;
+    }
+
+    @media(max-width:980px){
+      .callout-contact__inner{
+        grid-template-columns:1fr;
+        align-items:start;
+      }
+
+      .callout-contact__inner > div:last-child{
+        align-items:flex-start;
+      }
+    }
+
+  
+    /* High-contrast hover shadow for project journey buttons */
+    .project-cta{--cta-hover-shadow:#111;position:relative;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s cubic-bezier(.2,.8,.2,1),background-color .28s ease}
+    .project-cta:hover,.project-cta:focus-visible{transform:translate(-6px,-6px);box-shadow:10px 10px 0 var(--cta-hover-shadow)}
+    .chapter--red .project-cta,.chapter--gray .project-cta{--cta-hover-shadow:#111}
+    .chapter--black .project-cta,.chapter--dark .project-cta,.chapter--space .project-cta{--cta-hover-shadow:var(--red)}
+    .project-cta:active{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--cta-hover-shadow)}
+
+</style>
+</head>
+
+<body>
+  <aside class="sidebar">
+    <div class="sidebar__inner">
+      <div class="photo"><img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко" /><span>PHOTO</span></div>
+
+      <div>
+        <p class="eyebrow">Product Manager</p>
+        <h1 class="name">Котляренко Владислав Викторович</h1>
+
+        <div class="contact">
+          <a href="tel:+79936259008">+7 993 625 9008</a>
+          <a href="mailto:kotlyarenko.ru@yandex.ru">kotlyarenko.ru@yandex.ru</a>
+        </div>
+      </div>
+
+      <div class="role-block">
+        <p class="eyebrow">Текущая роль</p>
+        <div class="role">Менеджер продукта</div>
+        <p class="role-secondary">Стажер в дирекцию развития сайта и платформы первичных продаж</p>
+      </div>
+
+      <section class="sidebar-section">
+        <h3>Достижения</h3>
+        <ul>
+          <li>Победитель Кейс-чемпионата Альфа-Банка 2022 года</li>
+          <li>Победитель HSE Startup Cup 2023</li>
+        </ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Образование</h3>
+        <p>Высшая Школа Экономики, Экономический факультет, 22'</p>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Спорт и увлечения</h3>
+        <p>Дайвинг CMAS, сноуборд, большой теннис, мото эндуро, вейкбординг, КМС по стрельбе, лыжное ориентирование. Люблю отдых на природе и готовлю кайфовые шашлычки)</p>
+      </section>
+    </div>
+  </aside>
+
+
+  <nav class="top-nav">
+    <div class="top-nav__inner">
+      <div class="top-nav__brand">Vladislav Kotlyarenko</div>
+      <div class="top-nav__links">
+        <a href="#/" data-nav-route="/">Главная</a>
+        <a href="#/about" data-nav-route="/about">Обо мне</a>
+        <a href="#/lowcode" data-nav-route="/lowcode">Low-code</a>
+        <a href="#/origami" data-nav-route="/origami">Origami Wear</a>
+        <a href="#/obblic" data-nav-route="/obblic">Obblic</a>
+        <a href="#/klever" data-nav-route="/klever">Клевер</a>
+        <a href="#/space-soda" data-nav-route="/space-soda">Космос</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="progress"><span id="progressBar"></span></div>
+
+  <main class="main">
+    <!-- HOME -->
+    <section class="page" data-route="/">
+      <section class="intro">
+        <div class="intro__content">
+          <p class="eyebrow">Portfolio / Product / Web</p>
+          <h2>Я создаю продукты</h2>
+          <p class="intro__copy">От исследования рынка и пользовательских проблем — до MVP, запуска, продаж и развития продукта. Каждый проект ниже показан как отдельная продуктовая глава: контекст, решения, результат и артефакт.</p>
+        </div>
+      </section>
+
+      <section class="chapter chapter--gray">
+        <div class="chapter__number">01</div>
+        <div class="chapter__inner">
+          <div>
+            <div class="chapter__kicker">
+              <span>Июль 2020 — Январь 2023</span>
+              <span>2 года 6 месяцев</span>
+              <span>Москва</span>
+            </div>
+
+            <h2 class="chapter__company">Low-code</h2>
+            <p class="chapter__position">Product / Project Manager web-проектов</p>
+
+            <div class="metrics metrics--two">
+              <div class="metric"><strong>30+</strong><span>адаптивных сайтов</span></div>
+              <div class="metric"><strong>6</strong><span>человек в команде</span></div>
+            </div>
+
+            <div class="chapter-copy">
+              Создал студию low-code разработки и собрал команду, с которой мы делали сайты и цифровые каналы продаж для бизнеса и онлайн-проектов — от структуры и дизайна до запуска и сопровождения.
+            </div>
+
+            <a class="project-cta" href="#/lowcode"><span>Пройти путь создания проекта</span><span>↗</span></a>
+          </div>
+
+          <div class="artifact">
+            <img class="asset-image" data-asset="homeLowcode" alt="Low-code — артефакт проекта" />
+            <div class="artifact__shape"></div>
+            <div class="artifact__label">3D artifact / browser / web system</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter--dark">
+        <div class="chapter__number">02</div>
+        <div class="chapter__inner">
+          <div>
+            <div class="chapter__kicker">
+              <span>Октябрь 2022 — Август 2025</span>
+              <span>2 года 11 месяцев</span>
+              <span>Москва</span>
+            </div>
+
+            <h2 class="chapter__company">Origami Wear</h2>
+            <p class="chapter__position">Сооснователь / Product Manager</p>
+
+            <div class="metrics">
+              <div class="metric"><strong>1 млн ₽</strong><span>грант ФСИ</span></div>
+              <div class="metric"><strong>20+</strong><span>питчингов</span></div>
+              <div class="metric"><strong>MVP</strong><span>от гипотезы до продукта</span></div>
+            </div>
+
+            <div class="story">
+              <div class="story__row"><small>01 / Problem</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p></div>
+            </div>
+
+            <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
+          </div>
+
+          <div class="artifact">
+            <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" />
+            <div class="artifact__shape"></div>
+            <div class="artifact__label">3D artifact / apparel / material / MVP</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter--red">
+        <div class="chapter__number">03</div>
+        <div class="chapter__inner">
+          <div>
+            <div class="chapter__kicker">
+              <span>Январь 2023 — Ноябрь 2024</span>
+              <span>1 год 11 месяцев</span>
+              <span>Москва</span>
+            </div>
+
+            <h2 class="chapter__company">Obblic</h2>
+            <p class="chapter__position">Основатель / Product Manager & Business Development</p>
+
+            <div class="metrics">
+              <div class="metric"><strong>2</strong><span>версии продукта — web и физический</span></div>
+              <div class="metric"><strong>MMP</strong><span>физический журнал</span></div>
+              <div class="metric"><strong>Sales</strong><span>спрос подтвержден продажами</span></div>
+            </div>
+
+            <div class="story">
+              <div class="story__row"><small>01 / Задача</small><p>Разработать имиджевый продукт для студии дизайна интерьеров, который позволит охватить ЦА из премиум сегмента.</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p></div>
+            </div>
+
+            <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
+          </div>
+
+          <div class="artifact">
+            <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" />
+            <div class="artifact__shape"></div>
+            <div class="artifact__label">3D artifact / magazine / architecture / real estate</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter--dark">
+        <div class="chapter__number">04</div>
+        <div class="chapter__inner">
+          <div>
+            <div class="chapter__kicker">
+              <span>Проект / полевая разработка</span>
+              <span>Экспресс-эвакуация</span>
+              <span>Физический продукт</span>
+            </div>
+
+            <h2 class="chapter__company">Клевер</h2>
+            <p class="chapter__position">Носилки для экспресс-эвакуации / Product Owner</p>
+
+            <div class="metrics">
+              <div class="metric"><strong>2 мин → 10 с</strong><span>время подготовки к эвакуации</span></div>
+              <div class="metric"><strong>1-я</strong><span>партия используется в полях</span></div>
+            </div>
+
+            <div class="story">
+              <div class="story__row"><small>01 / Problem</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p></div>
+            </div>
+
+            <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
+          </div>
+
+          <div class="artifact artifact--klever">
+            <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" />
+            <div class="klever-pack"></div>
+            <div class="klever-sheet"></div>
+            <div class="klever-handle klever-handle--a"></div>
+            <div class="klever-handle klever-handle--b"></div>
+            <div class="artifact__label">3D artifact / rescue stretcher / field product</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter chapter--gray chapter--space">
+        <div class="chapter__number">05</div>
+        <div class="chapter__inner">
+          <div>
+            <div class="chapter__kicker">
+              <span>Проект / рекламная интеграция</span>
+              <span>Космос / МКС</span>
+              <span>Физический макет</span>
+            </div>
+
+            <h2 class="chapter__company"></h2>
+            <p class="chapter__position">Организация производства макета банки газировки для запуска на МКС</p>
+
+            <div class="metrics metrics--two">
+              <div class="metric"><strong>МКС</strong><span>макет отправился в космос</span></div>
+              <div class="metric"><strong>Союз</strong><span>рекламная интеграция на запуске</span></div>
+            </div>
+
+            <div class="story">
+              <div class="story__row"><small>01 / Задача</small><p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p></div>
+            </div>
+
+            <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
+          </div>
+
+          <div class="artifact artifact--space">
+            <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" />
+            <div class="space-can">
+              <div class="space-can__label">SODA<br>ORBIT</div>
+              <div class="space-can__ring"></div>
+            </div>
+            <div class="artifact__label">3D artifact / beverage can / ISS / Soyuz</div>
+          </div>
+        </div>
+      </section>
+
+<section class="about-promo">
+        <div class="about-promo__inner">
+          <div class="about-promo__photo">
+            <img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко — обо мне" />
+          </div>
+          <div class="about-promo__copy">
+            <p class="eyebrow">About / Life / Product</p>
+            <h2>Кто я вне проектов</h2>
+            <p>Немного больше о моем подходе к жизни, спорте и вещах, которые формируют мой способ думать и работать.</p>
+            <a class="about-promo__button" href="#/about"><span>Перейти на страницу обо мне</span><span>↗</span></a>
+          </div>
+        </div>
+      </section>
+
+    
+<section class="callout-contact">
+        <div class="callout-contact__inner">
+          <div>
+            <h2>Можно просто познакомиться</h2>
+          </div>
+          <div>
+            <p>Если хотите обсудить продукт, карьеру, запуск нового проекта или просто познакомиться — напишите мне.</p>
+            <div class="callout-contact__actions"><a class="call-button call-button--primary" href="https://t.me/kotlyarenko_ru" target="_blank" rel="noopener">Написать в Telegram</a></div>
+          </div>
+        </div>
+      </section>
+
+      </section>
+
+    <!-- ABOUT -->
+    <section class="page" data-route="/about">
+      <section class="about-hero">
+        <div class="about-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">About / Life / Product</p>
+            <h1>Обо мне</h1>
+          </div>
+          <p>Я люблю собирать продукты из неопределенности: находить проблему, формулировать гипотезу, договариваться с людьми и доводить идею до работающего результата. Вне работы мне нравятся занятия, где нужно одновременно думать и держать концентрацию. Там всё зависит только от тебя - это и есть свобода.</p>
+        </div>
+      </section>
+
+      <section class="about-body">
+        <div class="about-grid">
+          <div class="about-copy">
+            <h2>Увлечения вне работы</h2>
+            <p>Каждый вид спорта скрывает в себе определенную философию, требует разного подхода и развития разных навыков. Увлечение разными видами спорта — это мой способ самопознания и возможность увидеть мир под разными углами.</p>
+          </div>
+
+          <div class="hobby-grid">
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">01 / CMAS</div>
+              <h3>Дайвинг</h3>
+              <p>Погружения - это сочетание спокойствия, подготовки и работы с риском. Под водой особенно хорошо понимаешь ценность дисциплины и четких процедур.</p>
+            </article>
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">02 / SNOW</div>
+              <h3>Сноуборд</h3>
+              <p>Здесь нужны скорость, баланс и умение быстро адаптироваться к условиям. Мне нравится ощущение контроля в динамичной среде.</p>
+            </article>
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">03 / TENNIS</div>
+              <h3>Большой теннис</h3>
+              <p>Люблю за стратегию на ходу: нужно одновременно читать соперника и менять тактику по ходу игры.</p>
+            </article>
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">04 / ENDURO</div>
+              <h3>Мото эндуро</h3>
+              <p>Это про выбор оптимального маршрута, реакцию и умение принимать решения в условиях ограниченного времени и непредсказуемой среды.</p>
+            </article>
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">05 / WAKE</div>
+              <h3>Вейкбординг</h3>
+              <p>Нравится быстрый цикл обучения: попробовал, ошибся, проанализировал, поднялся и пробуешь снова.</p>
+            </article>
+            <article class="hobby-card" tabindex="0">
+              <div class="hobby-card__index">06 / SPORT</div>
+              <h3>Стрельба, ориентирование</h3>
+              <p>КМС по стрельбе и победитель чемпионата Красноярского края по лыжному ориентированию. Здесь особенно ценю концентрацию, точность и работу под давлением.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-principles">
+        <div class="about-principles__inner">
+          <div class="about-principles__head">
+            <p class="eyebrow">Communication / Learning / Decisions</p>
+            <h2>Как я взаимодействую с людьми</h2>
+          </div>
+          <div class="about-principles__grid">
+            <article><span>01 / OPENNESS</span><h3>Умею работать с конфликтами</h3><p>Я отзывчив и не конфликтен. Разногласия в команде решаю переводом обстановки в рациональное обсуждение, выявляю причины конфликта, заинтересованную в конфликте сторону и прорабатываю возможные компромиссы после устранения причины конфликта.</p></article>
+            <article><span>02 / FEEDBACK</span><h3>Принимаю объективную критику</h3><p>Отлично воспринимаю критику, если она сопровождается предложениями. Сам привык давать решения вместе с критикой и того же требую от команды — считаю это залогом продуктивности и роста каждого в команде.</p></article>
+            <article><span>03 / QUESTIONS</span><h3>Задаю много вопросов</h3><p>Умею активно слушать и задаю много вопросов. Убеждён, что спросить что-то простое и показаться глупым гораздо лучше, чем остаться без ответа.</p></article>
+            <article><span>04 / DIRECTNESS</span><h3>Предпочитаю говорить прямо</h3><p>Открыто выражаю мысли, считаю прямоту самым эффективным способом коммуникации. Отлично отношусь к прямолинейности в свой адрес.</p></article>
+            <article><span>05 / PEOPLE</span><h3>Быстро разбираюсь в незнакомом</h3><p>Очень быстро разбираюсь в вещах, которых не знаю, активно обращаюсь к специалистам в своём окружении и быстро нахожу решения через людей и брейншторминг.</p></article>
+            <article><span>06 / CONFLICT</span><h3>Умею работать с негативом</h3><p>Испытываю неприязнь к пассивно-агрессивным людям, с открытой агрессией умею работать через выставление границ, смену фреймов и юмор.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="callout-contact">
+        <div class="callout-contact__inner">
+          <div><h2>Можно просто познакомиться</h2></div>
+          <div>
+            <p>Если вам близок мой подход или есть интересный продуктовый контекст — буду рад знакомству.</p>
+            <div class="callout-contact__actions"><a class="call-button call-button--primary" href="https://t.me/kotlyarenko_ru" target="_blank" rel="noopener">Написать в Telegram</a></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- LOWCODE -->
+    <section class="page" data-route="/lowcode">
+      <section class="project-hero">
+        <div class="project-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">Июль 2020 — Январь 2023 / Москва</p>
+            <h1>Low-code</h1>
+          </div>
+          <p class="project-hero__lead">История о том, как из разрозненных запросов заказчиков собирался цифровой продукт: от интервью и пользовательского пути до постановки задач, запуска, аналитики и оплаты.</p>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <div class="timeline-band">
+          <div class="timeline-band__grid">
+            <div class="timeline-step"><strong>01</strong><span>Гипотеза и входящий запрос</span></div>
+            <div class="timeline-step"><strong>02</strong><span>Пользователь и архитектура</span></div>
+            <div class="timeline-step"><strong>03</strong><span>Команда и запуск</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Аналитика и результат</span></div>
+          </div>
+        </div>
+
+        <div class="project-flow">
+          <section class="flow-section">
+            <div class="flow-section__index">01</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Гипотеза и входящий запрос</h2>
+                <p>Почти каждый проект начинался не с готового ТЗ, а с бизнес-задачи. Нужно было понять, кто пользователь, зачем он приходит на сайт и какое целевое действие действительно важно.</p>
+                <div class="flow-callout">Вместо немедленного перехода к макетам я начинал с интервью с заказчиком и декомпозиции задачи. Это позволяло отделить пожелания от реальной пользовательской ценности.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode01" alt="brief / interview notes" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">02</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Исследование пользователя</h2>
+                <p>Формулировал Jobs To Be Done, собирал Customer Journey Map и определял ключевые точки принятия решения.</p>
+                <div class="flow-callout">На этом этапе появлялась логика продукта: что человек должен увидеть первым, где ему нужна дополнительная информация и что мешает дойти до заявки или оплаты.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode02" alt="CJM / JTBD / sitemap" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">03</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Команда и постановка задач</h2>
+                <p>Работал с командой до 6 человек: дизайн, верстка, разработка и контент.</p>
+                <div class="flow-callout">Декомпозировал функциональность, фиксировал требования и критерии приемки. Это снижало количество переделок и помогало синхронизировать участников вокруг пользовательского сценария.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode03" alt="board / tasks / prototype" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">04</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Создание и тестирование</h2>
+                <p>Проверял адаптивность, пользовательский путь и работу платежных сценариев на разных устройствах.</p>
+                <div class="flow-callout">После запуска подключал Яндекс Метрику, проверял ключевые события и искал точки, где пользователи терялись до целевого действия.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode04" alt="analytics / payment flow" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">05</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Сложные решения и конфликты</h2>
+                <p>В web-проектах неизбежно возникал конфликт между объемом пожеланий, сроками и возможностями команды.</p>
+                <div class="flow-callout">Решение строилось через возврат к цели проекта: что необходимо пользователю и бизнесу сейчас, а что можно вынести в следующую итерацию.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode05" alt="decision map / priority matrix" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">06</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Результат</h2>
+                <p>За время работы реализовал более 30 адаптивных сайтов.</p>
+                <div class="flow-callout">Главный результат — умение проводить web-продукт через весь цикл: discovery, архитектура, требования, дизайн, разработка, приемка, аналитика и целевое действие.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode06" alt="30+ launches" /></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="shop-cta">
+        <div>
+          <p class="eyebrow">Low-code / Web</p>
+          <h2>Нужен сайт или web-продукт?</h2>
+          <p>Можно обсудить задачу, структуру, пользовательский путь и запуск сайта — от идеи и прототипа до готовой адаптивной версии.</p>
+        </div>
+        <div class="shop-cta__actions">
+          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=Хочу%20заказать%20сайт">Заказать сайт</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- ORIGAMI -->
+    <section class="page" data-route="/origami">
+      <section class="project-hero">
+        <div class="project-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">Октябрь 2022 — Август 2025 / Москва</p>
+            <h1>Origami Wear</h1>
+          </div>
+          <p class="project-hero__lead">История о том, как идея функциональной одежды превратилась в продукт: исследование рынка, поиск ценности, сбор команды, грантовое финансирование, тестирование материалов, MVP и десятки питчингов.</p>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <div class="timeline-band">
+          <div class="timeline-band__grid">
+            <div class="timeline-step"><strong>01</strong><span>Гипотеза и рынок</span></div>
+            <div class="timeline-step"><strong>02</strong><span>Команда и ресурсы</span></div>
+            <div class="timeline-step"><strong>03</strong><span>MVP и тестирование</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Питчинг и результат</span></div>
+          </div>
+        </div>
+
+        <div class="project-flow">
+          <section class="flow-section">
+            <div class="flow-section__index">01</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Гипотеза</h2>
+                <p>В основе проекта была гипотеза о том, что функциональная одежда может решать прикладную пользовательскую задачу и одновременно иметь коммерческий потенциал.</p>
+                <div class="flow-callout">Первым шагом было не производство, а проверка самой логики рынка и продукта.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami01" alt="product hypothesis" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">02</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Рынок и позиционирование</h2>
+                <p>Оценил рынок через TAM–SAM–SOM и SWOT, изучил конкурентное поле и определял, где продукт может занять понятную позицию.</p>
+                <div class="flow-callout">Это стало основой для продуктовой концепции и списка гипотез, которые нужно было проверить до масштабных затрат.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami02" alt="TAM SAM SOM / SWOT" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">03</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Команда</h2>
+                <p>Для перехода от идеи к физическому продукту нужно было объединить людей с разными компетенциями и подрядчиков.</p>
+                <div class="flow-callout">Моя роль была продуктовой: сформировать цель, поставить задачи, удерживать сроки и связать исследовательскую часть с разработкой MVP.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami03" alt="team map" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">04</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Деньги</h2>
+                <p>Подготовил финансовую модель и презентацию проекта, участвовал в защитах и питчингах.</p>
+                <div class="flow-callout">Проект победил в HSE Startup Cup и привлек грант Фонда содействия инновациям в размере 1 млн рублей.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami04" alt="pitch / grant / financial model" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">05</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>MVP и тестирование</h2>
+                <p>Координировал разработку MVP, тестирование материалов и сбор обратной связи.</p>
+                <div class="flow-callout">Результаты тестирования использовались для доработки продукта, а не просто как финальная проверка перед выпуском.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami05" alt="material / prototype / test" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">06</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Конфликты и приоритеты</h2>
+                <p>Физический продукт заставляет постоянно выбирать между качеством, сроками, доступностью материалов и масштабом первоначальной версии.</p>
+                <div class="flow-callout">Приоритетом оставалась проверка ключевой гипотезы MVP. Здесь позже можно добавить конкретную историю разногласия внутри команды или с подрядчиком.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami06" alt="priority / trade-offs" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">07</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Питчинг и обратная связь</h2>
+                <p>Провел более 20 публичных выступлений и защит проекта перед экспертами и инвесторами.</p>
+                <div class="flow-callout">Питчинг использовался не только для привлечения ресурсов, но и как дополнительный канал обратной связи по продуктовой логике.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami07" alt="pitch deck / stage" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">08</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Результат</h2>
+                <p>Проект прошел путь от исследования рынка и продуктовой гипотезы до физического MVP.</p>
+                <div class="flow-callout">Для меня это опыт полного 0→1 цикла, где продукт существует не в интерфейсе, а в реальном мире и требует работы одновременно с рынком, людьми, финансами и производством.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami08" alt="final MVP" /></div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="shop-cta">
+        <div>
+          <p class="eyebrow">Origami Wear / Product</p>
+          <h2>Хотите такую одежду для себя?</h2>
+          <p>Можно обсудить покупку функциональной одежды или индивидуальный пошив под ваши задачи, сценарий использования и предпочтения.</p>
+        </div>
+        <div class="shop-cta__actions">
+          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=Индивидуальный%20пошив%20Origami%20Wear">Заказать пошив для себя</a>
+        </div>
+      </section>
+    </section>
+
+    <!-- OBBLIC -->
+    <section class="page" data-route="/obblic">
+      <section class="project-hero">
+        <div class="project-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">Январь 2023 — Ноябрь 2024 / Москва</p>
+            <h1>Obblic</h1>
+          </div>
+          <p class="project-hero__lead">История о запуске сразу двух связанных продуктов: клиентского сервиса и Obblic Journal. От исследования аудитории и концепции до дизайна, контента, продаж и проверки коммерческого спроса.</p>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <div class="timeline-band">
+          <div class="timeline-band__grid">
+            <div class="timeline-step"><strong>01</strong><span>Проблема аудитории</span></div>
+            <div class="timeline-step"><strong>02</strong><span>Продуктовая концепция</span></div>
+            <div class="timeline-step"><strong>03</strong><span>MVP и продажи</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Обратная связь и результат</span></div>
+          </div>
+        </div>
+
+        <div class="project-flow">
+          <section class="flow-section">
+            <div class="flow-section__index">01</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Проблема аудитории</h2>
+                <p>Проект развивался на пересечении недвижимости, релокации и контента.</p>
+                <div class="flow-callout">Нужно было понять, какие вопросы действительно возникают у аудитории и какой формат сервиса способен стать полезной точкой входа.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic01" alt="audience / research" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">02</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Продуктовая концепция</h2>
+                <p>Исследовал рынок и конкурентные решения, после чего сформировал структуру клиентского сервиса и отдельного контентного продукта — Obblic Journal.</p>
+                <div class="flow-callout">Два продукта решали разные части одного пользовательского контекста и должны были работать в одном бренде.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic02" alt="product map / journal" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">03</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Команда и производство</h2>
+                <p>Координировал работу над web-продуктами, контентом, дизайном и выпуском журнала.</p>
+                <div class="flow-callout">Моя задача заключалась в том, чтобы синхронизировать разные типы работ вокруг общего результата и не потерять продуктовую логику.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic03" alt="editorial / product team" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">04</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>MVP и проверка спроса</h2>
+                <p>Вместо ожидания идеальной версии журнала проверял коммерческий интерес заранее.</p>
+                <div class="flow-callout">Спрос был подтвержден продажей рекламных размещений еще до выхода первого тиража — это стало ключевым подтверждением жизнеспособности MVP.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic04" alt="sales / media kit" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">05</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Цифровой продукт</h2>
+                <p>Спроектировал и запустил сайт клиентского сервиса Obblic и цифровую версию Obblic Journal.</p>
+                <div class="flow-callout">Определял пользовательские сценарии, структуру страниц и требования к контенту и дизайну.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic05" alt="website / digital journal" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">06</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Обратная связь</h2>
+                <p>После запуска собирал обратную связь пользователей и партнеров.</p>
+                <div class="flow-callout">Она использовалась как вход для следующих продуктовых решений, а не как формальная оценка уже готовой работы.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic06" alt="feedback / interviews" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">07</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Сложные решения</h2>
+                <p>Проект требовал балансировать между редакционным качеством, скоростью выпуска, коммерческими задачами и ресурсами.</p>
+                <div class="flow-callout">Здесь можно добавить конкретный кейс конфликта интересов между продуктовой, контентной или коммерческой стороной.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic07" alt="trade-offs" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">08</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Результат</h2>
+                <p>Запущены два web-продукта и MVP журнала, а коммерческий спрос был подтвержден до первого печатного тиража.</p>
+                <div class="flow-callout">Главный опыт — связывать продукт, контент и business development в одну систему и проверять ценность не только интервью, но и реальными продажами.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic08" alt="final products" /></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    <!-- KLEVER -->
+    <section class="page" data-route="/klever">
+      <section class="project-hero">
+        <div class="project-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">Экспресс-эвакуация / физический продукт / полевая разработка</p>
+            <h1>Клевер</h1>
+          </div>
+          <p class="project-hero__lead">Носилки, которые всегда находятся у того, кто нуждается в транспортировке. Разворачиваются за 10 секунд по принципу парашютной системы и позволяют сразу приступить к эвакуации.</p>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <div class="timeline-band">
+          <div class="timeline-band__grid">
+            <div class="timeline-step"><strong>01</strong><span>Проблема и сценарий эвакуации</span></div>
+            <div class="timeline-step"><strong>02</strong><span>Концепция и прототип</span></div>
+            <div class="timeline-step"><strong>03</strong><span>Тестирование и доработка</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Полевые испытания и применение</span></div>
+          </div>
+        </div>
+
+        <div class="project-flow">
+          <section class="flow-section">
+            <div class="flow-section__index">01</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Проблема была не в носилках. Проблема — во времени.</h2>
+                <p>Классические носилки по умолчанию находились у медиков. Если эвакуацию нужно было начинать немедленно, подготовка занимала более 2 минут — время, которое в критической ситуации может иметь решающее значение.</p>
+                <div class="flow-callout">Второй барьер — сам способ погрузки: человека приходилось переворачивать и перемещать, чтобы разместить его на носилках.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever01" alt="emergency scenario / time constraint" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">02</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Сделать носилки частью экипировки</h2>
+                <p>Мы изменили сам сценарий использования: носилки стали легкими и переносимыми на спине, чтобы они были доступны не только медику, а человеку, который первым оказался рядом с пострадавшим.</p>
+                <div class="flow-callout">Ключевая продуктовая идея — не доставлять носилки к пострадавшему, а сделать их частью экипировки.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever02" alt="backpack carry / product concept" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">03</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Раскрытие по принципу парашюта</h2>
+                <p>Конструкция раскрывается за 10 секунд. При этом пострадавший сразу оказывается на поверхности носилок — без отдельного этапа переворачивания и перемещения.</p>
+                <div class="flow-callout">Главная метрика решения: сократить подготовку к эвакуации с более чем 2 минут до 10 секунд.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever03" alt="deployment sequence / 10 sec" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">04</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>От концепта к продукту</h2>
+                <p>Мы разработали конструкцию и пошили носилки, чтобы проверить не только идею, но и реальный сценарий использования: переноску, раскрытие, работу с пострадавшим и удобство перемещения.</p>
+                <div class="flow-callout">Продукт прошел путь от концепции до работающего физического образца.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever04" alt="sewn prototype / physical MVP" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">05</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Тестирование с целевой аудиторией</h2>
+                <p>Протестировали носилки с целевой аудиторией и собрали обратную связь непосредственно по сценарию применения.</p>
+                <div class="flow-callout">Проверили гипотезы, моделируя реальные сценарии использования.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever05" alt="user test / field feedback" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">06</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Доработка под реальные условия</h2>
+                <p>По итогам тестирования усилили практическую часть конструкции: улучшили ручки и добавили дренажные отверстия с учетом специфики эксплуатации.</p>
+                <div class="flow-callout">Внесли функциональные изменения, опираясь на наблюдения за реальным сценарием использования.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever06" alt="handles / drainage / iteration" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">07</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>От прототипа — к полю</h2>
+                <p>Первая партия носилок была протестирована в полевых условиях. После проверки она была отправлена для практического применения.</p>
+                <div class="flow-callout">Результат проекта — функциональное решение и испытанный продукт, спасающий жизни.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever07" alt="first batch / field deployment" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">08</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Результат</h2>
+                <p>Сценарий подготовки к эвакуации сокращен с более чем 2 минут до 10 секунд. Носилки стали переносимым физическим продуктом, который можно быстро развернуть непосредственно под пострадавшим.</p>
+                <div class="flow-callout">Главный продуктовый результат — убрать лишние действия из критического сценария и превратить каждую секунду подготовки в потенциально сохраненное время.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="klever08" alt="2 min → 10 sec / field-ready product" /></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACE SODA -->
+    <section class="page" data-route="/space-soda">
+      <section class="project-hero project-hero--space">
+        <div class="project-hero__inner">
+          <div>
+            <a class="route-back" href="#/">Вернуться к портфолио</a>
+            <p class="eyebrow" style="margin-top:26px">Космос / рекламная интеграция / физический продукт</p>
+            <h1>Космос</h1>
+          </div>
+          <p class="project-hero__lead">Организация производства макета банки газировки для рекламной интеграции на ракете «Союз» и последующего запуска на Международную космическую станцию.</p>
+        </div>
+      </section>
+
+      <div class="project-body">
+        <div class="timeline-band">
+          <div class="timeline-band__grid">
+            <div class="timeline-step"><strong>01</strong><span>Рекламная интеграция</span></div>
+            <div class="timeline-step"><strong>02</strong><span>Требования Роскосмоса</span></div>
+            <div class="timeline-step"><strong>03</strong><span>Производство и сертификация</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Запуск на МКС</span></div>
+          </div>
+        </div>
+
+        <div class="project-flow">
+          <section class="flow-section">
+            <div class="flow-section__index">01</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Реклама, которую нужно было отправить в космос</h2>
+                <p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p>
+                <div class="flow-callout">Здесь недостаточно было сделать визуально точную упаковку: физический объект должен был соответствовать требованиям космического запуска.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda01" alt="Soyuz / advertising integration" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">02</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Макет под требования Роскосмоса</h2>
+                <p>Работал с требованиями к материалам, конструктиву и допустимым параметрам изделия. Нужно было учитывать ограничения, которые предъявляются к предметам, отправляемым в космический полёт.</p>
+                <div class="flow-callout">Макет проектировался не только как рекламный объект, но и как изделие, готовое пройти необходимую проверку.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda02" alt="material tolerances / requirements" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">03</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Производство и сертификация</h2>
+                <p>Организовал изготовление макета и согласование производства с учетом допусков по материалам и необходимых процедур сертификации.</p>
+                <div class="flow-callout">Главная сложность была в стыке требований рекламной интеграции, физического производства и регламентов космического запуска.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda03" alt="prototype / certification / production" /></div>
+            </div>
+          </section>
+
+          <section class="flow-section">
+            <div class="flow-section__index">04</div>
+            <div class="flow-section__content">
+              <div>
+                <h2>Макет полетел на МКС</h2>
+                <p>После согласований и подготовки производства готовый макет банки отправился в космос в рамках запуска ракеты «Союз» и рекламной интеграции.</p>
+                <div class="flow-callout">Результат — физический рекламный объект, который прошел путь от идеи и требований до реального космического запуска.</div>
+              </div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda04" alt="final can / ISS / launch" /></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>Котляренко Владислав</span>
+    <span>Product Manager</span>
+    <span id="year"></span>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-asset]').forEach(element => {
+      const key = element.dataset.asset;
+      const url = PORTFOLIO_ASSETS[key];
+      if (url) {
+        element.src = url;
+        element.closest('.artifact, .flow-artifact, .photo, .about-promo__photo')?.classList.add('has-image');
+      }
+    });
+
+    const pages = [...document.querySelectorAll('.page')];
+    const progressBar = document.getElementById('progressBar');
+
+    function normalizeRoute() {
+      const raw = location.hash.replace(/^#/, '') || '/';
+      const allowed = ['/', '/about', '/lowcode', '/origami', '/obblic', '/klever', '/space-soda'];
+      return allowed.includes(raw) ? raw : '/';
+    }
+
+    const homeScrollKey = 'portfolioHomeScrollY';
+
+    function saveHomeScroll() {
+      if (normalizeRoute() === '/') {
+        sessionStorage.setItem(homeScrollKey, String(window.scrollY));
+      }
+    }
+
+    function restoreHomeScroll() {
+      const saved = sessionStorage.getItem(homeScrollKey);
+      if (saved === null) {
+        window.scrollTo(0, 0);
+        return;
+      }
+      const y = Number(saved);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => window.scrollTo(0, y));
+      });
+    }
+
+    function renderRoute() {
+      const previousRoute = window.__currentRoute || null;
+      const route = normalizeRoute();
+
+      if (previousRoute === '/' && route !== '/') {
+        sessionStorage.setItem(homeScrollKey, String(window.scrollY));
+      }
+
+      pages.forEach(page => {
+        page.classList.toggle('is-active', page.dataset.route === route);
+      });
+
+      document.querySelectorAll('[data-nav-route]').forEach(link => {
+        link.classList.toggle('is-active', link.dataset.navRoute === route);
+      });
+
+      const titles = {
+        '/': 'Котляренко Владислав — Product Manager',
+        '/about': 'Обо мне — Владислав Котляренко',
+        '/lowcode': 'Low-code — Product Story',
+        '/origami': 'Origami Wear — Product Story',
+        '/obblic': 'Obblic — Product Story',
+        '/klever': 'Клевер — Product Story',
+        '/space-soda': 'Космос — Product Story'
+      };
+
+      document.title = titles[route] || titles['/'];
+
+      if (route === '/') {
+        if (previousRoute !== '/') restoreHomeScroll();
+      } else {
+        window.scrollTo(0, 0);
+      }
+
+      window.__currentRoute = route;
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
+      progressBar.style.width = Math.min(100, pct) + '%';
+    }
+
+    window.addEventListener('hashchange', renderRoute);
+    window.addEventListener('scroll', () => { updateProgress(); saveHomeScroll(); }, { passive: true });
+    window.addEventListener('resize', updateProgress);
+
+
+    document.querySelectorAll('.hobby-card').forEach(card => {
+      const toggle = () => card.classList.toggle('is-open');
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          toggle();
+        }
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    if (!location.hash) {
+      history.replaceState(null, '', '#/');
+    }
+
+    renderRoute();
+  </script>
+</body>
+</html>
