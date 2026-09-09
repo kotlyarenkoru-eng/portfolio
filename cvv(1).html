@@ -14,7 +14,8 @@
       profilePhoto: "https://kotlyarenkoru-eng.github.io/portfolio/prophoto-Photoroom%20(1).png",
       aboutPhoto: "",
 
-      homeLowcode: "",
+      homeLowcode: "https://kotlyarenkoru-eng.github.io/portfolio/homeLow.png",
+      homeLowcode2: "https://kotlyarenkoru-eng.github.io/portfolio/homeLow2.png",
       homeOrigami: "",
       homeObblic: "",
       homeKlever: "",
@@ -920,6 +921,70 @@
       text-transform:uppercase;
     }
 
+
+    /* ===== HOME ARTIFACT SCROLL MOTION ===== */
+    .home-scroll-artifact{
+      --scroll-y:0px;
+      --scroll-rotate:0deg;
+      transform:translate3d(0,var(--scroll-y),0) rotate(var(--scroll-rotate));
+      transform-origin:50% 50%;
+      will-change:transform;
+    }
+
+    .artifact-stack{
+      position:relative;
+      min-height:470px;
+      aspect-ratio:1;
+    }
+
+    .artifact-stack > .artifact{
+      position:absolute;
+      inset:0;
+      width:100%;
+      min-height:0;
+      aspect-ratio:auto;
+    }
+
+    .artifact-stack > .artifact:first-child{
+      z-index:1;
+    }
+
+    .artifact-stack > .artifact:last-child{
+      z-index:2;
+    }
+
+    .artifact-stack .home-scroll-artifact{
+      z-index:1;
+    }
+
+    .artifact-stack .home-static-artifact{
+      z-index:2;
+    }
+
+    .home-static-artifact{
+      transform:none;
+    }
+
+    @media(max-width:1080px){
+      .artifact-stack{
+        max-width:540px;
+        min-height:390px;
+      }
+    }
+
+    @media(max-width:560px){
+      .artifact-stack{
+        min-height:300px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .home-scroll-artifact{
+        --scroll-y:0px !important;
+        --scroll-rotate:0deg !important;
+      }
+    }
+
     @media(max-width:1080px){
       :root{--sidebar:290px}
       .chapter__inner,.project-hero__inner{grid-template-columns:1fr}
@@ -1440,10 +1505,17 @@
             <a class="project-cta" href="#/lowcode"><span>Пройти путь создания проекта</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
-            <img class="asset-image" data-asset="homeLowcode" alt="Low-code — артефакт проекта" />
-            <div class="artifact__shape"></div>
-            <div class="artifact__label">3D artifact / browser / web system</div>
+          <div class="artifact-stack">
+            <div class="artifact home-scroll-artifact">
+              <img class="asset-image" data-asset="homeLowcode" alt="Low-code — нижний артефакт проекта" />
+              <div class="artifact__shape"></div>
+              <div class="artifact__label">3D artifact / browser / web system</div>
+            </div>
+            <div class="artifact home-static-artifact">
+              <img class="asset-image" data-asset="homeLowcode2" alt="Low-code — верхний артефакт проекта" />
+              <div class="artifact__shape"></div>
+              <div class="artifact__label">3D artifact / interface / web system</div>
+            </div>
           </div>
         </div>
       </section>
@@ -1476,7 +1548,7 @@
             <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
+          <div class="artifact home-scroll-artifact">
             <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / apparel / material / MVP</div>
@@ -1512,7 +1584,7 @@
             <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
+          <div class="artifact home-scroll-artifact">
             <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / magazine / architecture / real estate</div>
@@ -1547,7 +1619,7 @@
             <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--klever">
+          <div class="artifact artifact--klever home-scroll-artifact">
             <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" />
             <div class="klever-pack"></div>
             <div class="klever-sheet"></div>
@@ -1585,7 +1657,7 @@
             <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--space">
+          <div class="artifact artifact--space home-scroll-artifact">
             <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" />
             <div class="space-can">
               <div class="space-can__label">SODA<br>ORBIT</div>
@@ -2279,6 +2351,30 @@
     <span>Product Manager</span>
     <span id="year"></span>
   </footer>
+
+  <script>
+    (() => {
+      const artifacts = [...document.querySelectorAll('.home-scroll-artifact')];
+      if (!artifacts.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      const animateLevitation = (time) => {
+        artifacts.forEach((artifact, index) => {
+          const speed = 0.00055 + index * 0.000035;
+          const phase = index * 0.9;
+          const wave = Math.sin(time * speed + phase);
+          const easedWave = wave * Math.abs(wave);
+          const y = -15 * easedWave;
+
+          artifact.style.setProperty('--scroll-y', `${y.toFixed(2)}px`);
+          artifact.style.setProperty('--scroll-rotate', '0deg');
+        });
+
+        requestAnimationFrame(animateLevitation);
+      };
+
+      requestAnimationFrame(animateLevitation);
+    })();
+  </script>
 
   <script>
     document.querySelectorAll('[data-asset]').forEach(element => {
