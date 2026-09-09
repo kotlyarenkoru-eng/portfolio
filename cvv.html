@@ -15,6 +15,7 @@
       aboutPhoto: "",
 
       homeLowcode: "",
+      homeLowcode2: "",
       homeOrigami: "",
       homeObblic: "",
       homeKlever: "",
@@ -151,6 +152,24 @@
       position:absolute;
       inset:0;
       z-index:2;
+    }
+
+    /* Slow, non-linear sway around the center of the photo's bottom edge */
+    .photo{
+      transform-origin:50% 100%;
+      animation:profile-photo-sway 8s ease-in-out infinite;
+      will-change:transform;
+    }
+
+    @keyframes profile-photo-sway{
+      0%,100%{transform:rotate(0deg)}
+      50%{transform:rotate(10deg)}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .photo{
+        animation:none;
+      }
     }
 
     .artifact .asset-image,
@@ -902,6 +921,70 @@
       text-transform:uppercase;
     }
 
+
+    /* ===== HOME ARTIFACT SCROLL MOTION ===== */
+    .home-scroll-artifact{
+      --scroll-y:0px;
+      --scroll-rotate:0deg;
+      transform:translate3d(0,var(--scroll-y),0) rotate(var(--scroll-rotate));
+      transform-origin:50% 50%;
+      will-change:transform;
+    }
+
+    .artifact-stack{
+      position:relative;
+      min-height:470px;
+      aspect-ratio:1;
+    }
+
+    .artifact-stack > .artifact{
+      position:absolute;
+      inset:0;
+      width:100%;
+      min-height:0;
+      aspect-ratio:auto;
+    }
+
+    .artifact-stack > .artifact:first-child{
+      z-index:1;
+    }
+
+    .artifact-stack > .artifact:last-child{
+      z-index:2;
+    }
+
+    .artifact-stack .home-scroll-artifact{
+      z-index:1;
+    }
+
+    .artifact-stack .home-static-artifact{
+      z-index:2;
+    }
+
+    .home-static-artifact{
+      transform:none;
+    }
+
+    @media(max-width:1080px){
+      .artifact-stack{
+        max-width:540px;
+        min-height:390px;
+      }
+    }
+
+    @media(max-width:560px){
+      .artifact-stack{
+        min-height:300px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .home-scroll-artifact{
+        --scroll-y:0px !important;
+        --scroll-rotate:0deg !important;
+      }
+    }
+
     @media(max-width:1080px){
       :root{--sidebar:290px}
       .chapter__inner,.project-hero__inner{grid-template-columns:1fr}
@@ -1422,10 +1505,17 @@
             <a class="project-cta" href="#/lowcode"><span>Пройти путь создания проекта</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
-            <img class="asset-image" data-asset="homeLowcode" alt="Low-code — артефакт проекта" />
-            <div class="artifact__shape"></div>
-            <div class="artifact__label">3D artifact / browser / web system</div>
+          <div class="artifact-stack">
+            <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.035">
+              <img class="asset-image" data-asset="homeLowcode" alt="Low-code — нижний артефакт проекта" />
+              <div class="artifact__shape"></div>
+              <div class="artifact__label">3D artifact / browser / web system</div>
+            </div>
+            <div class="artifact home-static-artifact">
+              <img class="asset-image" data-asset="homeLowcode2" alt="Low-code — верхний артефакт проекта" />
+              <div class="artifact__shape"></div>
+              <div class="artifact__label">3D artifact / interface / web system</div>
+            </div>
           </div>
         </div>
       </section>
@@ -1458,7 +1548,7 @@
             <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
+          <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.03">
             <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / apparel / material / MVP</div>
@@ -1494,7 +1584,7 @@
             <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
           </div>
 
-          <div class="artifact">
+          <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.03">
             <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / magazine / architecture / real estate</div>
@@ -1529,7 +1619,7 @@
             <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--klever">
+          <div class="artifact artifact--klever home-scroll-artifact" data-home-scroll-speed="0.035">
             <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" />
             <div class="klever-pack"></div>
             <div class="klever-sheet"></div>
@@ -1567,7 +1657,7 @@
             <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--space">
+          <div class="artifact artifact--space home-scroll-artifact" data-home-scroll-speed="0.028">
             <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" />
             <div class="space-can">
               <div class="space-can__label">SODA<br>ORBIT</div>
@@ -2261,6 +2351,48 @@
     <span>Product Manager</span>
     <span id="year"></span>
   </footer>
+
+  <script>
+    (() => {
+      const artifacts = [...document.querySelectorAll('.home-scroll-artifact')];
+      if (!artifacts.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      let ticking = false;
+
+      const updateHomeArtifacts = () => {
+        const viewportCenter = window.innerHeight * 0.5;
+
+        artifacts.forEach(artifact => {
+          const rect = artifact.getBoundingClientRect();
+          const elementCenter = rect.top + rect.height * 0.5;
+          const distance = elementCenter - viewportCenter;
+          const speed = parseFloat(artifact.dataset.homeScrollSpeed || '0.03');
+
+          // Small movement tied to scroll position; easing keeps it soft near the viewport center.
+          const normalized = Math.max(-1, Math.min(1, distance / (window.innerHeight * 0.75)));
+          const eased = normalized * Math.abs(normalized);
+          const y = -eased * 22 * speed / 0.03;
+          const rotate = eased * 1.2 * speed / 0.03;
+
+          artifact.style.setProperty('--scroll-y', `${y.toFixed(2)}px`);
+          artifact.style.setProperty('--scroll-rotate', `${rotate.toFixed(2)}deg`);
+        });
+
+        ticking = false;
+      };
+
+      const requestUpdate = () => {
+        if (!ticking) {
+          ticking = true;
+          requestAnimationFrame(updateHomeArtifacts);
+        }
+      };
+
+      window.addEventListener('scroll', requestUpdate, {passive:true});
+      window.addEventListener('resize', requestUpdate);
+      requestUpdate();
+    })();
+  </script>
 
   <script>
     document.querySelectorAll('[data-asset]').forEach(element => {
