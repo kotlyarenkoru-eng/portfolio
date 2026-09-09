@@ -1506,7 +1506,7 @@
           </div>
 
           <div class="artifact-stack">
-            <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.035">
+            <div class="artifact home-scroll-artifact">
               <img class="asset-image" data-asset="homeLowcode" alt="Low-code — нижний артефакт проекта" />
               <div class="artifact__shape"></div>
               <div class="artifact__label">3D artifact / browser / web system</div>
@@ -1548,7 +1548,7 @@
             <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
           </div>
 
-          <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.03">
+          <div class="artifact home-scroll-artifact">
             <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / apparel / material / MVP</div>
@@ -1584,7 +1584,7 @@
             <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
           </div>
 
-          <div class="artifact home-scroll-artifact" data-home-scroll-speed="0.03">
+          <div class="artifact home-scroll-artifact">
             <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" />
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / magazine / architecture / real estate</div>
@@ -1619,7 +1619,7 @@
             <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--klever home-scroll-artifact" data-home-scroll-speed="0.035">
+          <div class="artifact artifact--klever home-scroll-artifact">
             <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" />
             <div class="klever-pack"></div>
             <div class="klever-sheet"></div>
@@ -1657,7 +1657,7 @@
             <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
           </div>
 
-          <div class="artifact artifact--space home-scroll-artifact" data-home-scroll-speed="0.028">
+          <div class="artifact artifact--space home-scroll-artifact">
             <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" />
             <div class="space-can">
               <div class="space-can__label">SODA<br>ORBIT</div>
@@ -2357,40 +2357,22 @@
       const artifacts = [...document.querySelectorAll('.home-scroll-artifact')];
       if (!artifacts.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-      let ticking = false;
-
-      const updateHomeArtifacts = () => {
-        const viewportCenter = window.innerHeight * 0.5;
-
-        artifacts.forEach(artifact => {
-          const rect = artifact.getBoundingClientRect();
-          const elementCenter = rect.top + rect.height * 0.5;
-          const distance = elementCenter - viewportCenter;
-          const speed = parseFloat(artifact.dataset.homeScrollSpeed || '0.03');
-
-          // Small movement tied to scroll position; easing keeps it soft near the viewport center.
-          const normalized = Math.max(-1, Math.min(1, distance / (window.innerHeight * 0.75)));
-          const eased = normalized * Math.abs(normalized);
-          const y = -eased * 22 * speed / 0.03;
-          const rotate = eased * 1.2 * speed / 0.03;
+      const animateLevitation = (time) => {
+        artifacts.forEach((artifact, index) => {
+          const speed = 0.00055 + index * 0.000035;
+          const phase = index * 0.9;
+          const wave = Math.sin(time * speed + phase);
+          const easedWave = wave * Math.abs(wave);
+          const y = -15 * easedWave;
 
           artifact.style.setProperty('--scroll-y', `${y.toFixed(2)}px`);
-          artifact.style.setProperty('--scroll-rotate', `${rotate.toFixed(2)}deg`);
+          artifact.style.setProperty('--scroll-rotate', '0deg');
         });
 
-        ticking = false;
+        requestAnimationFrame(animateLevitation);
       };
 
-      const requestUpdate = () => {
-        if (!ticking) {
-          ticking = true;
-          requestAnimationFrame(updateHomeArtifacts);
-        }
-      };
-
-      window.addEventListener('scroll', requestUpdate, {passive:true});
-      window.addEventListener('resize', requestUpdate);
-      requestUpdate();
+      requestAnimationFrame(animateLevitation);
     })();
   </script>
 
