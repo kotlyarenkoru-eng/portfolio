@@ -12,6 +12,7 @@
   <script>
     const PORTFOLIO_ASSETS = {
       profilePhoto: "https://kotlyarenkoru-eng.github.io/portfolio/prophoto-Photoroom%20(1).png",
+      aboutPhoto: "",
 
       homeLowcode: "",
       homeOrigami: "",
@@ -117,13 +118,13 @@
       position:relative;
       display:grid;
       place-items:center;
-      width:65%;
-      margin:0 auto 0 0;
-      aspect-ratio:1/1;
+      width:90%;
+      margin:0 auto 0 5;
+      aspect-ratio:1/1.25;
       min-height:0;
       overflow:hidden;
-      background:transparent;
-      border:0;
+      background:hidden;
+      border:0px solid rgba(255,255,255,.22);
     }
 
     .photo::before,
@@ -150,6 +151,24 @@
       position:absolute;
       inset:0;
       z-index:2;
+    }
+
+    /* Slow, non-linear sway around the center of the photo's bottom edge */
+    .photo{
+      transform-origin:50% 100%;
+      animation:profile-photo-sway 8s ease-in-out infinite;
+      will-change:transform;
+    }
+
+    @keyframes profile-photo-sway{
+      0%,100%{transform:rotate(0deg)}
+      50%{transform:rotate(10deg)}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      .photo{
+        animation:none;
+      }
     }
 
     .artifact .asset-image,
@@ -212,7 +231,7 @@
       margin:10px 0 0;
       max-width:9ch;
       font:700 clamp(30px,2.15vw,40px)/.95 var(--font-display);
-      letter-spacing:-.05em;
+      letter-spacing:-.03em;
     }
 
     .contact{
@@ -996,7 +1015,7 @@
     .about-promo__photo.has-image > :not(.asset-image){display:none !important}
     .about-promo__photo .asset-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .about-promo__photo:not(.has-image)::before{content:"PHOTO / 3:4";position:absolute;inset:0;display:grid;place-items:center;color:var(--white);font:700 11px/1 var(--font-display);letter-spacing:.14em}
-    .about-promo__copy h2{margin:0;max-width:9ch;font:700 clamp(46px,6vw,92px)/.88 var(--font-display);letter-spacing:-.06em;text-transform:uppercase}
+    .about-promo__copy h2{margin:0;max-width:9ch;font:700 clamp(46px,6vw,92px)/.88 var(--font-display);letter-spacing:-.03em;text-transform:uppercase}
     .about-promo__copy p{margin:22px 0 0;max-width:54ch;font-size:16px;line-height:1.6}
     .about-promo__button{display:inline-flex;align-items:center;justify-content:space-between;gap:28px;width:min(100%,420px);margin-top:26px;padding:18px;color:var(--white);background:var(--black);border:1px solid var(--black);font:500 13px/1.2 var(--font-display);transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s cubic-bezier(.2,.8,.2,1)}
     .about-promo__button:hover,.about-promo__button:focus-visible{transform:translate(-6px,-6px);box-shadow:10px 10px 0 var(--red)}
@@ -1328,17 +1347,7 @@
     .chapter--black .project-cta,.chapter--dark .project-cta,.chapter--space .project-cta{--cta-hover-shadow:var(--red)}
     .project-cta:active{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--cta-hover-shadow)}
 
-
-    /* ===== SCROLL-LINKED PHOTO FOLLOW ===== */
-    .photo {
-      transform-origin: 50% 50%;
-      transform: rotate(var(--photo-rotation, 0deg));
-      will-change: transform;
-    }
-    @media (prefers-reduced-motion: reduce){
-      .photo{transform:none !important}
-    }
-  </style>
+</style>
 </head>
 
 <body>
@@ -1425,7 +1434,7 @@
             </div>
 
             <div class="chapter-copy">
-              Создал студию low-code разработки и собрал команду, с которой мы делали сайты и цифровые каналы продаж для бизнеса и онлайн-проектов — от структуры и дизайна до запуска и развития.
+              Создал студию low-code разработки и собрал команду, с которой мы делали сайты и цифровые каналы продаж для бизнеса и онлайн-проектов — от структуры и дизайна до запуска и сопровождения.
             </div>
 
             <a class="project-cta" href="#/lowcode"><span>Пройти путь создания проекта</span><span>↗</span></a>
@@ -1459,12 +1468,12 @@
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Problem</small><p>Нужно было понять, существует ли коммерческий потенциал у идеи функциональной одежды и какой сегмент стоит атаковать первым.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Оценил рынок через TAM–SAM–SOM и SWOT, сформировал продуктовую концепцию, организовал проверку гипотез, координировал разработку и тестирование MVP.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Победа в HSE Startup Cup, грант 1 млн ₽ и путь от исследования рынка до запуска физического MVP.</p></div>
+              <div class="story__row"><small>01 / Problem</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p></div>
             </div>
 
-            <a class="project-cta" href="#/origami"><span>Пройти путь создания продукта</span><span>↗</span></a>
+            <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
           </div>
 
           <div class="artifact">
@@ -1489,18 +1498,18 @@
             <p class="chapter__position">Основатель / Product Manager & Business Development</p>
 
             <div class="metrics">
-              <div class="metric"><strong>2</strong><span>web-продукта</span></div>
-              <div class="metric"><strong>MVP</strong><span>журнал до первого тиража</span></div>
-              <div class="metric"><strong>Sales</strong><span>спрос подтвержден рекламой</span></div>
+              <div class="metric"><strong>2</strong><span>версии продукта — web и физический</span></div>
+              <div class="metric"><strong>MMP</strong><span>физический журнал</span></div>
+              <div class="metric"><strong>Sales</strong><span>спрос подтвержден продажами</span></div>
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Problem</small><p>Нужно было создать полезный продукт для аудитории недвижимости и релокации и одновременно проверить жизнеспособность медийной модели.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Исследовал аудиторию и рынок, спроектировал клиентский сервис и цифровой журнал, координировал дизайн, контент и публикацию.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Запустил два web-продукта и подтвердил коммерческий спрос на журнал продажей рекламных размещений до выхода первого тиража.</p></div>
+              <div class="story__row"><small>01 / Задача</small><p>Разработать имиджевый продукт для студии дизайна интерьеров, который позволит охватить ЦА из премиум сегмента.</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p></div>
             </div>
 
-            <a class="project-cta" href="#/obblic"><span>Пройти путь создания продукта</span><span>↗</span></a>
+            <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
           </div>
 
           <div class="artifact">
@@ -1530,12 +1539,12 @@
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Problem</small><p>Классические носилки обычно находятся у медиков, поэтому подготовка к эвакуации могла занимать более 2 минут. Кроме того, пострадавшего приходилось переворачивать и перемещать, чтобы уложить на носилки.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Разработали и пошили легкие носилки, которые носятся на спине и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. В конструкцию внесли улучшенные ручки и дренажные отверстия. Первая партия носилок отправилась спасать жизни.</p></div>
+              <div class="story__row"><small>01 / Problem</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p></div>
+              <div class="story__row"><small>02 / Actions</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p></div>
             </div>
 
-            <a class="project-cta" href="#/klever"><span>Пройти путь создания продукта</span><span>↗</span></a>
+            <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
           </div>
 
           <div class="artifact artifact--klever">
@@ -1559,8 +1568,8 @@
               <span>Физический макет</span>
             </div>
 
-            <h2 class="chapter__company">Космос</h2>
-            <p class="chapter__position">Организация производства макета банки газировки для запуска на МКС</p>
+            <h2 class="chapter__company"></h2>
+            <p class="chapter__position">Создание макета банки газировки для запуска в космос</p>
 
             <div class="metrics metrics--two">
               <div class="metric"><strong>МКС</strong><span>макет отправился в космос</span></div>
@@ -1570,10 +1579,10 @@
             <div class="story">
               <div class="story__row"><small>01 / Задача</small><p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p></div>
               <div class="story__row"><small>02 / Actions</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Готовый макет банки был подготовлен к запуску и полетел на МКС в рамках миссии «Союза».</p></div>
+              <div class="story__row"><small>03 / Result</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p></div>
             </div>
 
-            <a class="project-cta" href="#/space-soda"><span>Пройти путь создания проекта</span><span>↗</span></a>
+            <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
           </div>
 
           <div class="artifact artifact--space">
@@ -1590,12 +1599,12 @@
 <section class="about-promo">
         <div class="about-promo__inner">
           <div class="about-promo__photo">
-            <img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко — обо мне" />
+            <img class="asset-image" data-asset="aboutPhoto" alt="Фото Владислава Котляренко — обо мне" />
           </div>
           <div class="about-promo__copy">
             <p class="eyebrow">About / Life / Product</p>
             <h2>Кто я вне проектов</h2>
-            <p>Немного больше обо мне, моем подходе к жизни, спорте и вещах, которые формируют мой способ думать и работать.</p>
+            <p>Немного больше о моем подходе к жизни, спорте и вещах, которые формируют мой способ думать и работать.</p>
             <a class="about-promo__button" href="#/about"><span>Перейти на страницу обо мне</span><span>↗</span></a>
           </div>
         </div>
@@ -1675,15 +1684,15 @@
         <div class="about-principles__inner">
           <div class="about-principles__head">
             <p class="eyebrow">Communication / Learning / Decisions</p>
-            <h2>Как я думаю и принимаю решения</h2>
+            <h2>Как я взаимодействую с людьми</h2>
           </div>
           <div class="about-principles__grid">
-            <article><span>01 / OPENNESS</span><h3>Отзывчивость и спокойная коммуникация</h3><p>Я отзывчив и не конфликтен.</p></article>
-            <article><span>02 / FEEDBACK</span><h3>Критика должна идти вместе с решением</h3><p>Отлично воспринимаю критику, если она сопровождается предложениями. Сам привык давать решения вместе с критикой и того же требую от команды — считаю это залогом продуктивности и роста каждого в команде.</p></article>
-            <article><span>03 / QUESTIONS</span><h3>Лучше спросить, чем остаться без ответа</h3><p>Умею активно слушать и задаю много вопросов. Убеждён, что спросить что-то простое и показаться глупым гораздо лучше, чем остаться без ответа.</p></article>
-            <article><span>04 / DIRECTNESS</span><h3>Прямота — самый эффективный способ коммуникации</h3><p>Открыто выражаю мысли, считаю прямоту самым эффективным способом коммуникации. Отлично отношусь к прямолинейности в свой адрес.</p></article>
+            <article><span>01 / OPENNESS</span><h3>Умею работать с конфликтами</h3><p>Я отзывчив и не конфликтен. Разногласия в команде решаю переводом обстановки в рациональное обсуждение, выявляю причины конфликта, заинтересованную в конфликте сторону и прорабатываю возможные компромиссы после устранения причины конфликта.</p></article>
+            <article><span>02 / FEEDBACK</span><h3>Принимаю объективную критику</h3><p>Отлично воспринимаю критику, если она сопровождается предложениями. Сам привык давать решения вместе с критикой и того же требую от команды — считаю это залогом продуктивности и роста каждого в команде.</p></article>
+            <article><span>03 / QUESTIONS</span><h3>Задаю много вопросов</h3><p>Умею активно слушать и задаю много вопросов. Убеждён, что спросить что-то простое и показаться глупым гораздо лучше, чем остаться без ответа.</p></article>
+            <article><span>04 / DIRECTNESS</span><h3>Предпочитаю говорить прямо</h3><p>Открыто выражаю мысли, считаю прямоту самым эффективным способом коммуникации. Отлично отношусь к прямолинейности в свой адрес.</p></article>
             <article><span>05 / PEOPLE</span><h3>Быстро разбираюсь в незнакомом</h3><p>Очень быстро разбираюсь в вещах, которых не знаю, активно обращаюсь к специалистам в своём окружении и быстро нахожу решения через людей и брейншторминг.</p></article>
-            <article><span>06 / CONFLICT</span><h3>Границы, смена фрейма и юмор</h3><p>Испытываю неприязнь к пассивно-агрессивным людям, с открытой агрессией умею работать через выставление границ, смену фреймов и юмор.</p></article>
+            <article><span>06 / CONFLICT</span><h3>Умею работать с негативом</h3><p>Испытываю неприязнь к пассивно-агрессивным людям, с открытой агрессией умею работать через выставление границ, смену фреймов и юмор.</p></article>
           </div>
         </div>
       </section>
@@ -1708,7 +1717,7 @@
             <p class="eyebrow" style="margin-top:26px">Июль 2020 — Январь 2023 / Москва</p>
             <h1>Low-code</h1>
           </div>
-          <p class="project-hero__lead">История о том, как из разрозненных запросов заказчиков собирался цифровой продукт: от интервью и пользовательского пути до постановки задач, запуска, аналитики и оплаты.</p>
+          <p class="project-hero__lead">История о том, как из разрозненных запросов заказчиков мы собирали страницы приема оплат и заявок.</p>
         </div>
       </section>
 
@@ -2310,47 +2319,6 @@
       });
     }
 
-
-    /* ===== SCROLL-LINKED PHOTO FOLLOW =====
-       Flat 2D rotation around the center of the photo. */
-    const profilePhoto = document.querySelector('.photo');
-    let photoFollowRaf = 0;
-
-    function updatePhotoFollow() {
-      photoFollowRaf = 0;
-      if (!profilePhoto || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-      const activePage = document.querySelector('.page.is-active');
-      if (!activePage) return;
-
-      const headings = [...activePage.querySelectorAll('h1, h2')].filter(el => {
-        const r = el.getBoundingClientRect();
-        return r.width > 0 && r.height > 0;
-      });
-      if (!headings.length) return;
-
-      const viewportCenter = window.innerHeight * 0.48;
-      let heading = headings[0];
-      let best = Infinity;
-      for (const el of headings) {
-        const r = el.getBoundingClientRect();
-        const d = Math.abs((r.top + r.height / 2) - viewportCenter);
-        if (d < best) { best = d; heading = el; }
-      }
-
-      const r = heading.getBoundingClientRect();
-      const distance = r.top + r.height / 2 - viewportCenter;
-      const range = Math.max(window.innerHeight * 0.42, 300);
-      const verticalProgress = Math.max(-1, Math.min(1, distance / range));
-
-      const rotation = verticalProgress * 18;
-      profilePhoto.style.setProperty('--photo-rotation', rotation.toFixed(3) + 'deg');
-    }
-
-    function requestPhotoFollow() {
-      if (!photoFollowRaf) photoFollowRaf = requestAnimationFrame(updatePhotoFollow);
-    }
-
     function renderRoute() {
       const previousRoute = window.__currentRoute || null;
       const route = normalizeRoute();
@@ -2387,7 +2355,6 @@
 
       window.__currentRoute = route;
       updateProgress();
-      requestPhotoFollow();
     }
 
     function updateProgress() {
@@ -2397,7 +2364,7 @@
     }
 
     window.addEventListener('hashchange', renderRoute);
-    window.addEventListener('scroll', () => { updateProgress(); saveHomeScroll(); requestPhotoFollow(); }, { passive: true });
+    window.addEventListener('scroll', () => { updateProgress(); saveHomeScroll(); }, { passive: true });
     window.addEventListener('resize', updateProgress);
 
 
