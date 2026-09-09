@@ -122,8 +122,8 @@
       aspect-ratio:1/1;
       min-height:0;
       overflow:hidden;
-      background:#151515;
-      border:1px solid rgba(255,255,255,.22);
+      background:transparent;
+      border:0;
     }
 
     .photo::before,
@@ -1371,11 +1371,6 @@
       </section>
 
       <section class="sidebar-section">
-        <h3>Образование</h3>
-        <p>Высшая Школа Экономики, Экономический факультет, 22'</p>
-      </section>
-
-      <section class="sidebar-section">
         <h3>Спорт и увлечения</h3>
         <p>Дайвинг CMAS, сноуборд, большой теннис, мото эндуро, вейкбординг, КМС по стрельбе, лыжное ориентирование. Люблю отдых на природе и готовлю кайфовые шашлычки)</p>
       </section>
@@ -2348,7 +2343,7 @@
       const range = Math.max(window.innerHeight * 0.42, 300);
       const verticalProgress = Math.max(-1, Math.min(1, distance / range));
 
-      const rotation = verticalProgress * -18;
+      const rotation = verticalProgress * 18;
       profilePhoto.style.setProperty('--photo-rotation', rotation.toFixed(3) + 'deg');
     }
 
