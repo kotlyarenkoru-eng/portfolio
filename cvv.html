@@ -965,16 +965,17 @@
       transform:none;
     }
 
-    /* HOME LOWCODE — 20% smaller */
+    /* HOME LOWCODE — 20% smaller, 25px right */
     .artifact-stack .home-scroll-artifact{
       width:80%;
       height:80%;
       margin:auto;
+      transform:translateX(25px) translateY(var(--scroll-y)) rotate(var(--scroll-rotate));
     }
 
-    /* HOME LOWCODE 2 — 20px to the left */
+    /* HOME LOWCODE 2 — 30px down */
     .artifact-stack .home-static-artifact{
-      transform:translateX(-20px);
+      transform:translateY(30px);
     }
 
     @media(max-width:1080px){
