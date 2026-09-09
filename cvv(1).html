@@ -941,7 +941,7 @@
     .sidebar{perspective:900px}
     .photo{
       transform-origin:100% 50%;
-      transform:perspective(900px) rotateX(var(--photo-follow-x, 0deg)) rotateY(var(--photo-follow-y, 0deg));
+      transform:perspective(900px) rotateY(var(--photo-follow-y, 0deg));
       will-change:transform;
       backface-visibility:hidden;
     }
@@ -2324,17 +2324,10 @@
       const range = Math.max(window.innerHeight * 0.42, 300);
       const verticalProgress = Math.max(-1, Math.min(1, distance / range));
 
-      // Right edge turns toward the heading: when the heading is above,
-      // the upper/right edge leads; when it is below, the lower/right edge leads.
-      const rotateX = verticalProgress * -7;
+      // The entire photo rotates as one plane around its right vertical edge.
+      // The direction follows the heading's vertical position in the viewport.
+      const rotateY = verticalProgress * -18;
 
-      // Keep a subtle 3D yaw so the right side visibly "looks" into the page.
-      // It reverses as the next heading takes over, producing the follow effect.
-      const headingX = r.left + r.width * 0.72;
-      const horizontal = headingX - (photoRect.right + (window.innerWidth - photoRect.right) * 0.18);
-      const rotateY = Math.max(-11, Math.min(11, horizontal / 85));
-
-      profilePhoto.style.setProperty('--photo-follow-x', rotateX.toFixed(3) + 'deg');
       profilePhoto.style.setProperty('--photo-follow-y', rotateY.toFixed(3) + 'deg');
     }
 
