@@ -21,9 +21,8 @@
       homeKlever: "https://kotlyarenkoru-eng.github.io/portfolio/homeKlever.png",
       homeSpaceSoda: "https://kotlyarenkoru-eng.github.io/portfolio/homeSpace.png",
 
-      lowcode01: "",
-      lowcode02: "",
-      lowcode03: "",
+      lowcode01: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode01.png",
+      lowcode03: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode02.png",
       lowcode04: "",
       lowcode05: "",
       lowcode06: "",
@@ -31,11 +30,9 @@
       origami01: "",
       origami02: "",
       origami03: "",
-      origami04: "",
+      origami04: "https://kotlyarenkoru-eng.github.io/portfolio/orig4.JPG",
       origami05: "",
-      origami06: "",
-      origami07: "",
-      origami08: "",
+  
 
       obblic01: "",
       obblic02: "",
@@ -180,7 +177,7 @@
     }
 
     .artifact .asset-image{
-      position:absolute;
+      position:relative;
       inset:0;
       z-index:2;
     }
@@ -212,7 +209,7 @@
 
     .artifact.has-image .asset-image,
     .flow-artifact.has-image .asset-image{
-      position:absolute;
+      position:relative;
       inset:0;
       display:block;
       width:100%;
@@ -343,7 +340,7 @@
 
     .intro{
       position:relative;
-      min-height:100vh;
+      min-height:80vh;
       overflow:hidden;
       display:grid;
       align-items:end;
@@ -907,6 +904,12 @@
       letter-spacing:.1em;
       text-transform:uppercase;
     }
+    .flow-artifact .asset-video{
+      display:block;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
     .footer{
       margin-left:var(--sidebar);
@@ -1425,7 +1428,64 @@
     .chapter--black .project-cta,.chapter--dark .project-cta,.chapter--space .project-cta{--cta-hover-shadow:var(--red)}
     .project-cta:active{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--cta-hover-shadow)}
 
-</style>
+
+    /* LOWCODE ARTIFACT VIEW */
+    .page[data-route="/lowcode"] .flow-artifact{
+      min-height:520px;
+    }
+
+    @media(min-width:1081px){
+      .page[data-route="/lowcode"] .flow-artifact .asset-image{
+        cursor:zoom-in;
+      }
+
+      .artifact-lightbox{
+        position:fixed;
+        inset:0;
+        z-index:1000;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding:40px;
+        background:rgba(0,0,0,.86);
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+        transition:opacity .2s ease, visibility .2s ease;
+      }
+
+      .artifact-lightbox.is-open{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+      }
+
+      .artifact-lightbox__image{
+        display:block;
+        max-width:calc(100vw - 80px);
+        max-height:calc(100vh - 80px);
+        width:auto;
+        height:auto;
+        object-fit:contain;
+        box-shadow:0 20px 80px rgba(0,0,0,.45);
+        cursor:zoom-out;
+      }
+
+      .artifact-lightbox__close{
+        position:absolute;
+        top:18px;
+        right:24px;
+        width:44px;
+        height:44px;
+        border:1px solid rgba(255,255,255,.65);
+        background:rgba(0,0,0,.2);
+        color:#fff;
+        font:400 26px/1 Arial,sans-serif;
+        cursor:pointer;
+      }
+    }
+
+  </style>
 </head>
 
 <body>
@@ -1829,20 +1889,10 @@
             </div>
           </section>
 
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Исследование пользователя</h2>
-                <p>Формулировал Jobs To Be Done, собирал Customer Journey Map и определял ключевые точки принятия решения.</p>
-                <div class="flow-callout">На этом этапе появлялась логика продукта: что человек должен увидеть первым, где ему нужна дополнительная информация и что мешает дойти до заявки или оплаты.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode02" alt="CJM / JTBD / sitemap" /></div>
-            </div>
-          </section>
+          
 
           <section class="flow-section">
-            <div class="flow-section__index">03</div>
+            <div class="flow-section__index">02</div>
             <div class="flow-section__content">
               <div>
                 <h2>Команда и постановка задач</h2>
@@ -1854,7 +1904,7 @@
           </section>
 
           <section class="flow-section">
-            <div class="flow-section__index">04</div>
+            <div class="flow-section__index">03</div>
             <div class="flow-section__content">
               <div>
                 <h2>Создание и тестирование</h2>
@@ -1865,20 +1915,10 @@
             </div>
           </section>
 
-          <section class="flow-section">
-            <div class="flow-section__index">05</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Сложные решения и конфликты</h2>
-                <p>В web-проектах неизбежно возникал конфликт между объемом пожеланий, сроками и возможностями команды.</p>
-                <div class="flow-callout">Решение строилось через возврат к цели проекта: что необходимо пользователю и бизнесу сейчас, а что можно вынести в следующую итерацию.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode05" alt="decision map / priority matrix" /></div>
-            </div>
-          </section>
+          
 
           <section class="flow-section">
-            <div class="flow-section__index">06</div>
+            <div class="flow-section__index">04</div>
             <div class="flow-section__content">
               <div>
                 <h2>Результат</h2>
@@ -1912,14 +1952,14 @@
             <p class="eyebrow" style="margin-top:26px">Октябрь 2022 — Август 2025 / Москва</p>
             <h1>Origami Wear</h1>
           </div>
-          <p class="project-hero__lead">История о том, как идея функциональной одежды превратилась в продукт: исследование рынка, поиск ценности, сбор команды, грантовое финансирование, тестирование материалов, MVP и десятки питчингов.</p>
+          <p class="project-hero__lead">История о том, как идея функциональной одежды превратилась в полноценный проект: исследование рынка, сбор команды, грантовое финансирование, тестирование материалов, MVP и десятки питчингов.</p>
         </div>
       </section>
 
       <div class="project-body">
         <div class="timeline-band">
           <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Гипотеза и рынок</span></div>
+            <div class="timeline-step"><strong>01</strong><span>Проблема</span></div>
             <div class="timeline-step"><strong>02</strong><span>Команда и ресурсы</span></div>
             <div class="timeline-step"><strong>03</strong><span>MVP и тестирование</span></div>
             <div class="timeline-step"><strong>04</strong><span>Питчинг и результат</span></div>
@@ -1931,23 +1971,25 @@
             <div class="flow-section__index">01</div>
             <div class="flow-section__content">
               <div>
-                <h2>Гипотеза</h2>
-                <p>В основе проекта была гипотеза о том, что функциональная одежда может решать прикладную пользовательскую задачу и одновременно иметь коммерческий потенциал.</p>
-                <div class="flow-callout">Первым шагом было не производство, а проверка самой логики рынка и продукта.</div>
+                <h2>Проблема</h2>
+                <p>Дети быстро вырастают из одежды - очень простая проблема, понятная каждому родителю.</p>
+       
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="origami01" alt="product hypothesis" /></div>
             </div>
           </section>
 
+          
+
           <section class="flow-section">
             <div class="flow-section__index">02</div>
             <div class="flow-section__content">
               <div>
-                <h2>Рынок и позиционирование</h2>
-                <p>Оценил рынок через TAM–SAM–SOM и SWOT, изучил конкурентное поле и определял, где продукт может занять понятную позицию.</p>
-                <div class="flow-callout">Это стало основой для продуктовой концепции и списка гипотез, которые нужно было проверить до масштабных затрат.</div>
+                <h2>Команда</h2>
+                <p>Мы собирали необходимые компетенции в институте и привлекали в лице менторов через акселераторы. За дизайнером одежды мы пошли в ВШД, я договорился с преподавателем на проектную работу для студентов, которых мы возьмем в команду проекта. Экономиста для составления финмодели и веб-дизайнера взяли в команду в рамках майнора «Стартап как диплом» и договорились на зачетные единицы, которые они получат по завершении.</p>
+                <div class="flow-callout">Моя задача была собрать весь проект воедино - разработать бизнес план, привлечь финансы, организовать разработку MVP, координировать работу команды, эффективно и быстро получать обратную связь от рынка на каждом этапе.</div>
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami02" alt="TAM SAM SOM / SWOT" /></div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami02" alt="team map" /></div>
             </div>
           </section>
 
@@ -1955,11 +1997,11 @@
             <div class="flow-section__index">03</div>
             <div class="flow-section__content">
               <div>
-                <h2>Команда</h2>
-                <p>Для перехода от идеи к физическому продукту нужно было объединить людей с разными компетенциями и подрядчиков.</p>
-                <div class="flow-callout">Моя роль была продуктовой: сформировать цель, поставить задачи, удерживать сроки и связать исследовательскую часть с разработкой MVP.</div>
+                <h2>Деньги</h2>
+                <p>Мы подготовили первую презентацию и зашли в акселератор стартапов.  Так мы подготовили проект к финансированию - с анализом рынка, интервью с ЦА, бизнес-планом, несколькими менторами и парой предзаказов на ещё не существующий продукт.</p>
+                <div class="flow-callout">Проект победил в HSE Startup Cup и привлек грант Фонда содействия инновациям в размере 1 млн рублей - к этому моменту у нас уже был MVP.</div>
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami03" alt="team map" /></div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami03" alt="pitch / grant / financial model" /></div>
             </div>
           </section>
 
@@ -1967,23 +2009,24 @@
             <div class="flow-section__index">04</div>
             <div class="flow-section__content">
               <div>
-                <h2>Деньги</h2>
-                <p>Подготовил финансовую модель и презентацию проекта, участвовал в защитах и питчингах.</p>
-                <div class="flow-callout">Проект победил в HSE Startup Cup и привлек грант Фонда содействия инновациям в размере 1 млн рублей.</div>
+                <h2>MVP и тестирование</h2>
+                <p>В поисках решения и материалов, мы обошли все отраслевые выставки и наткнулись на технологию складывания ткани под горячим прессом. Если сложить так ткань определенным образом - получалась гармошка, которая тянется во все стороны и держит форму. В поисках ткани, которую можно сложить именно так, мы пообщались со всеми ведущими производителями ткани, собрали и протестировали больше 200 различных образцов.</p>
+                <div class="flow-callout">Результатом наших попыток стала кофточка, которая увеличивается на 7 размеров. Мы выиграли HSE Startup Cup, надев в финале на сцене детскую кофточку на взрослую девушку.</div>
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami04" alt="pitch / grant / financial model" /></div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami04" alt="material / prototype / test" /></div>
             </div>
           </section>
 
+          
           <section class="flow-section">
             <div class="flow-section__index">05</div>
             <div class="flow-section__content">
               <div>
-                <h2>MVP и тестирование</h2>
-                <p>Координировал разработку MVP, тестирование материалов и сбор обратной связи.</p>
-                <div class="flow-callout">Результаты тестирования использовались для доработки продукта, а не просто как финальная проверка перед выпуском.</div>
+                <h2>Питчинг и обратная связь</h2>
+                <p>Я провел более 20 публичных выступлений и защит проекта перед экспертами и инвесторами. В рамках акселератора мы ежедневно мы проводили по 3 - 4 созвона с разными менторами и специалистами, после каждого созвона докручивали презентацию и питч. Несколько раз выходили на прожарки, чтобы получить дополнительную обратную связь.</p>
+                <div class="flow-callout">Питчинг использовался в первую очередь как канал быстрого сбора обратной связи по продукту и упаковке стартапа. Через постоянные питчинги мы успевали пройти цикл тестирования гипотезы и внесения изменений до трёх раз в день.</div>
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami05" alt="material / prototype / test" /></div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="origami05" alt="pitch deck / stage" /></div>
             </div>
           </section>
 
@@ -1991,35 +2034,11 @@
             <div class="flow-section__index">06</div>
             <div class="flow-section__content">
               <div>
-                <h2>Конфликты и приоритеты</h2>
-                <p>Физический продукт заставляет постоянно выбирать между качеством, сроками, доступностью материалов и масштабом первоначальной версии.</p>
-                <div class="flow-callout">Приоритетом оставалась проверка ключевой гипотезы MVP. Здесь позже можно добавить конкретную историю разногласия внутри команды или с подрядчиком.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami06" alt="priority / trade-offs" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">07</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Питчинг и обратная связь</h2>
-                <p>Провел более 20 публичных выступлений и защит проекта перед экспертами и инвесторами.</p>
-                <div class="flow-callout">Питчинг использовался не только для привлечения ресурсов, но и как дополнительный канал обратной связи по продуктовой логике.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami07" alt="pitch deck / stage" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">08</div>
-            <div class="flow-section__content">
-              <div>
                 <h2>Результат</h2>
-                <p>Проект прошел путь от исследования рынка и продуктовой гипотезы до физического MVP.</p>
-                <div class="flow-callout">Для меня это опыт полного 0→1 цикла, где продукт существует не в интерфейсе, а в реальном мире и требует работы одновременно с рынком, людьми, финансами и производством.</div>
+                <p>Я получил невероятный опыт по созданию продукта, публичным выступлениям, упаковке стартапа и командообразованию. Мы привлекли грантовые деньги и успешно закрыли отчетность, разобрались в абсолютно незнакомой до этого нише, завели много новых знакомств благодаря этому проекту и самое главное - от всей души повеселились)</p>
+             
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami08" alt="final MVP" /></div>
+              <div class="flow-artifact"><video class="asset-video" autoplay loop muted playsinline><source src="https://kotlyarenkoru-eng.github.io/portfolio/orig6.mp4" type="video/mp4"></video></div>
             </div>
           </section>
         </div>
@@ -2046,17 +2065,17 @@
             <p class="eyebrow" style="margin-top:26px">Январь 2023 — Ноябрь 2024 / Москва</p>
             <h1>Obblic</h1>
           </div>
-          <p class="project-hero__lead">История о запуске сразу двух связанных продуктов: клиентского сервиса и Obblic Journal. От исследования аудитории и концепции до дизайна, контента, продаж и проверки коммерческого спроса.</p>
+          <p class="project-hero__lead">История создания глянцевого журнала для студии дизайна интерьеров.</p>
         </div>
       </section>
 
       <div class="project-body">
         <div class="timeline-band">
           <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Проблема аудитории</span></div>
+            <div class="timeline-step"><strong>01</strong><span>Задача</span></div>
             <div class="timeline-step"><strong>02</strong><span>Продуктовая концепция</span></div>
             <div class="timeline-step"><strong>03</strong><span>MVP и продажи</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Обратная связь и результат</span></div>
+            <div class="timeline-step"><strong>04</strong><span>Результат</span></div>
           </div>
         </div>
 
@@ -2065,9 +2084,9 @@
             <div class="flow-section__index">01</div>
             <div class="flow-section__content">
               <div>
-                <h2>Проблема аудитории</h2>
-                <p>Проект развивался на пересечении недвижимости, релокации и контента.</p>
-                <div class="flow-callout">Нужно было понять, какие вопросы действительно возникают у аудитории и какой формат сервиса способен стать полезной точкой входа.</div>
+                <h2>Где искать премиум сегмент</h2>
+                <p>Задача была сформировать имиджевое решение - канал, с которым будет взаимодействовать аудитория люкс сегмента.</p>
+                <div class="flow-callout">Подходящая нам ЦА уже пользуется рядом дорогих услуг, посещает заведения и сообщества, которые обеспечивают статус и высокий уровень сервиса. Принято решение создавать решение, которое позволит взаимодействовать с аудиторией в этих местах.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="obblic01" alt="audience / research" /></div>
             </div>
@@ -2078,22 +2097,23 @@
             <div class="flow-section__content">
               <div>
                 <h2>Продуктовая концепция</h2>
-                <p>Исследовал рынок и конкурентные решения, после чего сформировал структуру клиентского сервиса и отдельного контентного продукта — Obblic Journal.</p>
-                <div class="flow-callout">Два продукта решали разные части одного пользовательского контекста и должны были работать в одном бренде.</div>
+                <p>Необходимо было собрать решение, которое будет эстетичным и более ёмким по контенту, нежели рекламный баннер. Кроме того, реклама студии должна была быть представлена как сервисное предложение, которое объединяет уже знакомые клиенту решения и продукты.</p>
+                <div class="flow-callout">Решением стал интерьерный журнал, который собререт в себе партнерские предложения брендов люкс сегмента по наполнению интерьера, мебели и материалам. Журнал визуально и тактильно приятен, его наполнения достаточно, чтобы проникнуться решениями уже узнаваемых брендов. Такой подход был призван сформировать доверие и обеспечить первый контакт с продуктом.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="obblic02" alt="product map / journal" /></div>
             </div>
           </section>
 
+      
           <section class="flow-section">
             <div class="flow-section__index">03</div>
             <div class="flow-section__content">
               <div>
-                <h2>Команда и производство</h2>
-                <p>Координировал работу над web-продуктами, контентом, дизайном и выпуском журнала.</p>
-                <div class="flow-callout">Моя задача заключалась в том, чтобы синхронизировать разные типы работ вокруг общего результата и не потерять продуктовую логику.</div>
+                <h2>MVP и проверка спроса</h2>
+                <p>Я договорился с дистрибьюторами крупнейших премиальных брендов интерьерных решений о контенте - они предоставляли фото и копирайтеров для написания статей в обмен на размещение в журнале. Я разработал дизайн, привлёк верстальщика на добровольных началах, разработал презентацию будущего журнала и продал пять разворотов под размещения через холодные звонки в бренды.</p>
+                <div class="flow-callout">Спрос был подтвержден продажей рекламных размещений еще до выхода первого тиража — это стало подтверждением жизнеспособности MVP.</div>
               </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic03" alt="editorial / product team" /></div>
+              <div class="flow-artifact"><img class="asset-image" data-asset="obblic04" alt="sales / media kit" /></div>
             </div>
           </section>
 
@@ -2101,57 +2121,9 @@
             <div class="flow-section__index">04</div>
             <div class="flow-section__content">
               <div>
-                <h2>MVP и проверка спроса</h2>
-                <p>Вместо ожидания идеальной версии журнала проверял коммерческий интерес заранее.</p>
-                <div class="flow-callout">Спрос был подтвержден продажей рекламных размещений еще до выхода первого тиража — это стало ключевым подтверждением жизнеспособности MVP.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic04" alt="sales / media kit" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">05</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Цифровой продукт</h2>
-                <p>Спроектировал и запустил сайт клиентского сервиса Obblic и цифровую версию Obblic Journal.</p>
-                <div class="flow-callout">Определял пользовательские сценарии, структуру страниц и требования к контенту и дизайну.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic05" alt="website / digital journal" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">06</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Обратная связь</h2>
-                <p>После запуска собирал обратную связь пользователей и партнеров.</p>
-                <div class="flow-callout">Она использовалась как вход для следующих продуктовых решений, а не как формальная оценка уже готовой работы.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic06" alt="feedback / interviews" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">07</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Сложные решения</h2>
-                <p>Проект требовал балансировать между редакционным качеством, скоростью выпуска, коммерческими задачами и ресурсами.</p>
-                <div class="flow-callout">Здесь можно добавить конкретный кейс конфликта интересов между продуктовой, контентной или коммерческой стороной.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic07" alt="trade-offs" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">08</div>
-            <div class="flow-section__content">
-              <div>
                 <h2>Результат</h2>
-                <p>Запущены два web-продукта и MVP журнала, а коммерческий спрос был подтвержден до первого печатного тиража.</p>
-                <div class="flow-callout">Главный опыт — связывать продукт, контент и business development в одну систему и проверять ценность не только интервью, но и реальными продажами.</div>
+                <p>На деньги от продажи размещений, мы напечатали первый тираж и договорились о размещении в ресторанах и загородных клубах.</p>
+                 
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="obblic08" alt="final products" /></div>
             </div>
@@ -2168,7 +2140,7 @@
             <p class="eyebrow" style="margin-top:26px">Экспресс-эвакуация / физический продукт / полевая разработка</p>
             <h1>Клевер</h1>
           </div>
-          <p class="project-hero__lead">Носилки, которые всегда находятся у того, кто нуждается в транспортировке. Разворачиваются за 10 секунд по принципу парашютной системы и позволяют сразу приступить к эвакуации.</p>
+          <p class="project-hero__lead">Носилки, которые разворачиваются за 10 секунд по принципу парашютной системы и позволяют сразу приступить к эвакуации.</p>
         </div>
       </section>
 
@@ -2187,9 +2159,9 @@
             <div class="flow-section__index">01</div>
             <div class="flow-section__content">
               <div>
-                <h2>Проблема была не в носилках. Проблема — во времени.</h2>
+                <h2>Долгая подготовка</h2>
                 <p>Классические носилки по умолчанию находились у медиков. Если эвакуацию нужно было начинать немедленно, подготовка занимала более 2 минут — время, которое в критической ситуации может иметь решающее значение.</p>
-                <div class="flow-callout">Второй барьер — сам способ погрузки: человека приходилось переворачивать и перемещать, чтобы разместить его на носилках.</div>
+                <div class="flow-callout">Второй барьер — сам способ погрузки: человека приходилось переворачивать и перемещать, чтобы разместить его на носилках - такие манипуляции могут стоить жизни.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="klever01" alt="emergency scenario / time constraint" /></div>
             </div>
@@ -2200,7 +2172,7 @@
             <div class="flow-section__content">
               <div>
                 <h2>Сделать носилки частью экипировки</h2>
-                <p>Мы изменили сам сценарий использования: носилки стали легкими и переносимыми на спине, чтобы они были доступны не только медику, а человеку, который первым оказался рядом с пострадавшим.</p>
+                <p>Мы изменили сценарий использования: носилки стали переносимыми на спине и сразу готовыми к развертке.</p>
                 <div class="flow-callout">Ключевая продуктовая идея — не доставлять носилки к пострадавшему, а сделать их частью экипировки.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="klever02" alt="backpack carry / product concept" /></div>
@@ -2212,7 +2184,7 @@
             <div class="flow-section__content">
               <div>
                 <h2>Раскрытие по принципу парашюта</h2>
-                <p>Конструкция раскрывается за 10 секунд. При этом пострадавший сразу оказывается на поверхности носилок — без отдельного этапа переворачивания и перемещения.</p>
+                <p>Конструкция раскрывается за 10 секунд - достаточно открыть клапан и потянуть за ручки в стороны. Носилки расрываются прямо из чехла на спине пострадавшего и не требуют дополнительных манипуляций.</p>
                 <div class="flow-callout">Главная метрика решения: сократить подготовку к эвакуации с более чем 2 минут до 10 секунд.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="klever03" alt="deployment sequence / 10 sec" /></div>
@@ -2224,55 +2196,20 @@
             <div class="flow-section__content">
               <div>
                 <h2>От концепта к продукту</h2>
-                <p>Мы разработали конструкцию и пошили носилки, чтобы проверить не только идею, но и реальный сценарий использования: переноску, раскрытие, работу с пострадавшим и удобство перемещения.</p>
-                <div class="flow-callout">Продукт прошел путь от концепции до работающего физического образца.</div>
+                <p>Мы разработали конструкцию и пошили носилки, чтобы проверить реальный сценарий использования: переноску, раскрытие, работу с пострадавшим и удобство перемещения. После тестов вносили изменения в продукт. После первого теста оказалось, что при развертке человек не полностью помещается на носилки. Доработали систему складывания носилок в чехол, чтобы при разворачивании они стразу принимали нужное положение. Добавили дренажные отвертия для избежания скопления жидкости.</p>
+                <div class="flow-callout">Получили на выходе носилки, которые отвечают всем требованиям и эффективны в разных сценариях использования.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="klever04" alt="sewn prototype / physical MVP" /></div>
             </div>
           </section>
 
+          
           <section class="flow-section">
             <div class="flow-section__index">05</div>
             <div class="flow-section__content">
               <div>
-                <h2>Тестирование с целевой аудиторией</h2>
-                <p>Протестировали носилки с целевой аудиторией и собрали обратную связь непосредственно по сценарию применения.</p>
-                <div class="flow-callout">Проверили гипотезы, моделируя реальные сценарии использования.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever05" alt="user test / field feedback" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">06</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Доработка под реальные условия</h2>
-                <p>По итогам тестирования усилили практическую часть конструкции: улучшили ручки и добавили дренажные отверстия с учетом специфики эксплуатации.</p>
-                <div class="flow-callout">Внесли функциональные изменения, опираясь на наблюдения за реальным сценарием использования.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever06" alt="handles / drainage / iteration" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">07</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>От прототипа — к полю</h2>
-                <p>Первая партия носилок была протестирована в полевых условиях. После проверки она была отправлена для практического применения.</p>
-                <div class="flow-callout">Результат проекта — функциональное решение и испытанный продукт, спасающий жизни.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever07" alt="first batch / field deployment" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">08</div>
-            <div class="flow-section__content">
-              <div>
                 <h2>Результат</h2>
-                <p>Сценарий подготовки к эвакуации сокращен с более чем 2 минут до 10 секунд. Носилки стали переносимым физическим продуктом, который можно быстро развернуть непосредственно под пострадавшим.</p>
+                <p>Мы получили заказ, первая партия отправилась спасать жизни. Сценарий подготовки к эвакуации сокращен с более чем 2 минут до 10 секунд. Носилки стали переносимым физическим продуктом, который можно быстро развернуть непосредственно под пострадавшим. ОТКРОЙ, ТЯНИ, ГОТОВО.</p>
                 <div class="flow-callout">Главный продуктовый результат — убрать лишние действия из критического сценария и превратить каждую секунду подготовки в потенциально сохраненное время.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="klever08" alt="2 min → 10 sec / field-ready product" /></div>
@@ -2291,7 +2228,7 @@
             <p class="eyebrow" style="margin-top:26px">Космос / рекламная интеграция / физический продукт</p>
             <h1>Космос</h1>
           </div>
-          <p class="project-hero__lead">Организация производства макета банки газировки для рекламной интеграции на ракете «Союз» и последующего запуска на Международную космическую станцию.</p>
+          <p class="project-hero__lead">Организация производства банки газировки для рекламной интеграции на ракете «Союз» и последующего запуска на Международную космическую станцию.</p>
         </div>
       </section>
 
@@ -2310,8 +2247,8 @@
             <div class="flow-section__index">01</div>
             <div class="flow-section__content">
               <div>
-                <h2>Реклама, которую нужно было отправить в космос</h2>
-                <p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p>
+                <h2>Реклама в космосе</h2>
+                <p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало срочное производство физического макета банки газировки, который должен был полететь на МКС.</p>
                 <div class="flow-callout">Здесь недостаточно было сделать визуально точную упаковку: физический объект должен был соответствовать требованиям космического запуска.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda01" alt="Soyuz / advertising integration" /></div>
@@ -2323,8 +2260,8 @@
             <div class="flow-section__content">
               <div>
                 <h2>Макет под требования Роскосмоса</h2>
-                <p>Работал с требованиями к материалам, конструктиву и допустимым параметрам изделия. Нужно было учитывать ограничения, которые предъявляются к предметам, отправляемым в космический полёт.</p>
-                <div class="flow-callout">Макет проектировался не только как рекламный объект, но и как изделие, готовое пройти необходимую проверку.</div>
+                <p>Нужно было учитывать ограничения, которые предъявляются к предметам, отправляемым в космический полёт. Классические материалы - алюминий и платик запрещены для размещения в грузовом отсеке, требования по весу - не более 50 грамм. Приняли решение использовать картон, бумагу и натуральные клеи.</p>
+                <div class="flow-callout">Макет проектировался как рекламный объект и как изделие, готовое пройти необходимую проверку.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda02" alt="material tolerances / requirements" /></div>
             </div>
@@ -2334,8 +2271,8 @@
             <div class="flow-section__index">03</div>
             <div class="flow-section__content">
               <div>
-                <h2>Производство и сертификация</h2>
-                <p>Организовал изготовление макета и согласование производства с учетом допусков по материалам и необходимых процедур сертификации.</p>
+                <h2>Производство, сертификация</h2>
+                <p>Протестировали 5 различных методов формовки изделия, чтобы получить максимально близкий результат и не выйти за ограничения по весу. Отдельно согласовывали каждый компонент из состава - от картона до краски на этикетке и подкрепляли всё сертификатами безопасности. Готовое изделие успешно прошло сертификацию в Институте медико-биологических проблем РАН и получило допуск к полету.</p>
                 <div class="flow-callout">Главная сложность была в стыке требований рекламной интеграции, физического производства и регламентов космического запуска.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda03" alt="prototype / certification / production" /></div>
@@ -2347,7 +2284,7 @@
             <div class="flow-section__content">
               <div>
                 <h2>Макет полетел на МКС</h2>
-                <p>После согласований и подготовки производства готовый макет банки отправился в космос в рамках запуска ракеты «Союз» и рекламной интеграции.</p>
+                <p>После согласований готовый макет банки отправился в космос в рамках запуска ракеты «Союз» с Байконура.</p>
                 <div class="flow-callout">Результат — физический рекламный объект, который прошел путь от идеи и требований до реального космического запуска.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda04" alt="final can / ISS / launch" /></div>
@@ -2496,5 +2433,59 @@
 
     renderRoute();
   </script>
+
+  <div class="artifact-lightbox" id="artifactLightbox" aria-hidden="true">
+    <button class="artifact-lightbox__close" type="button" aria-label="Закрыть">×</button>
+    <img class="artifact-lightbox__image" alt="" />
+  </div>
+
+
+  <script>
+    (() => {
+      const lightbox = document.getElementById('artifactLightbox');
+      if (!lightbox) return;
+
+      const lightboxImage = lightbox.querySelector('.artifact-lightbox__image');
+      const closeButton = lightbox.querySelector('.artifact-lightbox__close');
+      const isDesktop = () => window.matchMedia('(min-width:1081px)').matches;
+
+      const closeLightbox = () => {
+        lightbox.classList.remove('is-open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        lightboxImage.removeAttribute('src');
+        document.body.style.overflow = '';
+      };
+
+      document.querySelectorAll('.page[data-route="/lowcode"] .flow-artifact .asset-image').forEach(image => {
+        image.addEventListener('click', () => {
+          if (!isDesktop() || !image.src) return;
+          lightboxImage.src = image.currentSrc || image.src;
+          lightboxImage.alt = image.alt || '';
+          lightbox.classList.add('is-open');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      closeButton.addEventListener('click', closeLightbox);
+
+      lightbox.addEventListener('click', event => {
+        if (event.target === lightbox || event.target === lightboxImage) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
+          closeLightbox();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (!isDesktop()) closeLightbox();
+      });
+    })();
+  </script>
+
 </body>
 </html>
