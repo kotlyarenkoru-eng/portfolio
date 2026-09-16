@@ -1072,6 +1072,8 @@
       transform:translateY(-1px);
     }
 
+    .top-nav__burger{display:none;}
+
     .top-nav__links a.is-active{
       color:var(--white);
       background:var(--black);
@@ -1377,9 +1379,47 @@
     }
 
     @media(max-width:560px){
-      .top-nav__inner{display:grid}
-      .top-nav__links{justify-content:flex-start}
-      .top-nav__links a{padding:8px 9px}
+      .top-nav__inner{display:flex;align-items:center}
+      .top-nav__links{
+        display:none;
+        position:absolute;
+        top:100%;
+        right:12px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:8px;
+        background:rgba(255,255,255,.96);
+        border:1px solid rgba(0,0,0,.12);
+        box-shadow:0 8px 24px rgba(0,0,0,.08);
+      }
+      .top-nav__links.is-open{display:flex}
+      .top-nav__links a{padding:10px 12px;white-space:nowrap}
+      .top-nav__burger{
+        display:flex;
+        width:36px;
+        height:36px;
+        align-items:center;
+        justify-content:center;
+        margin-left:auto;
+        padding:0;
+        border:1px solid var(--black);
+        background:var(--white);
+        cursor:pointer;
+      }
+      .top-nav__burger span,
+      .top-nav__burger span::before,
+      .top-nav__burger span::after{
+        display:block;
+        width:16px;
+        height:1px;
+        background:var(--black);
+        position:relative;
+      }
+      .top-nav__burger span::before,
+      .top-nav__burger span::after{content:"";position:absolute;left:0}
+      .top-nav__burger span::before{top:-5px}
+      .top-nav__burger span::after{top:5px}
     }
 
   
@@ -1488,7 +1528,7 @@
       <div class="photo"><img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко" /><span>PHOTO</span></div>
 
       <div>
-        <p class="eyebrow">Product Developer</p>
+        <p class="eyebrow">Product Manager</p>
         <h1 class="name">Котляренко Владислав Викторович</h1>
 
         <div class="contact">
@@ -1498,7 +1538,9 @@
       </div>
 
       <div class="role-block">
-        <div class="role">Venture PM</div>
+        <p class="eyebrow">Текущая роль</p>
+        <div class="role">Менеджер продукта</div>
+        <p class="role-secondary">Стажер в дирекцию развития сайта и платформы первичных продаж</p>
       </div>
 
       <section class="sidebar-section sidebar-section--mobile-hide">
@@ -1520,6 +1562,7 @@
   <nav class="top-nav">
     <div class="top-nav__inner">
       <div class="top-nav__brand">Vladislav Kotlyarenko</div>
+      <button class="top-nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
       <div class="top-nav__links">
         <a href="#/" data-nav-route="/">Главная</a>
         <a href="#/about" data-nav-route="/about">Обо мне</a>
@@ -2479,5 +2522,22 @@
     })();
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const burger = document.querySelector('.top-nav__burger');
+      const links = document.querySelector('.top-nav__links');
+      if (!burger || !links) return;
+      burger.addEventListener('click', function(){
+        const open = links.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function(e){
+        if (e.target.closest('a')) {
+          links.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
