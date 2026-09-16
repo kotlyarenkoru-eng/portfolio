@@ -21,12 +21,12 @@
       homeKlever: "https://kotlyarenkoru-eng.github.io/portfolio/homeKlever.png",
       homeSpaceSoda: "https://kotlyarenkoru-eng.github.io/portfolio/homeSpace.png",
 
-      lowcode01: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode01.png",
-      lowcode02: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode02.png",
-      lowcode03: "",
+      lowcode01: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode1.webp",
+      lowcode02: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode2.webp",
+      lowcode03: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode02.png",
       lowcode04: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode4.webp",
 
-      origami01: "",
+      origami01: "https://kotlyarenkoru-eng.github.io/portfolio/origami1.webp",
       origami02: "https://kotlyarenkoru-eng.github.io/portfolio/orig2.png",
       origami03: "https://kotlyarenkoru-eng.github.io/portfolio/orig3.png",
       origami04: "https://kotlyarenkoru-eng.github.io/portfolio/orig4.JPG",
@@ -45,7 +45,7 @@
       spacesoda01: "",
       spacesoda02: "",
       spacesoda03: "",
-      spacesoda04: ""
+      spacesoda04: "https://kotlyarenkoru-eng.github.io/portfolio/space4.webp"
     };
   </script>
 
@@ -1043,15 +1043,10 @@
       width:min(100%,var(--content));
       display:flex;
       align-items:center;
-      justify-content:space-between;
+      justify-content:flex-end;
       gap:20px;
     }
 
-    .top-nav__brand{
-      font:700 11px/1 var(--font-display);
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
 
     .top-nav__links{
       display:flex;
@@ -1071,6 +1066,8 @@
       border-color:var(--black);
       transform:translateY(-1px);
     }
+
+    .top-nav__burger{display:none;}
 
     .top-nav__links a.is-active{
       color:var(--white);
@@ -1372,10 +1369,52 @@
       .shop-cta__actions{justify-content:flex-start}
     }
 
+    @media(max-width:820px){
+      .sidebar-section--mobile-hide{display:none}
+    }
+
     @media(max-width:560px){
-      .top-nav__inner{display:grid}
-      .top-nav__links{justify-content:flex-start}
-      .top-nav__links a{padding:8px 9px}
+      .top-nav__inner{display:flex;align-items:center}
+      .top-nav__links{
+        display:none;
+        position:absolute;
+        top:100%;
+        right:12px;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding:8px;
+        background:rgba(255,255,255,.96);
+        border:1px solid rgba(0,0,0,.12);
+        box-shadow:0 8px 24px rgba(0,0,0,.08);
+      }
+      .top-nav__links.is-open{display:flex}
+      .top-nav__links a{padding:10px 12px;white-space:nowrap}
+      .top-nav__burger{
+        display:flex;
+        width:36px;
+        height:36px;
+        align-items:center;
+        justify-content:center;
+        margin-left:auto;
+        padding:0;
+        border:1px solid var(--black);
+        background:var(--white);
+        cursor:pointer;
+      }
+      .top-nav__burger span,
+      .top-nav__burger span::before,
+      .top-nav__burger span::after{
+        display:block;
+        width:16px;
+        height:1px;
+        background:var(--black);
+        position:relative;
+      }
+      .top-nav__burger span::before,
+      .top-nav__burger span::after{content:"";position:absolute;left:0}
+      .top-nav__burger span::before{top:-5px}
+      .top-nav__burger span::after{top:5px}
     }
 
   
@@ -1484,7 +1523,7 @@
       <div class="photo"><img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко" /><span>PHOTO</span></div>
 
       <div>
-        <p class="eyebrow">Product Manager</p>
+        <p class="eyebrow">Product Developer</p>
         <h1 class="name">Котляренко Владислав Викторович</h1>
 
         <div class="contact">
@@ -1494,12 +1533,10 @@
       </div>
 
       <div class="role-block">
-        <p class="eyebrow">Текущая роль</p>
-        <div class="role">Менеджер продукта</div>
-        <p class="role-secondary">Стажер в дирекцию развития сайта и платформы первичных продаж</p>
+        <div class="role">Venture PM</div>
       </div>
 
-      <section class="sidebar-section">
+      <section class="sidebar-section sidebar-section--mobile-hide">
         <h3>Достижения</h3>
         <ul>
           <li>Победитель Кейс-чемпионата Альфа-Банка 2022 года</li>
@@ -1507,7 +1544,7 @@
         </ul>
       </section>
 
-      <section class="sidebar-section">
+      <section class="sidebar-section sidebar-section--mobile-hide">
         <h3>Спорт и увлечения</h3>
         <p>Дайвинг CMAS, сноуборд, большой теннис, мото эндуро, вейкбординг, КМС по стрельбе, лыжное ориентирование. Люблю отдых на природе и готовлю кайфовые шашлычки)</p>
       </section>
@@ -1517,7 +1554,7 @@
 
   <nav class="top-nav">
     <div class="top-nav__inner">
-      <div class="top-nav__brand">Vladislav Kotlyarenko</div>
+      <button class="top-nav__burger" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span></button>
       <div class="top-nav__links">
         <a href="#/" data-nav-route="/">Главная</a>
         <a href="#/about" data-nav-route="/about">Обо мне</a>
@@ -1537,7 +1574,7 @@
     <section class="page" data-route="/">
       <section class="intro">
         <div class="intro__content">
-          <p class="eyebrow">Portfolio / Product / Web</p>
+          <p class="eyebrow">Portfolio</p>
           <h2>Я создаю продукты</h2>
           <p class="intro__copy">От исследования рынка и пользовательских проблем — до MVP, запуска, продаж и развития продукта. Каждый проект ниже показан как отдельная продуктовая глава: контекст, решения, результат и артефакт.</p>
         </div>
@@ -1547,11 +1584,6 @@
         <div class="chapter__number">01</div>
         <div class="chapter__inner">
           <div>
-            <div class="chapter__kicker">
-              <span>Июль 2020 — Январь 2023</span>
-              <span>2 года 6 месяцев</span>
-              <span>Москва</span>
-            </div>
 
             <h2 class="chapter__company">Low-code</h2>
             <p class="chapter__position">Product / Project Manager web-проектов</p>
@@ -1587,11 +1619,7 @@
         <div class="chapter__number">02</div>
         <div class="chapter__inner">
           <div>
-            <div class="chapter__kicker">
-              <span>Октябрь 2022 — Август 2025</span>
-              <span>2 года 11 месяцев</span>
-              <span>Москва</span>
-            </div>
+
 
             <h2 class="chapter__company">Origami Wear</h2>
             <p class="chapter__position">Сооснователь / Product Manager</p>
@@ -1603,9 +1631,9 @@
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Problem</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p></div>
+              <div class="story__row"><small>01 / Проблема</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p></div>
+              <div class="story__row"><small>02 / Решение</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p></div>
+              <div class="story__row"><small>03 / Результат</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p></div>
             </div>
 
             <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
@@ -1623,11 +1651,7 @@
         <div class="chapter__number">03</div>
         <div class="chapter__inner">
           <div>
-            <div class="chapter__kicker">
-              <span>Январь 2023 — Ноябрь 2024</span>
-              <span>1 год 11 месяцев</span>
-              <span>Москва</span>
-            </div>
+
 
             <h2 class="chapter__company">Obblic</h2>
             <p class="chapter__position">Основатель / Product Manager & Business Development</p>
@@ -1640,8 +1664,8 @@
 
             <div class="story">
               <div class="story__row"><small>01 / Задача</small><p>Разработать имиджевый продукт для студии дизайна интерьеров, который позволит охватить ЦА из премиум сегмента.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p></div>
+              <div class="story__row"><small>02 / Решение</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p></div>
+              <div class="story__row"><small>03 / Результат</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p></div>
             </div>
 
             <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
@@ -1659,11 +1683,7 @@
         <div class="chapter__number">04</div>
         <div class="chapter__inner">
           <div>
-            <div class="chapter__kicker">
-              <span>Проект / полевая разработка</span>
-              <span>Экспресс-эвакуация</span>
-              <span>Физический продукт</span>
-            </div>
+
 
             <h2 class="chapter__company">Клевер</h2>
             <p class="chapter__position">Носилки для экспресс-эвакуации / Product Owner</p>
@@ -1674,9 +1694,9 @@
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Problem</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p></div>
+              <div class="story__row"><small>01 / Задача</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p></div>
+              <div class="story__row"><small>02 / Решение</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
+              <div class="story__row"><small>03 / Результат</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p></div>
             </div>
 
             <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
@@ -1697,11 +1717,6 @@
         <div class="chapter__number">05</div>
         <div class="chapter__inner">
           <div>
-            <div class="chapter__kicker">
-              <span>Проект / рекламная интеграция</span>
-              <span>Космос / МКС</span>
-              <span>Физический макет</span>
-            </div>
 
             <h2 class="chapter__company"></h2>
             <p class="chapter__position">Создание банки, которую запустили в космос</p>
@@ -1713,8 +1728,8 @@
 
             <div class="story">
               <div class="story__row"><small>01 / Задача</small><p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p></div>
-              <div class="story__row"><small>02 / Actions</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p></div>
-              <div class="story__row"><small>03 / Result</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p></div>
+              <div class="story__row"><small>02 / Решение</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p></div>
+              <div class="story__row"><small>03 / Результат</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p></div>
             </div>
 
             <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
@@ -1871,9 +1886,9 @@
             <div class="flow-section__index">01</div>
             <div class="flow-section__content">
               <div>
-                <h2>Гипотеза и входящий запрос</h2>
-                <p>Почти каждый проект начинался не с готового ТЗ, а с бизнес-задачи. Нужно было понять, кто пользователь, зачем он приходит на сайт и какое целевое действие действительно важно.</p>
-                <div class="flow-callout">Вместо немедленного перехода к макетам я начинал с интервью с заказчиком и декомпозиции задачи. Это позволяло отделить пожелания от реальной пользовательской ценности.</div>
+                <h2>Входящий запрос</h2>
+                <p>Почти каждый проект начинался с бизнес-задачи. Нужно было понять, кто пользователь, зачем он приходит на сайт и к какому целевому действию его нужно привести.</p>
+                <div class="flow-callout">Я начинал с интервью с заказчиком и декомпозиции задачи. Это позволяло отделить пожелания от реальной пользовательской ценности.</div>
               </div>
               <div class="flow-artifact"><img class="asset-image" data-asset="lowcode01" alt="brief / interview notes" /></div>
             </div>
@@ -2477,5 +2492,22 @@
     })();
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const burger = document.querySelector('.top-nav__burger');
+      const links = document.querySelector('.top-nav__links');
+      if (!burger || !links) return;
+      burger.addEventListener('click', function(){
+        const open = links.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      links.addEventListener('click', function(e){
+        if (e.target.closest('a')) {
+          links.classList.remove('is-open');
+          burger.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
