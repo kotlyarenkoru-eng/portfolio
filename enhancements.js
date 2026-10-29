@@ -24,11 +24,6 @@
     if(el.tagName==='A')el.href=path;else el.src=path;
     el.closest('.artifact,.flow-artifact,.photo,.about-promo__photo')?.classList.add('has-image');
   });
-  if(validAsset(assets.coplayingScreen)) {
-    const target=document.querySelector('.coplaying-object');
-    const image=document.createElement('img'); image.src=validAsset(assets.coplayingScreen);image.alt='Интерфейс CoPlaying';image.className='coplaying-screen';image.loading='lazy';
-    target.replaceWith(image);
-  }
   document.querySelectorAll('img').forEach(img => img.addEventListener('error', () => {
     if(img.closest('dialog'))return;
     const note=document.createElement('p');note.className='media-error';note.textContent='Изображение временно недоступно';
@@ -36,9 +31,8 @@
   },{once:true}));
   const skip=document.createElement('a');skip.href='#content';skip.className='skip-link';skip.textContent='К содержанию';document.body.prepend(skip);
   main.id='content';main.tabIndex=-1;
-  const mobileHome=document.createElement('a');mobileHome.href='#/';mobileHome.className='mobile-home';mobileHome.textContent='Проекты';mobileHome.dataset.homeTop='true';
   const mobileCurrent=document.createElement('span');mobileCurrent.className='mobile-current';mobileCurrent.setAttribute('aria-live','polite');
-  document.querySelector('.top-nav__inner').prepend(mobileHome,mobileCurrent);
+  document.querySelector('.top-nav__inner').prepend(mobileCurrent);
   document.querySelectorAll('.top-nav__links a[href="#/"]').forEach(a=>a.dataset.homeTop='true');
   navLinks.id='main-menu';burger.setAttribute('aria-controls','main-menu');
   function closeMenu(){navLinks.classList.remove('is-open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Открыть меню');}
@@ -54,10 +48,6 @@
   }
   function scrollToY(y){window.scrollTo({top:y,behavior:'instant'});}
   function focusTitle(page){const title=page.querySelector('h1,h2');if(title){title.tabIndex=-1;title.focus({preventScroll:true});}}
-  function syncExpand(page){
-    const chapters=[...page.querySelectorAll('.case-chapter')];const button=page.querySelector('.expand-story');if(!button)return;
-    const all=chapters.length>0 && chapters.every(ch=>ch.open);button.setAttribute('aria-expanded',String(all));button.textContent=all?'Свернуть подробности':'Раскрыть весь кейс';
-  }
   function updateProgress(){const max=document.documentElement.scrollHeight-innerHeight;document.getElementById('progressBar').style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%';}
   function render({initial=false}={}){
     const state=parseHash();
@@ -70,14 +60,13 @@
     const titles={'/':'Котляренко Владислав — Product Manager','/about':'Обо мне — Владислав Котляренко','/coplaying':'CoPlaying — Владислав Котляренко','/lowcode':'Low-code — Product Story','/origami':'Origami Wear — Product Story','/obblic':'Obblic — Product Story','/klever':'Клевер — Product Story','/space-soda':'Космос — Product Story'};
     document.title=titles[state.route]||'Проект не найден — Владислав Котляренко';
     document.querySelectorAll('[data-nav-route]').forEach(a=>{const active=a.dataset.navRoute===state.route;a.classList.toggle('is-active',active);if(active)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
-    mobileCurrent.textContent=state.route==='/'?'':state.route==='/about'?'Обо мне':titles[state.route]?.split(' — ')[0]||'';
+    mobileCurrent.textContent=state.route==='/'?'Портфолио':state.route==='/about'?'Обо мне':titles[state.route]?.split(' — ')[0]||'';
     closeMenu();current=state.route;
     document.querySelectorAll('video').forEach(v=>{if(v.closest('.page')?.hidden)v.pause();});
     let target=null;
-    if(state.chapter){target=document.getElementById(state.chapter);if(target && target.closest('.page')===page && target.classList.contains('case-chapter'))target.open=true;else target=null;}
-    syncExpand(page);
+    if(state.chapter){target=document.getElementById(state.chapter);if(!target || target.closest('.page')!==page)target=null;}
     requestAnimationFrame(()=>{
-      if(target){target.scrollIntoView({behavior:'instant'});const summary=target.querySelector('summary');summary?.focus({preventScroll:true});}
+      if(target){target.scrollIntoView({behavior:'instant'});const heading=target.querySelector('h2');if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}}
       else if(state.route==='/' && previous && previous!=='/' && !showHomeTop){scrollToY(homeY);if(homeSource?.isConnected)homeSource.focus({preventScroll:true});}
       else if(changed||showHomeTop){scrollToY(state.route!=='/' && matchMedia('(max-width:820px)').matches?nav.offsetTop:0);if(!initial)focusTitle(page);}
       showHomeTop=false;restoring=false;updateProgress();
@@ -96,10 +85,6 @@
     event.preventDefault();target.scrollIntoView({behavior:reduce.matches?'instant':'smooth'});
     const focus=target.matches('[tabindex],a,button')?target:target.querySelector('h1,h2,a');if(focus){focus.tabIndex=-1;focus.focus({preventScroll:true});}
   });
-  document.querySelectorAll('.expand-story').forEach(button=>button.addEventListener('click',()=>{
-    const page=button.closest('.page');const all=button.getAttribute('aria-expanded')==='true';page.querySelectorAll('.case-chapter').forEach(ch=>ch.open=!all);syncExpand(page);updateProgress();
-  }));
-  document.querySelectorAll('.case-chapter').forEach(ch=>ch.addEventListener('toggle',()=>{syncExpand(ch.closest('.page'));updateProgress();}));
   document.querySelectorAll('.hobby-card').forEach(card=>{
     const toggle=()=>{const open=card.classList.toggle('is-open');card.setAttribute('aria-expanded',String(open));};
     card.addEventListener('click',toggle);card.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle();}});
@@ -115,17 +100,17 @@
   dialog.addEventListener('click',event=>{if(event.target!==dialog)return;const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();});
   dialog.addEventListener('close',()=>{dialog.querySelector('img').removeAttribute('src');returnFocus?.focus({preventScroll:true});});
   // Pointer motion affects images only. Vertical touch scrolling remains native.
-  const artTargets=[...document.querySelectorAll('.chapter__inner>.artifact,.chapter__inner>.artifact-stack')];
+  const artTargets=[...document.querySelectorAll('.chapter__inner>.artifact:not(.coplaying-artifact),.chapter__inner>.artifact-stack')];
   artTargets.forEach(art=>{
     art.classList.add('is-interactive');art.tabIndex=0;art.setAttribute('role','button');art.setAttribute('aria-label','Покачать объект проекта. Используйте стрелки, Enter — вернуть в центр.');
     let x=0,y=0,dragging=false,keyboardMode=false;
     const paint=()=>{art.style.setProperty('--art-x',x+'deg');art.style.setProperty('--art-y',y+'deg');art.style.setProperty('--art-shift',y*.6+'px');};
     const reset=()=>{x=0;y=0;art.classList.remove('is-moving');paint();};
     art.addEventListener('pointerdown',event=>{keyboardMode=false;if(event.pointerType!=='mouse')dragging=true;});
-    art.addEventListener('pointermove',event=>{if(reduce.matches || keyboardMode || event.pointerType!=='mouse'&&!dragging)return;const r=art.getBoundingClientRect();x=Math.max(-7,Math.min(7,(.5-(event.clientY-r.top)/r.height)*14));y=Math.max(-9,Math.min(9,((event.clientX-r.left)/r.width-.5)*18));art.classList.add('is-moving');paint();});
+    art.addEventListener('pointermove',event=>{if(reduce.matches || keyboardMode || event.pointerType!=='mouse'&&!dragging)return;const r=art.getBoundingClientRect();x=Math.max(-4,Math.min(4,(.5-(event.clientY-r.top)/r.height)*8));y=Math.max(-5,Math.min(5,((event.clientX-r.left)/r.width-.5)*10));art.classList.add('is-moving');paint();});
     ['pointerleave','pointerup','pointercancel'].forEach(name=>art.addEventListener(name,()=>{dragging=false;if(!keyboardMode)reset();}));
     art.addEventListener('blur',()=>{keyboardMode=false;dragging=false;reset();});
-    art.addEventListener('keydown',event=>{if(reduce.matches)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(event.key)){event.preventDefault();keyboardMode=true;if(event.key==='Enter'||event.key===' ')reset();else{x=Math.max(-7,Math.min(7,x+(event.key==='ArrowUp'?2:event.key==='ArrowDown'?-2:0)));y=Math.max(-9,Math.min(9,y+(event.key==='ArrowRight'?3:event.key==='ArrowLeft'?-3:0)));paint();}}});
+    art.addEventListener('keydown',event=>{if(reduce.matches)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Enter',' '].includes(event.key)){event.preventDefault();keyboardMode=true;if(event.key==='Enter'||event.key===' ')reset();else{x=Math.max(-4,Math.min(4,x+(event.key==='ArrowUp'?2:event.key==='ArrowDown'?-2:0)));y=Math.max(-5,Math.min(5,y+(event.key==='ArrowRight'?3:event.key==='ArrowLeft'?-3:0)));paint();}}});
   });
   // Preserve the author's moving video, with pause and reduced-motion support.
   const videos=[...document.querySelectorAll('video')];
