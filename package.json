@@ -1,0 +1,8 @@
+{
+  "name": "vladislav-kotlyarenko-portfolio",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node --check enhancements.js && node scripts/build.mjs"
+  }
+}

@@ -1,53 +1,54 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Портфолио Владислава Котляренко — Product Manager" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Портфолио Владислава Котляренко — Product Manager. Истории CoPlaying, Origami Wear, Obblic, «Клевера» и других проектов.">
   <title>Котляренко Владислав — Product Manager</title>
 
 
-  <!-- ===== IMAGE / ARTIFACT ASSETS =====
-       Paste image URLs into the values below. -->
+  <!-- МЕДИА: ссылки меняются здесь, в начале index.html. Добавьте файл в репозиторий и вставьте относительный путь или HTTPS-ссылку. Ключи не переименовывайте. coplayingScreen — каталог на главной; coplayingCatalog/Create/Call — экраны в кейсе. Скриншоты показываются целиком. resume — резюме для скачивания. -->
   <script>
     const PORTFOLIO_ASSETS = {
-      profilePhoto: "https://kotlyarenkoru-eng.github.io/portfolio/PhotoTitle.webp",
-      aboutPhoto: "https://kotlyarenkoru-eng.github.io/portfolio/aboutPhoto.mp4",
-
-      homeLowcode: "https://kotlyarenkoru-eng.github.io/portfolio/homeLow.png",
-      homeLowcode2: "https://kotlyarenkoru-eng.github.io/portfolio/homeLow2.png",
-      homeOrigami: "https://kotlyarenkoru-eng.github.io/portfolio/homeOrig.png",
-      homeObblic: "https://kotlyarenkoru-eng.github.io/portfolio/homeObblic.png",
-      homeKlever: "https://kotlyarenkoru-eng.github.io/portfolio/homeKlever.png",
-      homeSpaceSoda: "https://kotlyarenkoru-eng.github.io/portfolio/homeSpace.png",
-
-      lowcode01: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode1.webp",
-      lowcode02: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode2.webp",
-      lowcode03: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode02.png",
-      lowcode04: "https://kotlyarenkoru-eng.github.io/portfolio/lowcode4.webp",
-
-      origami01: "https://kotlyarenkoru-eng.github.io/portfolio/origami1.webp",
-      origami02: "https://kotlyarenkoru-eng.github.io/portfolio/orig2.png",
-      origami03: "https://kotlyarenkoru-eng.github.io/portfolio/orig3.png",
-      origami04: "https://kotlyarenkoru-eng.github.io/portfolio/orig4.JPG",
-      origami05: "https://kotlyarenkoru-eng.github.io/portfolio/origa5.png",
-
-      obblic01: "https://kotlyarenkoru-eng.github.io/portfolio/oblic1.png",
-      obblic02: "https://kotlyarenkoru-eng.github.io/portfolio/oblic2.png",
-      obblic03: "https://kotlyarenkoru-eng.github.io/portfolio/oblic3.png",
-      obblic04: "https://kotlyarenkoru-eng.github.io/portfolio/obblic4.png",
-
-      klever01: "https://kotlyarenkoru-eng.github.io/portfolio/klever1.png",
-      klever02: "https://kotlyarenkoru-eng.github.io/portfolio/klever2.png",
-      klever03: "https://kotlyarenkoru-eng.github.io/portfolio/klever3.png",
-      klever04: "https://kotlyarenkoru-eng.github.io/portfolio/klever4.png",
-
-      spacesoda01: "https://kotlyarenkoru-eng.github.io/portfolio/space1.webp",
-      spacesoda02: "https://kotlyarenkoru-eng.github.io/portfolio/space2.jpg",
-      spacesoda03: "https://kotlyarenkoru-eng.github.io/portfolio/space3.WEBP",
-      spacesoda04: "https://kotlyarenkoru-eng.github.io/portfolio/space4.webp"
-    };
-  </script>
+      "profilePhoto": "assets/media/profilePhoto.webp",
+      "aboutPhoto": "aboutPhoto.mp4",
+      "homeLowcode": "assets/media/homeLowcode.webp",
+      "homeLowcode2": "assets/media/homeLowcode2.webp",
+      "homeOrigami": "assets/media/homeOrigami.webp",
+      "homeObblic": "assets/media/homeObblic.webp",
+      "homeKlever": "assets/media/homeKlever.webp",
+      "homeSpaceSoda": "assets/media/homeSpaceSoda.webp",
+      "lowcode01": "assets/media/lowcode01.webp",
+      "lowcode02": "assets/media/lowcode02.webp",
+      "lowcode03": "assets/media/lowcode03.webp",
+      "lowcode04": "assets/media/lowcode04.webp",
+      "origami01": "assets/media/origami01.webp",
+      "origami02": "assets/media/origami02.webp",
+      "origami03": "assets/media/origami03.webp",
+      "origami04": "assets/media/origami04.webp",
+      "origami05": "assets/media/origami05.webp",
+      "obblic01": "assets/media/obblic01.webp",
+      "obblic02": "assets/media/obblic02.webp",
+      "obblic03": "assets/media/obblic03.webp",
+      "obblic04": "assets/media/obblic04.webp",
+      "klever01": "assets/media/klever01.webp",
+      "klever02": "assets/media/klever02.webp",
+      "klever03": "assets/media/klever03.webp",
+      "klever04": "assets/media/klever04.webp",
+      "spacesoda01": "assets/media/spacesoda01.webp",
+      "spacesoda02": "assets/media/spacesoda02.webp",
+      "spacesoda03": "assets/media/spacesoda03.webp",
+      "spacesoda04": "assets/media/spacesoda04.webp",
+      "origamiVideo": "orig6.mp4",
+      "kleverVideo": "klever5.mp4",
+      "coplayingBrand": "assets/coplaying/logo-current.svg",
+      "coplayingScreen": "assets/coplaying/catalog.jpg",
+      "resume": "assets/kotlyarenko-pm-coplaying.docx",
+      "coplayingCatalog": "assets/coplaying/catalog.jpg",
+      "coplayingCreate": "assets/coplaying/create-slot.png",
+      "coplayingCall": "assets/coplaying/call-contact.png"
+};
+</script>
 
   <style>
     :root{
@@ -1515,12 +1516,16 @@
     }
 
   </style>
+<link rel="stylesheet" href="responsive.css">
+<link rel="preload" href="assets/fonts/onest-400.ttf" as="font" type="font/ttf" crossorigin="">
 </head>
 
 <body>
   <aside class="sidebar">
     <div class="sidebar__inner">
-      <div class="photo"><img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко" /><span>PHOTO</span></div>
+      <div class="photo">
+<img class="asset-image" data-asset="profilePhoto" alt="Фото Владислава Котляренко" src="assets/media/profilePhoto.webp" loading="lazy" decoding="async" width="1253" height="1440"><span>PHOTO</span>
+</div>
 
       <div>
         <p class="eyebrow">Product Developer</p>
@@ -1533,7 +1538,7 @@
       </div>
 
       <div class="role-block">
-        <div class="role">Venture PM</div>
+        <div class="role">Product Manager</div>
       </div>
 
       <section class="sidebar-section sidebar-section--mobile-hide">
@@ -1558,12 +1563,13 @@
       <div class="top-nav__links">
         <a href="#/" data-nav-route="/">Главная</a>
         <a href="#/about" data-nav-route="/about">Обо мне</a>
-        <a href="#/lowcode" data-nav-route="/lowcode">Low-code</a>
+        <a href="#/coplaying" data-nav-route="/coplaying">CoPlaying</a><a href="#/lowcode" data-nav-route="/lowcode">Low-code</a>
         <a href="#/origami" data-nav-route="/origami">Origami Wear</a>
         <a href="#/obblic" data-nav-route="/obblic">Obblic</a>
         <a href="#/klever" data-nav-route="/klever">Клевер</a>
         <a href="#/space-soda" data-nav-route="/space-soda">Космос</a>
-      </div>
+      <a href="assets/kotlyarenko-pm-coplaying.docx" data-asset="resume" download>Резюме ↓</a>
+</div>
     </div>
   </nav>
 
@@ -1580,7 +1586,37 @@
         </div>
       </section>
 
-      <section class="chapter chapter--gray">
+      <section class="chapter chapter--dark chapter--coplaying"><div class="chapter__inner">
+<div>
+<h2 class="chapter__company">CoPlaying</h2>
+<p class="chapter__position">Создатель / Product Owner / пет-проект</p>
+<div class="metrics metrics--two">
+<div class="metric">
+<strong>5 дней</strong><span>до текущей стадии Mini App</span>
+</div>
+<div class="metric">
+<strong>AI</strong><span>разработка под моим управлением</span>
+</div>
+</div>
+<div class="story">
+<div class="story__row">
+<small>01 / Задача</small><p>Я искал профессиональные контакты в других компаниях. Писать в холодную оказалось сложно. Друг рассказал, что они играют с коллегами, но каждый раз трудно договориться о времени.</p>
+</div>
+<div class="story__row">
+<small>02 / Решение</small><p>Я подумал: можно собрать коммьюнити вокруг своего продукта — дать людям удобный инструмент для планирования совместных игр. Игра располагает к общению и помогает познакомиться.</p>
+</div>
+<div class="story__row">
+<small>03 / Результат</small><p>За 5 дней довёл Telegram Mini App до опубликованного MVP с помощью ИИ: слоты, приглашения, комнаты сбора, напоминания и внутренний дашборд для контроля метрик.</p>
+</div>
+</div>
+<div class="project-actions">
+<a class="project-cta launch-app" href="https://t.me/CoPlaying_bot" target="_blank" rel="noopener noreferrer"><img class="button-brand" data-asset="coplayingBrand" src="assets/coplaying/logo-current.svg" width="28" height="28" alt="" aria-hidden="true"><span>Открыть Mini App</span><span aria-hidden="true">↗</span></a><a class="project-cta" href="#/coplaying"><span>Пройти путь создания CoPlaying</span><span>↗</span></a>
+</div>
+</div>
+<div class="artifact coplaying-artifact">
+<img class="asset-image" data-asset="coplayingScreen" src="assets/coplaying/catalog.jpg" alt="CoPlaying — актуальный каталог игровых комнат" loading="lazy" decoding="async" width="412" height="804"><p class="media-caption">Каталог игр · рабочий MVP</p>
+</div>
+</div></section><section class="chapter chapter--gray">
         <div class="chapter__number">01</div>
         <div class="chapter__inner">
           <div>
@@ -1589,8 +1625,12 @@
             <p class="chapter__position">Product / Project Manager web-проектов</p>
 
             <div class="metrics metrics--two">
-              <div class="metric"><strong>30+</strong><span>адаптивных сайтов</span></div>
-              <div class="metric"><strong>6</strong><span>человек в команде</span></div>
+              <div class="metric">
+<strong>30+</strong><span>адаптивных сайтов</span>
+</div>
+              <div class="metric">
+<strong>6</strong><span>человек в команде</span>
+</div>
             </div>
 
             <div class="chapter-copy">
@@ -1602,12 +1642,12 @@
 
           <div class="artifact-stack">
             <div class="artifact home-scroll-artifact">
-              <img class="asset-image" data-asset="homeLowcode" alt="Low-code — нижний артефакт проекта" />
+              <img class="asset-image" data-asset="homeLowcode" alt="Low-code — нижний артефакт проекта" src="assets/media/homeLowcode.webp" loading="lazy" decoding="async" width="1440" height="1440">
               <div class="artifact__shape"></div>
               <div class="artifact__label">3D artifact / browser / web system</div>
             </div>
             <div class="artifact home-static-artifact">
-              <img class="asset-image" data-asset="homeLowcode2" alt="Low-code — верхний артефакт проекта" />
+              <img class="asset-image" data-asset="homeLowcode2" alt="Low-code — верхний артефакт проекта" src="assets/media/homeLowcode2.webp" loading="lazy" decoding="async" width="1440" height="1440">
               <div class="artifact__shape"></div>
               <div class="artifact__label">3D artifact / interface / web system</div>
             </div>
@@ -1625,22 +1665,34 @@
             <p class="chapter__position">Сооснователь / Product Manager</p>
 
             <div class="metrics">
-              <div class="metric"><strong>1 млн ₽</strong><span>грант ФСИ</span></div>
-              <div class="metric"><strong>20+</strong><span>питчингов</span></div>
-              <div class="metric"><strong>MVP</strong><span>от гипотезы до продукта</span></div>
+              <div class="metric">
+<strong>1 млн ₽</strong><span>грант ФСИ</span>
+</div>
+              <div class="metric">
+<strong>20+</strong><span>питчингов</span>
+</div>
+              <div class="metric">
+<strong>MVP</strong><span>от гипотезы до продукта</span>
+</div>
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Проблема</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p></div>
-              <div class="story__row"><small>02 / Решение</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p></div>
-              <div class="story__row"><small>03 / Результат</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p></div>
+              <div class="story__row">
+<small>01 / Проблема</small><p>Дети быстро вырастают из одежды. В некоторые периоды приходится обновлять гардероб каждый сезон</p>
+</div>
+              <div class="story__row">
+<small>02 / Решение</small><p>Собрал команду студентов на инициативной основе, разработал растущую одежду, полностью упаковал проект для инвестиций, провел более 20 питчингов на открытую аудиторию.</p>
+</div>
+              <div class="story__row">
+<small>03 / Результат</small><p>Победа в HSE Startup Cup, грант 1 млн ₽, разработан MVP.</p>
+</div>
             </div>
 
             <a class="project-cta" href="#/origami"><span>Пройти путь создания Растущей одежды</span><span>↗</span></a>
           </div>
 
           <div class="artifact home-scroll-artifact">
-            <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" />
+            <img class="asset-image" data-asset="homeOrigami" alt="Origami Wear — артефакт проекта" src="assets/media/homeOrigami.webp" loading="lazy" decoding="async" width="1440" height="1440">
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / apparel / material / MVP</div>
           </div>
@@ -1654,25 +1706,37 @@
 
 
             <h2 class="chapter__company">Obblic</h2>
-            <p class="chapter__position">Основатель / Product Manager & Business Development</p>
+            <p class="chapter__position">Основатель / Product Manager &amp; Business Development</p>
 
             <div class="metrics">
-              <div class="metric"><strong>2</strong><span>версии продукта — web и физический</span></div>
-              <div class="metric"><strong>MMP</strong><span>физический журнал</span></div>
-              <div class="metric"><strong>Sales</strong><span>спрос подтвержден продажами</span></div>
+              <div class="metric">
+<strong>2</strong><span>версии продукта — web и физический</span>
+</div>
+              <div class="metric">
+<strong>MMP</strong><span>физический журнал</span>
+</div>
+              <div class="metric">
+<strong>Sales</strong><span>спрос подтвержден продажами</span>
+</div>
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Задача</small><p>Разработать имиджевый продукт для студии дизайна интерьеров, который позволит охватить ЦА из премиум сегмента.</p></div>
-              <div class="story__row"><small>02 / Решение</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p></div>
-              <div class="story__row"><small>03 / Результат</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p></div>
+              <div class="story__row">
+<small>01 / Задача</small><p>Разработать имиджевый продукт для студии дизайна интерьеров, который позволит охватить ЦА из премиум сегмента.</p>
+</div>
+              <div class="story__row">
+<small>02 / Решение</small><p>Собрал команду и создал глянцевый журнал об интерьерных решениях в люкс сегменте, договорился о контенте и статьях с ведущими брендами, создал дизайн, цифровую версию и напечатал физический тираж.</p>
+</div>
+              <div class="story__row">
+<small>03 / Результат</small><p>Продал рекламные размещения ещё до выхода журнала, напечатал тираж полностью на деньги с размещений.</p>
+</div>
             </div>
 
             <a class="project-cta" href="#/obblic"><span>Пройти путь создания Журнала</span><span>↗</span></a>
           </div>
 
           <div class="artifact home-scroll-artifact">
-            <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" />
+            <img class="asset-image" data-asset="homeObblic" alt="Obblic — артефакт проекта" src="assets/media/homeObblic.webp" loading="lazy" decoding="async" width="1440" height="1440">
             <div class="artifact__shape"></div>
             <div class="artifact__label">3D artifact / magazine / architecture / real estate</div>
           </div>
@@ -1689,21 +1753,31 @@
             <p class="chapter__position">Носилки для экспресс-эвакуации / Product Owner</p>
 
             <div class="metrics">
-              <div class="metric"><strong>2 мин → 10 с</strong><span>время подготовки к эвакуации</span></div>
-              <div class="metric"><strong>1-я</strong><span>партия используется в полях</span></div>
+              <div class="metric">
+<strong>2 мин → 10 с</strong><span>время подготовки к эвакуации</span>
+</div>
+              <div class="metric">
+<strong>1-я</strong><span>партия используется в полях</span>
+</div>
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Задача</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p></div>
-              <div class="story__row"><small>02 / Решение</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p></div>
-              <div class="story__row"><small>03 / Результат</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p></div>
+              <div class="story__row">
+<small>01 / Задача</small><p>Подготовка к эвакуации занимает более 2 минут и требует перемещения пострадавшего — и то, и другое может оказаться критичным.</p>
+</div>
+              <div class="story__row">
+<small>02 / Решение</small><p>Разработали и пошили легкие носилки, которые носятся как часть униформы и разворачиваются по принципу парашютной системы. Протестировали решение с целевой аудиторией и доработали конструкцию под реальные условия использования.</p>
+</div>
+              <div class="story__row">
+<small>03 / Результат</small><p>Подготовка к эвакуации сокращена с более чем 2 минут до 10 секунд. Первая партия носилок отправилась спасать жизни.</p>
+</div>
             </div>
 
             <a class="project-cta" href="#/klever"><span>Пройти путь создания Носилок</span><span>↗</span></a>
           </div>
 
           <div class="artifact artifact--klever home-scroll-artifact">
-            <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" />
+            <img class="asset-image" data-asset="homeKlever" alt="Клевер — артефакт проекта" src="assets/media/homeKlever.webp" loading="lazy" decoding="async" width="1440" height="1440">
             <div class="klever-pack"></div>
             <div class="klever-sheet"></div>
             <div class="klever-handle klever-handle--a"></div>
@@ -1722,21 +1796,31 @@
             <p class="chapter__position">Создание банки, которую запустили в космос</p>
 
             <div class="metrics metrics--two">
-              <div class="metric"><strong>МКС</strong><span>макет отправился в космос</span></div>
-              <div class="metric"><strong>Союз</strong><span>рекламная интеграция на запуске</span></div>
+              <div class="metric">
+<strong>МКС</strong><span>макет отправился в космос</span>
+</div>
+              <div class="metric">
+<strong>Союз</strong><span>рекламная интеграция на запуске</span>
+</div>
             </div>
 
             <div class="story">
-              <div class="story__row"><small>01 / Задача</small><p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p></div>
-              <div class="story__row"><small>02 / Решение</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p></div>
-              <div class="story__row"><small>03 / Результат</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p></div>
+              <div class="story__row">
+<small>01 / Задача</small><p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало производство физического макета банки газировки, который должен был полететь на МКС.</p>
+</div>
+              <div class="story__row">
+<small>02 / Решение</small><p>Организовал производство макета: согласовывал конструкцию и материалы под требования Роскосмоса, работал с допусками по материалам и необходимой сертификацией.</p>
+</div>
+              <div class="story__row">
+<small>03 / Результат</small><p>Готовый макет банки был подготовлен к запуску, сертифицирован и полетел на МКС в рамках миссии «Союза».</p>
+</div>
             </div>
 
             <a class="project-cta" href="#/space-soda"><span>Пройти путь создания Космической баночки</span><span>↗</span></a>
           </div>
 
           <div class="artifact artifact--space home-scroll-artifact">
-            <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" />
+            <img class="asset-image" data-asset="homeSpaceSoda" alt="Космос — артефакт проекта" src="assets/media/homeSpaceSoda.webp" loading="lazy" decoding="async" width="1254" height="1254">
             <div class="space-can">
               <div class="space-can__label">SODA<br>ORBIT</div>
               <div class="space-can__ring"></div>
@@ -1749,7 +1833,7 @@
 <section class="about-promo">
         <div class="about-promo__inner">
           <div class="about-promo__photo">
-            <video class="asset-video" data-asset="aboutPhoto" autoplay loop muted playsinline preload="auto" aria-label="Обо мне"></video>
+            <video class="asset-video" data-asset="aboutPhoto" autoplay loop muted playsinline preload="none" aria-label="Обо мне" src="aboutPhoto.mp4"></video>
           </div>
           <div class="about-promo__copy">
             <h2>Кто я вне проектов</h2>
@@ -1795,32 +1879,32 @@
           </div>
 
           <div class="hobby-grid">
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">01 / CMAS</div>
               <h3>Дайвинг</h3>
               <p>Погружения - это сочетание спокойствия, подготовки и работы с риском. Под водой особенно хорошо понимаешь ценность дисциплины и четких процедур.</p>
             </article>
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">02 / SNOW</div>
               <h3>Сноуборд</h3>
               <p>Здесь нужны скорость, баланс и умение быстро адаптироваться к условиям. Мне нравится ощущение контроля в динамичной среде.</p>
             </article>
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">03 / TENNIS</div>
               <h3>Большой теннис</h3>
               <p>Люблю за стратегию на ходу: нужно одновременно читать соперника и менять тактику по ходу игры.</p>
             </article>
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">04 / ENDURO</div>
               <h3>Мото эндуро</h3>
               <p>Это про выбор оптимального маршрута, реакцию и умение принимать решения в условиях ограниченного времени и непредсказуемой среды.</p>
             </article>
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">05 / WAKE</div>
               <h3>Вейкбординг</h3>
               <p>Нравится быстрый цикл обучения: попробовал, ошибся, проанализировал, поднялся и пробуешь снова.</p>
             </article>
-            <article class="hobby-card" tabindex="0">
+            <article class="hobby-card" tabindex="0" role="button" aria-expanded="false">
               <div class="hobby-card__index">06 / SPORT</div>
               <h3>Стрельба, ориентирование</h3>
               <p>КМС по стрельбе и победитель чемпионата Красноярского края по лыжному ориентированию. Здесь особенно ценю концентрацию, точность и работу под давлением.</p>
@@ -1836,12 +1920,18 @@
             <h2>Как я взаимодействую с людьми</h2>
           </div>
           <div class="about-principles__grid">
-            <article><span>01 / OPENNESS</span><h3>Моё отношение к конфликтам</h3><p>Я отзывчив и неконфликтен. Разногласия и конфликты предпочитаю решать с холодной головой, не эскалируя, если это не требуется.</p></article>
-            <article><span>02 / FEEDBACK</span><h3>Как работаю с критикой</h3><p>Отлично воспринимаю критику, особенно если она сопровождается предложениями. Сам привык давать решения вместе с критикой и того же жду от команды — считаю это залогом продуктивности и роста каждого в команде.</p></article>
-            <article><span>03 / QUESTIONS</span><h3>Задаю много вопросов</h3><p>Умею активно слушать и задаю много вопросов. Убеждён, что спросить что-то простое и показаться глупым гораздо лучше, чем остаться без ответа.</p></article>
-            <article><span>04 / DIRECTNESS</span><h3>Считаю прямоту залогом эффективности</h3><p>Открыто выражаю мысли, считаю прямоту самым эффективным способом коммуникации. Отлично отношусь к прямолинейности в свой адрес.</p></article>
-            <article><span>05 / PEOPLE</span><h3>Быстро разбираюсь в незнакомом</h3><p>Очень быстро разбираюсь в вещах, которых не знаю, активно обращаюсь к специалистам в своём окружении и быстро нахожу решения через людей и брейншторминг.</p></article>
-            <article><span>06 / CONFLICT</span><h3>Моё отношение к агрессии</h3><p>Испытываю неприязнь к пассивно-агрессивным людям, с открытую агрессию парирую выставленим границ, сменой фреймов и юмором.</p></article>
+            <article><span>01 / OPENNESS</span><h3>Моё отношение к конфликтам</h3>
+<p>Я отзывчив и неконфликтен. Разногласия и конфликты предпочитаю решать с холодной головой, не эскалируя, если это не требуется.</p></article>
+            <article><span>02 / FEEDBACK</span><h3>Как работаю с критикой</h3>
+<p>Отлично воспринимаю критику, особенно если она сопровождается предложениями. Сам привык давать решения вместе с критикой и того же жду от команды — считаю это залогом продуктивности и роста каждого в команде.</p></article>
+            <article><span>03 / QUESTIONS</span><h3>Задаю много вопросов</h3>
+<p>Умею активно слушать и задаю много вопросов. Убеждён, что спросить что-то простое и показаться глупым гораздо лучше, чем остаться без ответа.</p></article>
+            <article><span>04 / DIRECTNESS</span><h3>Считаю прямоту залогом эффективности</h3>
+<p>Открыто выражаю мысли, считаю прямоту самым эффективным способом коммуникации. Отлично отношусь к прямолинейности в свой адрес.</p></article>
+            <article><span>05 / PEOPLE</span><h3>Быстро разбираюсь в незнакомом</h3>
+<p>Очень быстро разбираюсь в вещах, которых не знаю, активно обращаюсь к специалистам в своём окружении и быстро нахожу решения через людей и брейншторминг.</p></article>
+            <article><span>06 / CONFLICT</span><h3>Моё отношение к агрессии</h3>
+<p>Испытываю неприязнь к пассивно-агрессивным людям, с открытую агрессию парирую выставленим границ, сменой фреймов и юмором.</p></article>
           </div>
         </div>
       </section>
@@ -1866,73 +1956,44 @@
             <p class="eyebrow" style="margin-top:26px">Июль 2020 — Январь 2023 / Москва</p>
             <h1>Low-code</h1>
           </div>
-          <p class="project-hero__lead">История о том, как из разрозненных запросов заказчиков мы собирали страницы приема оплат и заявок.</p>
+          <p class="project-hero__lead">Собрал low-code студию и команду из 6 человек. Делали сайты, рассылки и воронки продаж для бизнеса и онлайн-проектов.</p>
         </div>
       </section>
 
       <div class="project-body">
-        <div class="timeline-band">
-          <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Гипотеза и входящий запрос</span></div>
-            <div class="timeline-step"><strong>02</strong><span>Пользователь и архитектура</span></div>
-            <div class="timeline-step"><strong>03</strong><span>Команда и запуск</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Аналитика и результат</span></div>
-          </div>
-        </div>
-
         <div class="project-flow">
-          <section class="flow-section">
-            <div class="flow-section__index">01</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Входящий запрос</h2>
-                <p>Почти каждый проект начинался с бизнес-задачи. Нужно было понять, кто пользователь, зачем он приходит на сайт и к какому целевому действию его нужно привести.</p>
-                <div class="flow-callout">Я начинал с интервью с заказчиком и декомпозиции задачи. Это позволяло отделить пожелания от реальной пользовательской ценности.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode01" alt="brief / interview notes" /></div>
-            </div>
-          </section>
-
-          
-
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Команда и постановка задач</h2>
-                <p>Работал с командой до 6 человек: дизайн, верстка, разработка и контент.</p>
-                <div class="flow-callout">Декомпозировал функциональность, фиксировал требования и критерии приемки. Это снижало количество переделок и помогало синхронизировать участников вокруг пользовательского сценария.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode02" alt="board / tasks / prototype" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">03</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Создание и тестирование</h2>
-                <p>Проверял адаптивность, пользовательский путь и работу платежных сценариев на разных устройствах.</p>
-                <div class="flow-callout">После запуска подключал Яндекс Метрику, проверял ключевые события и искал точки, где пользователи терялись до целевого действия.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode03" alt="analytics / payment flow" /></div>
-            </div>
-          </section>
-
-          
-
-          <section class="flow-section">
-            <div class="flow-section__index">04</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Результат</h2>
-                <p>За время работы реализовал более 30 адаптивных сайтов.</p>
-                <div class="flow-callout">Главный результат — умение проводить web-продукт через весь цикл: discovery, архитектура, требования, дизайн, разработка, приемка, аналитика и целевое действие.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="lowcode04" alt="30+ launches" /></div>
-            </div>
-          </section>
-        </div>
+<section class="case-chapter" id="lowcode-chapter-1"><h2>С чего начинался проект</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Почти каждый проект начинался с бизнес-задачи: привести заявки, принять оплату, запустить продажи. Я разбирался, кто пользователь, зачем он приходит на сайт и что ему нужно сделать.</p>
+<p>Начинал с интервью с заказчиком, проводил JTBD-исследования и строил CJM. Из этого собирал пользовательский путь и требования к продукту.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="lowcode01" alt="Рабочий материал Low-code: разбор задачи" src="assets/media/lowcode01.webp" loading="lazy" decoding="async" width="1440" height="1212"></div>
+</div></section>
+<section class="case-chapter" id="lowcode-chapter-2"><h2>Как организовал работу</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Собрал команду из <strong>6 человек</strong>: веб- и граф-дизайнер, верстальщик, копирайтер, frontend-разработчик и интегратор.</p>
+<p>Описывал User flow, Use cases и User Story Map, разбивал работу на задачи и фиксировал критерии приёмки. Отвечал за то, чтобы дизайн, контент и разработка сходились в одном пользовательском сценарии.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="lowcode02" alt="Рабочий материал Low-code: постановка задач" src="assets/media/lowcode02.webp" loading="lazy" decoding="async" width="1212" height="1236"></div>
+</div></section>
+<section class="case-chapter" id="lowcode-chapter-3"><h2>От страницы до оплаты</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Собирали лендинги на Tilda, подключали системы оплаты, делали рассылки и воронки через UniSender.</p>
+<p>Проверял адаптивность и путь от первого экрана до заявки или оплаты. После запуска смотрел поведение пользователей в Яндекс Метрике и Вебвизоре, находил места, где они останавливались.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="lowcode03" alt="Рабочий материал Low-code: пользовательский путь" src="assets/media/lowcode03.webp" loading="lazy" decoding="async" width="843" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="lowcode-chapter-4"><h2>Что получилось</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>За время работы реализовал <strong>30+ адаптивных сайтов</strong>. Проходил с проектами путь от бизнес-задачи и пользовательского сценария до разработки, запуска и дальнейшего сопровождения.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="lowcode04" alt="Один из проектов low-code студии" src="assets/media/lowcode04.webp" loading="lazy" decoding="async" width="1440" height="1266"></div>
+</div></section>
+</div>
       </div>
 
       <section class="shop-cta">
@@ -1942,10 +2003,10 @@
           <p>Можно обсудить задачу, структуру, пользовательский путь и запуск сайта — от идеи и прототипа до готовой адаптивной версии.</p>
         </div>
         <div class="shop-cta__actions">
-          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=Хочу%20заказать%20сайт">Заказать сайт</a>
+          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=%D0%A5%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C%20%D1%81%D0%B0%D0%B9%D1%82">Заказать сайт</a>
         </div>
       </section>
-    </section>
+    <nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/origami"><span>Следующий проект: Origami Wear</span><span>↗</span></a></nav></section>
 
     <!-- ORIGAMI -->
     <section class="page" data-route="/origami">
@@ -1956,96 +2017,61 @@
             <p class="eyebrow" style="margin-top:26px">Октябрь 2022 — Август 2025 / Москва</p>
             <h1>Origami Wear</h1>
           </div>
-          <p class="project-hero__lead">История о том, как идея функциональной одежды превратилась в полноценный проект: исследование рынка, сбор команды, грантовое финансирование, тестирование материалов, MVP и десятки питчингов.</p>
+          <p class="project-hero__lead">Одежда, которая растёт вместе с ребёнком. Проект, в котором я собрал команду, проверил спрос и довёл идею до кофты, увеличивающейся на 7 размеров.</p>
         </div>
       </section>
 
       <div class="project-body">
-        <div class="timeline-band">
-          <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Проблема</span></div>
-            <div class="timeline-step"><strong>02</strong><span>Команда и ресурсы</span></div>
-            <div class="timeline-step"><strong>03</strong><span>MVP и тестирование</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Питчинг и результат</span></div>
-          </div>
-        </div>
-
         <div class="project-flow">
-          <section class="flow-section">
-            <div class="flow-section__index">01</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Проблема</h2>
-                <p>Дети быстро вырастают из одежды - очень простая проблема, понятная каждому родителю.</p>
-       
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami01" alt="product hypothesis" /></div>
-            </div>
-          </section>
-
-          
-
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Команда</h2>
-                <p>Мы собирали необходимые компетенции в институте и привлекали в лице менторов через акселераторы. За дизайнером одежды мы пошли в ВШД, я договорился с преподавателем на проектную работу для студентов, которых мы возьмем в команду проекта. Экономиста для составления финмодели и веб-дизайнера взяли в команду в рамках майнора «Стартап как диплом» и договорились на зачетные единицы, которые они получат по завершении.</p>
-                <div class="flow-callout">Моя задача была собрать весь проект воедино - разработать бизнес план, привлечь финансы, организовать разработку MVP, координировать работу команды, эффективно и быстро получать обратную связь от рынка на каждом этапе.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami02" alt="team map" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">03</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Деньги</h2>
-                <p>Мы подготовили первую презентацию и зашли в акселератор стартапов.  Так мы подготовили проект к финансированию - с анализом рынка, интервью с ЦА, бизнес-планом, несколькими менторами и парой предзаказов на ещё не существующий продукт.</p>
-                <div class="flow-callout">Проект победил в HSE Startup Cup и привлек грант Фонда содействия инновациям в размере 1 млн рублей - к этому моменту у нас уже был MVP.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami03" alt="pitch / grant / financial model" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">04</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>MVP и тестирование</h2>
-                <p>В поисках решения и материалов, мы обошли все отраслевые выставки и наткнулись на технологию складывания ткани под горячим прессом. Если сложить так ткань определенным образом - получалась гармошка, которая тянется во все стороны и держит форму. В поисках ткани, которую можно сложить именно так, мы пообщались со всеми ведущими производителями ткани, собрали и протестировали больше 200 различных образцов.</p>
-                <div class="flow-callout">Результатом наших попыток стала кофточка, которая увеличивается на 7 размеров. Мы выиграли HSE Startup Cup, надев в финале на сцене детскую кофточку на взрослую девушку.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami04" alt="material / prototype / test" /></div>
-            </div>
-          </section>
-
-          
-          <section class="flow-section">
-            <div class="flow-section__index">05</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Питчинг и обратная связь</h2>
-                <p>Я провел более 20 публичных выступлений и защит проекта перед экспертами и инвесторами. В рамках акселератора мы ежедневно мы проводили по 3 - 4 созвона с разными менторами и специалистами, после каждого созвона докручивали презентацию и питч. Несколько раз выходили на прожарки, чтобы получить дополнительную обратную связь.</p>
-                <div class="flow-callout">Питчинг использовался в первую очередь как канал быстрого сбора обратной связи по продукту и упаковке стартапа. Через постоянные питчинги мы успевали пройти цикл тестирования гипотезы и внесения изменений до трёх раз в день.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="origami05" alt="pitch deck / stage" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">06</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Результат</h2>
-                <p>Я получил невероятный опыт по созданию продукта, публичным выступлениям, упаковке стартапа и командообразованию. Мы привлекли грантовые деньги и успешно закрыли отчетность, разобрались в абсолютно незнакомой до этого нише, завели много новых знакомств благодаря этому проекту и самое главное - от всей души повеселились)</p>
-             
-              </div>
-              <div class="flow-artifact"><video class="asset-video" autoplay loop muted playsinline><source src="https://kotlyarenkoru-eng.github.io/portfolio/orig6.mp4" type="video/mp4"></video></div>
-            </div>
-          </section>
-        </div>
+<section class="case-chapter" id="origami-chapter-1"><h2>Проверка спроса</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Дети быстро вырастают из одежды — очень простая проблема, понятная каждому родителю. Идея была сделать одежду, которая будет расти вместе с ребёнком.</p>
+<p>Провёл <strong>18 глубинных интервью</strong> и получил через соцсети оплаты на <strong>150 тыс. ₽</strong> ещё до появления готового продукта.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="origami01" alt="Origami Wear: идея растущей одежды" src="assets/media/origami01.webp" loading="lazy" decoding="async" width="1254" height="1254"></div>
+</div></section>
+<section class="case-chapter" id="origami-chapter-2"><h2>Команда</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Собрал команду на инициативной основе: дизайнера одежды, экономиста, графического дизайнера и SMM-специалиста. Привлёк <strong>2 менторов</strong>.</p>
+<p>За дизайнером одежды пошёл в ВШД: договорился с преподавателем о проектной работе для студентов. Часть команды привлёк через майнор «Стартап как диплом» — за работу над проектом ребята получали зачётные единицы.</p>
+<p>Моя задача была собрать весь проект воедино: разработать бизнес-план, привлечь финансы, организовать создание MVP и координировать команду.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="origami02" alt="Origami Wear: команда проекта" src="assets/media/origami02.webp" loading="lazy" decoding="async" width="1409" height="1214"></div>
+</div></section>
+<section class="case-chapter" id="origami-chapter-4"><h2>Поиск материала и MVP</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>На отраслевых выставках нашли технологию складывания ткани под горячим прессом. Если сложить ткань определённым образом, получается гармошка, которая тянется в разные стороны и держит форму.</p>
+<p>За <strong>3 месяца</strong> провёл <strong>200+ тестов материалов</strong>. Подбирали ткань и способ складывания, пока не получили кофточку, которая увеличивается на <strong>7 размеров</strong>.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="origami04" alt="Origami Wear: материал и прототип" src="assets/media/origami04.webp" loading="lazy" decoding="async" width="960" height="1280"></div>
+</div></section>
+<section class="case-chapter" id="origami-chapter-3"><h2>Деньги</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Подготовил проект к финансированию: анализ рынка, бизнес-план, презентация и первые предзаказы. Вместе с экономистом просчитали unit-экономику, точку безубыточности, срок окупаемости и план развития на <strong>3 года</strong>.</p>
+<p>С MVP выиграли HSE Startup Cup и привлекли грант Фонда содействия инновациям на <strong>1 млн ₽</strong>. В финале на сцене надели детскую кофточку на взрослую девушку.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="origami03" alt="Origami Wear: презентация и финансирование" src="assets/media/origami03.webp" loading="lazy" decoding="async" width="1409" height="1214"></div>
+</div></section>
+<section class="case-chapter" id="origami-chapter-5"><h2>Питчинг и обратная связь</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Провёл <strong>20+ питчингов и публичных выступлений</strong> перед экспертами и инвесторами. В акселераторе у нас было по 3–4 созвона с менторами и специалистами в день.</p>
+<p>После каждого созвона докручивали презентацию и питч, несколько раз выходили на прожарки. Так быстро получали обратную связь и успевали вносить изменения до следующей встречи.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="origami05" alt="Origami Wear: питчинг проекта" src="assets/media/origami05.webp" loading="lazy" decoding="async" width="1409" height="1214"></div>
+</div></section>
+<section class="case-chapter" id="origami-chapter-6"><h2>Что получилось</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Мы сделали работающий MVP, привлекли грант и успешно закрыли отчётность. Разобрались в абсолютно незнакомой до этого нише, завели много новых знакомств и самое главное — от всей души повеселились)</p>
+</div>
+<div class="flow-artifact"><video class="asset-video" autoplay loop muted playsinline data-asset="origamiVideo" src="orig6.mp4" controls="" preload="none"></video></div>
+</div></section>
+</div>
       </div>
 
       <section class="shop-cta">
@@ -2055,10 +2081,10 @@
           <p>Можно обсудить покупку функциональной одежды или индивидуальный пошив под ваши задачи, сценарий использования и предпочтения.</p>
         </div>
         <div class="shop-cta__actions">
-          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=Индивидуальный%20пошив%20Origami%20Wear">Заказать пошив для себя</a>
+          <a class="shop-button" href="mailto:kotlyarenko.ru@yandex.ru?subject=%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%BE%D1%88%D0%B8%D0%B2%20Origami%20Wear">Заказать пошив для себя</a>
         </div>
       </section>
-    </section>
+    <nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/obblic"><span>Следующий проект: Obblic</span><span>↗</span></a></nav></section>
 
     <!-- OBBLIC -->
     <section class="page" data-route="/obblic">
@@ -2069,72 +2095,47 @@
             <p class="eyebrow" style="margin-top:26px">Январь 2023 — Ноябрь 2024 / Москва</p>
             <h1>Obblic</h1>
           </div>
-          <p class="project-hero__lead">История создания глянцевого журнала для студии дизайна интерьеров.</p>
+          <p class="project-hero__lead">Интерьерный журнал для студии дизайна. Превратил рекламную задачу в отдельный продукт и продал первые размещения ещё до выхода тиража.</p>
         </div>
       </section>
 
       <div class="project-body">
-        <div class="timeline-band">
-          <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Задача</span></div>
-            <div class="timeline-step"><strong>02</strong><span>Продуктовая концепция</span></div>
-            <div class="timeline-step"><strong>03</strong><span>MVP и продажи</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Результат</span></div>
-          </div>
-        </div>
-
         <div class="project-flow">
-          <section class="flow-section">
-            <div class="flow-section__index">01</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Где искать премиум сегмент</h2>
-                <p>Задача была сформировать имиджевое решение - канал, с которым будет взаимодействовать аудитория люкс сегмента.</p>
-                <div class="flow-callout">Подходящая нам ЦА уже пользуется рядом дорогих услуг, посещает заведения и сообщества, которые обеспечивают статус и высокий уровень сервиса. Принято решение создать продукт, который позволит взаимодействовать с аудиторией в этих местах.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic01" alt="audience / research" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Продуктовая концепция</h2>
-                <p>Необходимо было собрать решение, которое будет эстетичным и более ёмким по контенту, нежели рекламный баннер. Кроме того, реклама студии должна была быть представлена как сервисное предложение, которое объединяет уже знакомые клиенту решения и продукты.</p>
-                <div class="flow-callout">Решением стал интерьерный журнал, который собререт в себе партнерские предложения брендов люкс сегмента по наполнению интерьера, мебели и материалам. Журнал визуально и тактильно приятен, его наполнения достаточно, чтобы проникнуться решениями уже узнаваемых брендов. Такой подход был призван сформировать доверие и обеспечить первый контакт с продуктом.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic02" alt="product map / journal" /></div>
-            </div>
-          </section>
-
-      
-          <section class="flow-section">
-            <div class="flow-section__index">03</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>MVP и проверка спроса</h2>
-                <p>Я договорился с дистрибьюторами крупнейших премиальных брендов интерьерных решений о контенте - они предоставляли фото и копирайтеров для написания статей в обмен на размещение в журнале. Я разработал дизайн, привлёк верстальщика на добровольных началах, разработал презентацию будущего журнала и продал пять разворотов под размещения через холодные звонки в бренды.</p>
-                <div class="flow-callout">Спрос был подтвержден продажей рекламных размещений еще до выхода первого тиража — это стало подтверждением жизнеспособности MVP.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic03" alt="sales / media kit" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">04</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Результат</h2>
-                <p>На деньги от продажи размещений, мы напечатали первый тираж и договорились о размещении в ресторанах и загородных клубах.</p>
-                 
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="obblic04" alt="final products" /></div>
-            </div>
-          </section>
-        </div>
+<section class="case-chapter" id="obblic-chapter-1"><h2>Где искать премиум-сегмент</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Задача была найти канал контакта с аудиторией люкс-сегмента для студии дизайна интерьеров.</p>
+<p>Эти люди уже посещают дорогие рестораны и загородные клубы, пользуются премиальными услугами. Решил сделать продукт, с которым они будут взаимодействовать в привычных для себя местах.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="obblic01" alt="Obblic: аудитория и контекст проекта" src="assets/media/obblic01.webp" loading="lazy" decoding="async" width="931" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="obblic-chapter-2"><h2>Почему журнал</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Выбрал интерьерный журнал, в котором студия дизайна будет представлена рядом с уже знакомыми аудитории брендами мебели, материалов и интерьерных решений.</p>
+<p>Договорился с дистрибьюторами люкс-брендов: они давали фотографии и копирайтеров для статей в обмен на размещение. Так собрал контент для первого выпуска.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="obblic02" alt="Obblic: концепция интерьерного журнала" src="assets/media/obblic02.webp" loading="lazy" decoding="async" width="1175" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="obblic-chapter-3"><h2>Продажи до тиража</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Разработал дизайн, привлёк верстальщика на добровольных началах и подготовил презентацию будущего журнала.</p>
+<p>Через холодные звонки продал <strong>5 рекламных разворотов</strong> ещё до выпуска. Эти продажи подтвердили спрос на размещения и полностью окупили первый тираж.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="obblic03" alt="Obblic: презентация рекламных размещений" src="assets/media/obblic03.webp" loading="lazy" decoding="async" width="936" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="obblic-chapter-4"><h2>Тираж и результат</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>На выручку от рекламы выпустил первый тираж. Договорился о бесплатном размещении журнала в <strong>15 заведениях и загородных клубах</strong>.</p>
+<p>Сразу после выпуска продал журнал рекламному агентству за <strong>4,5 млн ₽</strong>.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="obblic04" alt="Obblic: готовый выпуск журнала" src="assets/media/obblic04.webp" loading="lazy" decoding="async" width="1440" height="1440"></div>
+</div></section>
+</div>
       </div>
-    </section>
+    <nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/klever"><span>Следующий проект: Клевер</span><span>↗</span></a></nav></section>
     <!-- KLEVER -->
     <section class="page" data-route="/klever">
       <section class="project-hero">
@@ -2144,84 +2145,53 @@
             <p class="eyebrow" style="margin-top:26px">Экспресс-эвакуация / физический продукт / полевая разработка</p>
             <h1>Клевер</h1>
           </div>
-          <p class="project-hero__lead">Носилки, которые разворачиваются за 10 секунд по принципу парашютной системы и позволяют сразу приступить к эвакуации.</p>
+          <p class="project-hero__lead">Носилки для экспресс-эвакуации, которые носятся на спине и раскрываются прямо под пострадавшим.</p>
         </div>
       </section>
 
       <div class="project-body">
-        <div class="timeline-band">
-          <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Проблема и сценарий эвакуации</span></div>
-            <div class="timeline-step"><strong>02</strong><span>Концепция и прототип</span></div>
-            <div class="timeline-step"><strong>03</strong><span>Тестирование и доработка</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Полевые испытания и применение</span></div>
-          </div>
-        </div>
-
         <div class="project-flow">
-          <section class="flow-section">
-            <div class="flow-section__index">01</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Долгая подготовка</h2>
-                <p>Классические носилки по умолчанию находились у медиков. Если эвакуацию нужно было начинать немедленно, подготовка занимала более 2 минут — время, которое в критической ситуации может иметь решающее значение.</p>
-                <div class="flow-callout">Второй барьер — сам способ погрузки: человека приходилось переворачивать и перемещать, чтобы разместить его на носилках - такие манипуляции могут стоить жизни.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever01" alt="emergency scenario / time constraint" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Сделать носилки частью экипировки</h2>
-                <p>Мы изменили сценарий использования: носилки стали переносимыми на спине и сразу готовыми к развертке.</p>
-                <div class="flow-callout">Ключевая продуктовая идея — не доставлять носилки к пострадавшему, а сделать их частью экипировки.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever02" alt="backpack carry / product concept" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">03</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Раскрытие по принципу парашюта</h2>
-                <p>Конструкция раскрывается за 10 секунд - достаточно открыть клапан и потянуть за ручки в стороны. Носилки расрываются прямо из чехла на спине пострадавшего и не требуют дополнительных манипуляций.</p>
-                <div class="flow-callout">Главная метрика решения: сократить подготовку к эвакуации с более чем 2 минут до 10 секунд.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever03" alt="deployment sequence / 10 sec" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">04</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>От концепта к продукту</h2>
-                <p>Мы разработали конструкцию и пошили носилки, чтобы проверить реальный сценарий использования: переноску, раскрытие, работу с пострадавшим и удобство перемещения. После тестов вносили изменения в продукт. После первого теста оказалось, что при развертке человек не полностью помещается на носилки. Доработали систему складывания носилок в чехол, чтобы при разворачивании они стразу принимали нужное положение. Добавили дренажные отвертия для избежания скопления жидкости.</p>
-                <div class="flow-callout">Получили на выходе носилки, которые отвечают всем требованиям и эффективны в разных сценариях использования.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="klever04" alt="sewn prototype / physical MVP" /></div>
-            </div>
-          </section>
-
-          
-          <section class="flow-section">
-            <div class="flow-section__index">05</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Результат</h2>
-                <p>Мы получили заказ, первая партия отправилась спасать жизни. Сценарий подготовки к эвакуации сокращен с более чем 2 минут до 10 секунд. Носилки стали переносимым физическим продуктом, который можно быстро развернуть непосредственно под пострадавшим. ОТКРОЙ, ТЯНИ, ГОТОВО.</p>
-                <div class="flow-callout">Главный продуктовый результат — убрать лишние действия из критического сценария и превратить каждую секунду подготовки в потенциально сохраненное время.</div>
-              </div>
-              <div class="flow-artifact"><video class="asset-video" autoplay loop muted playsinline><source src="https://kotlyarenkoru-eng.github.io/portfolio/klever5.mp4" type="video/mp4"></video></div>
-            </div>
-          </section>
-        </div>
+<section class="case-chapter" id="klever-chapter-1"><h2>Что мешало эвакуации</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Классические носилки находились у медиков. Если эвакуацию нужно было начинать немедленно, подготовка занимала <strong>более 2 минут</strong>.</p>
+<p>Ещё приходилось переворачивать и перемещать пострадавшего, чтобы уложить его на носилки. Нужно было сократить время подготовки и количество этих действий.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="klever01" alt="Клевер: исходный сценарий эвакуации" src="assets/media/klever01.webp" loading="lazy" decoding="async" width="1081" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="klever-chapter-2"><h2>Носилки на спине</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Разработал конструкцию, которая носится на спине и раскрывается по принципу парашютной системы прямо под пострадавшим. Носилки стали частью экипировки и сразу готовы к развёртыванию.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="klever02" alt="Клевер: носилки в составе экипировки" src="assets/media/klever02.webp" loading="lazy" decoding="async" width="1171" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="klever-chapter-3"><h2>Открой, тяни, готово</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Достаточно открыть клапан и потянуть за ручки в стороны. Носилки раскрываются из чехла на спине пострадавшего и принимают нужное положение.</p>
+<p>Подготовка к эвакуации двумя людьми занимает <strong>10 секунд</strong>.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="klever03" alt="Клевер: последовательность раскрытия носилок" src="assets/media/klever03.webp" loading="lazy" decoding="async" width="1171" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="klever-chapter-4"><h2>Тесты и доработки</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Собрал MVP и провёл <strong>15 стресс-тестов</strong>. За <strong>1 месяц</strong> прошли <strong>4 итерации изменений</strong> по результатам проверок.</p>
+<p>После первого теста оказалось, что при раскрытии человек не полностью помещается на носилках. Доработали укладку в чехол, чтобы при разворачивании они сразу принимали нужное положение. Добавили дренажные отверстия, чтобы не скапливалась жидкость.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="klever04" alt="Клевер: прототип и испытания" src="assets/media/klever04.webp" loading="lazy" decoding="async" width="1440" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="klever-chapter-5"><h2>Первая партия</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Получили заказ на изготовление. Первая партия из <strong>50 носилок</strong> отправилась спасать жизни.</p>
+</div>
+<div class="flow-artifact"><video class="asset-video" autoplay loop muted playsinline data-asset="kleverVideo" src="klever5.mp4" controls="" preload="none"></video></div>
+</div></section>
+</div>
       </div>
-    </section>
+    <nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/space-soda"><span>Следующий проект: Космос</span><span>↗</span></a></nav></section>
 
     <!-- SPACE SODA -->
     <section class="page" data-route="/space-soda">
@@ -2232,73 +2202,110 @@
             <p class="eyebrow" style="margin-top:26px">Космос / рекламная интеграция / физический продукт</p>
             <h1>Космос</h1>
           </div>
-          <p class="project-hero__lead">Организация производства банки газировки для рекламной интеграции на ракете «Союз» и последующего запуска на Международную космическую станцию.</p>
+          <p class="project-hero__lead">Банка газировки, которая отправилась на МКС. Организовал изготовление рекламного макета под ограничения космического запуска.</p>
         </div>
       </section>
 
       <div class="project-body">
-        <div class="timeline-band">
-          <div class="timeline-band__grid">
-            <div class="timeline-step"><strong>01</strong><span>Рекламная интеграция</span></div>
-            <div class="timeline-step"><strong>02</strong><span>Требования Роскосмоса</span></div>
-            <div class="timeline-step"><strong>03</strong><span>Производство и сертификация</span></div>
-            <div class="timeline-step"><strong>04</strong><span>Запуск на МКС</span></div>
-          </div>
-        </div>
-
         <div class="project-flow">
-          <section class="flow-section">
-            <div class="flow-section__index">01</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Реклама в космосе</h2>
-                <p>В рамках запуска ракеты «Союз» согласовывалась рекламная интеграция. Одной из задач стало срочное производство физического макета банки газировки, который должен был полететь на МКС.</p>
-                <div class="flow-callout">Здесь недостаточно было сделать визуально точную упаковку: физический объект должен был соответствовать требованиям космического запуска.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda01" alt="Soyuz / advertising integration" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">02</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Макет под требования Роскосмоса</h2>
-                <p>Нужно было учесть ограничения, которые предъявляются к предметам, отправляемым в космический полёт. Классические материалы - алюминий и платик запрещены для размещения в грузовом отсеке, требования по весу - не более 50 грамм. Приняли решение использовать картон, бумагу и натуральные клеи.</p>
-                <div class="flow-callout">Макет проектировался как рекламный объект и как изделие, готовое пройти необходимую проверку.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda02" alt="material tolerances / requirements" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">03</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Производство, сертификация</h2>
-                <p>Протестировали 5 различных методов формовки изделия, чтобы получить максимально близкий результат и не выйти за ограничения по весу. Отдельно согласовывали каждый компонент из состава - от картона до краски на этикетке и подкрепляли всё сертификатами безопасности. Готовое изделие успешно прошло сертификацию в Институте медико-биологических проблем РАН и получило допуск к полету.</p>
-                <div class="flow-callout">Главная сложность была в стыке требований рекламной интеграции, физического производства и регламентов космического запуска.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda03" alt="prototype / certification / production" /></div>
-            </div>
-          </section>
-
-          <section class="flow-section">
-            <div class="flow-section__index">04</div>
-            <div class="flow-section__content">
-              <div>
-                <h2>Макет полетел на МКС</h2>
-                <p>После согласований готовый макет банки отправился в космос в рамках запуска ракеты «Союз» с Байконура.</p>
-                <div class="flow-callout">Результат — физический рекламный объект, который прошел путь от идеи и требований до реального космического запуска.</div>
-              </div>
-              <div class="flow-artifact"><img class="asset-image" data-asset="spacesoda04" alt="final can / ISS / launch" /></div>
-            </div>
-          </section>
-        </div>
+<section class="case-chapter" id="space-soda-chapter-1"><h2>Задача</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>В рамках рекламной интеграции на ракете «Союз» понадобился физический макет банки газировки для отправки на МКС.</p>
+<p>Нужно было срочно организовать производство, сохранить внешний вид банки и пройти проверку на допуск к полёту.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="spacesoda01" alt="Рекламная интеграция на ракете «Союз»" src="assets/media/spacesoda01.webp" loading="lazy" decoding="async" width="960" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="space-soda-chapter-2"><h2>Материалы и вес</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Для этого макета действовали ограничения по материалам: алюминий и пластик использовать было нельзя. Допустимый вес — <strong>не более 50 г</strong>.</p>
+<p>Выбрали картон, бумагу и натуральные клеи. Из них нужно было получить узнаваемую форму банки и подготовить изделие к проверке.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="spacesoda02" alt="Материалы рекламного макета банки" src="assets/media/spacesoda02.webp" loading="lazy" decoding="async" width="775" height="1051"></div>
+</div></section>
+<section class="case-chapter" id="space-soda-chapter-3"><h2>Пять способов формовки</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Протестировали <strong>5 методов формовки</strong>, чтобы получить форму банки и уложиться в ограничение по весу.</p>
+<p>Отдельно согласовывали каждый компонент: от картона до краски на этикетке. Для всех материалов собрали сертификаты безопасности.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="spacesoda03" alt="Изготовление и проверка макета банки" src="assets/media/spacesoda03.webp" loading="lazy" decoding="async" width="1080" height="1440"></div>
+</div></section>
+<section class="case-chapter" id="space-soda-chapter-4"><h2>Допуск и запуск</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Готовый макет прошёл сертификацию в Институте медико-биологических проблем РАН и получил допуск к полёту.</p>
+<p>После согласований банка отправилась на МКС в рамках запуска ракеты «Союз» с Байконура.</p>
+</div>
+<div class="flow-artifact"><img class="asset-image" data-asset="spacesoda04" alt="Готовый макет банки для отправки на МКС" src="assets/media/spacesoda04.webp" loading="lazy" decoding="async" width="1254" height="1254"></div>
+</div></section>
+</div>
       </div>
-    </section>
+    <nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/coplaying"><span>Следующий проект: CoPlaying</span><span>↗</span></a></nav></section>
 
-  </main>
+  <section class="page" data-route="/coplaying"><section class="project-hero project-hero--coplaying"><div class="project-hero__inner">
+<div>
+<a class="route-back" href="#/">Вернуться к портфолио</a><p class="eyebrow" style="margin-top:26px">Октябрь 2026 — настоящее время / пет-проект</p>
+<h1>CoPlaying</h1>
+</div>
+<p class="project-hero__lead">За 5 дней довёл CoPlaying до текущей стадии MVP — Telegram Mini App для совместных игр и профессиональных знакомств.</p>
+</div></section><div class="project-body">
+<div class="project-flow">
+<section class="case-chapter" id="coplaying-chapter-1"><h2>Откуда появилась идея</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Я искал контакты людей из других компаний, к которым можно обратиться за рефералкой на вакансию продакт-менеджера. Холодные сообщения через LinkedIn и открытые контакты давали мало отклика.</p>
+<p>Друг из банка рассказал, что они играют с коллегами и иногда с руководителями, но договориться об удобном времени сложно. Я подумал: можно собрать коммьюнити вокруг продукта, который поможет людям планировать совместные игры.</p>
+</div>
+<figure class="flow-artifact app-screen app-screen--portrait"><img class="asset-image" data-asset="coplayingCatalog" src="assets/coplaying/catalog.jpg" alt="Каталог игровых комнат CoPlaying" width="412" height="804" loading="lazy" decoding="async"><figcaption class="media-caption">Каталог игровых комнат CoPlaying</figcaption></figure>
+</div></section><section class="case-chapter" id="coplaying-chapter-2"><h2>Что умеет CoPlaying</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Сформулировал минимальный функционал вокруг договорённости о совместной игре: вход через Telegram, профиль с компанией и должностью, каталог игр, слоты, приглашения и комната сбора.</p>
+<ul class="case-list">
+<li>Общие слоты — выбор игры, даты, времени и количества участников. Игрок может создать свой слот или присоединиться к готовому.</li>
+<li>Личные приглашения — предложение конкретному игроку, встречное время и статусы ответов. В готовый слот можно пригласить сразу нескольких человек.</li>
+<li>Комната сбора — состав участников, время, ссылка или контакт для созвона. Напоминания в Telegram помогают вернуться к запланированной игре.</li>
+</ul>
+</div>
+<figure class="flow-artifact app-screen app-screen--form"><img class="asset-image" data-asset="coplayingCreate" src="assets/coplaying/create-slot.png" alt="Создание слота: дата и время" width="480" height="720" loading="lazy" decoding="async"><figcaption class="media-caption">Создание слота: дата и время</figcaption></figure>
+</div></section><section class="case-chapter" id="coplaying-chapter-3"><h2>Проектирование</h2>
+<div class="flow-section__content"><div class="case-copy">
+<p>С Codex и Figma через MCP спроектировал библиотеку компонентов и проработал пользовательские сценарии: регистрацию, поиск компании, создание слота, приглашения и сбор участников.</p>
+<p>Спроектировал 111 первичных состояний экранов и сделал кликабельные прототипы пользовательских сценариев.</p>
+</div></div></section><section class="case-chapter" id="coplaying-chapter-4"><h2>Разработка</h2>
+<div class="flow-section__content">
+<div class="case-copy">
+<p>Организовал рабочее пространство: локальное хранилище документации и версий, Git и GitHub для хранения версий кода. Развернул Mini App на Amvera Cloud, подключил PostgreSQL.</p>
+<p>Разрабатывал продукт с Codex: ставил задачи по сценариям, проверял реализацию и последовательно выпускал вход, слоты, приглашения, напоминания и аналитику. Приёмку строил вокруг пользовательского пути.</p>
+</div>
+<figure class="flow-artifact app-screen app-screen--form"><img class="asset-image" data-asset="coplayingCall" src="assets/coplaying/call-contact.png" alt="Выбор способа созвона: Jitsi или свой контакт" width="480" height="720" loading="lazy" decoding="async"><figcaption class="media-caption">Выбор способа созвона: Jitsi или свой контакт</figcaption></figure>
+</div></section><section class="case-chapter" id="coplaying-chapter-5"><h2>Гипотезы и тестирование</h2>
+<div class="flow-section__content"><div class="case-copy">
+<p>Для юзабилити-тестов обращался к целевой аудитории — сотрудникам корпораций, которые играют в игры. Решения о правках принимал по результатам тестирования.</p>
+<p>В основу сценариев заложил поведенческие гипотезы:</p>
+<ul class="case-list">
+<li>Конкретная игра и время в слоте помогут быстрее перейти от намерения поиграть к договорённости.</li>
+<li>Возможность предложить другое время поможет игрокам договориться о совместной игре.</li>
+<li>Напоминание перед началом игры поможет вернуться в комнату сбора вовремя.</li>
+</ul>
+</div></div></section><section class="case-chapter" id="coplaying-chapter-6"><h2>Метрики</h2>
+<div class="flow-section__content"><div class="case-copy">
+<p>Определил список продуктовых метрик для контроля работы Mini App:</p>
+<ul class="case-list">
+<li>Завершённые регистрации и активация в первые 14 дней.</li>
+<li>DAU/MAU и возвращаемость пользователей.</li>
+<li>Количество созданных слотов, их заполняемость и доля собранных компаний к началу.</li>
+<li>Отправленные и принятые приглашения, встречные предложения времени.</li>
+<li>Доставка уведомлений и напоминаний.</li>
+</ul>
+<p>Сделал внутренний дашборд для контроля метрик с фильтрами по датам, играм и типам слотов. Использую его, чтобы наблюдать поведение пользователей и выбирать следующие изменения.</p>
+<a class="project-cta launch-app" href="https://t.me/CoPlaying_bot" target="_blank" rel="noopener noreferrer"><img class="button-brand" data-asset="coplayingBrand" src="assets/coplaying/logo-current.svg" width="28" height="28" alt="" aria-hidden="true"><span>Открыть Mini App</span><span aria-hidden="true">↗</span></a>
+</div></div></section>
+</div>
+</div>
+<nav class="case-pagination" aria-label="Другие проекты"><a class="route-back" href="#/">Вернуться к портфолио</a><a class="project-cta" href="#/lowcode"><span>Следующий проект: Low-code</span><span>↗</span></a></nav></section></main>
 
   <footer class="footer">
     <span>Котляренко Владислав</span>
@@ -2330,184 +2337,7 @@
     })();
   </script>
 
-  <script>
-    document.querySelectorAll('[data-asset]').forEach(element => {
-      const key = element.dataset.asset;
-      const url = PORTFOLIO_ASSETS[key];
-      if (url) {
-        element.src = url;
-        if (element.tagName === 'VIDEO') element.load();
-        element.closest('.artifact, .flow-artifact, .photo, .about-promo__photo')?.classList.add('has-image');
-      }
-    });
-
-    const pages = [...document.querySelectorAll('.page')];
-    const progressBar = document.getElementById('progressBar');
-
-    function normalizeRoute() {
-      const raw = location.hash.replace(/^#/, '') || '/';
-      const allowed = ['/', '/about', '/lowcode', '/origami', '/obblic', '/klever', '/space-soda'];
-      return allowed.includes(raw) ? raw : '/';
-    }
-
-    const homeScrollKey = 'portfolioHomeScrollY';
-
-    function saveHomeScroll() {
-      if (normalizeRoute() === '/') {
-        sessionStorage.setItem(homeScrollKey, String(window.scrollY));
-      }
-    }
-
-    function restoreHomeScroll() {
-      const saved = sessionStorage.getItem(homeScrollKey);
-      if (saved === null) {
-        window.scrollTo(0, 0);
-        return;
-      }
-      const y = Number(saved);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => window.scrollTo(0, y));
-      });
-    }
-
-    function renderRoute() {
-      const previousRoute = window.__currentRoute || null;
-      const route = normalizeRoute();
-
-      if (previousRoute === '/' && route !== '/') {
-        sessionStorage.setItem(homeScrollKey, String(window.scrollY));
-      }
-
-      pages.forEach(page => {
-        page.classList.toggle('is-active', page.dataset.route === route);
-      });
-
-      document.querySelectorAll('[data-nav-route]').forEach(link => {
-        link.classList.toggle('is-active', link.dataset.navRoute === route);
-      });
-
-      const titles = {
-        '/': 'Котляренко Владислав — Product Manager',
-        '/about': 'Обо мне — Владислав Котляренко',
-        '/lowcode': 'Low-code — Product Story',
-        '/origami': 'Origami Wear — Product Story',
-        '/obblic': 'Obblic — Product Story',
-        '/klever': 'Клевер — Product Story',
-        '/space-soda': 'Космос — Product Story'
-      };
-
-      document.title = titles[route] || titles['/'];
-
-      if (route === '/') {
-        if (previousRoute !== '/') restoreHomeScroll();
-      } else {
-        window.scrollTo(0, 0);
-      }
-
-      window.__currentRoute = route;
-      updateProgress();
-    }
-
-    function updateProgress() {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
-      progressBar.style.width = Math.min(100, pct) + '%';
-    }
-
-    window.addEventListener('hashchange', renderRoute);
-    window.addEventListener('scroll', () => { updateProgress(); saveHomeScroll(); }, { passive: true });
-    window.addEventListener('resize', updateProgress);
-
-
-    document.querySelectorAll('.hobby-card').forEach(card => {
-      const toggle = () => card.classList.toggle('is-open');
-      card.addEventListener('click', toggle);
-      card.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          toggle();
-        }
-      });
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    if (!location.hash) {
-      history.replaceState(null, '', '#/');
-    }
-
-    renderRoute();
-  </script>
-
-  <div class="artifact-lightbox" id="artifactLightbox" aria-hidden="true">
-    <button class="artifact-lightbox__close" type="button" aria-label="Закрыть">×</button>
-    <img class="artifact-lightbox__image" alt="" />
-  </div>
-
-
-  <script>
-    (() => {
-      const lightbox = document.getElementById('artifactLightbox');
-      if (!lightbox) return;
-
-      const lightboxImage = lightbox.querySelector('.artifact-lightbox__image');
-      const closeButton = lightbox.querySelector('.artifact-lightbox__close');
-      const isDesktop = () => window.matchMedia('(min-width:1081px)').matches;
-
-      const closeLightbox = () => {
-        lightbox.classList.remove('is-open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightboxImage.removeAttribute('src');
-        document.body.style.overflow = '';
-      };
-
-      document.querySelectorAll('.page[data-route="/lowcode"] .flow-artifact .asset-image').forEach(image => {
-        image.addEventListener('click', () => {
-          if (!isDesktop() || !image.src) return;
-          lightboxImage.src = image.currentSrc || image.src;
-          lightboxImage.alt = image.alt || '';
-          lightbox.classList.add('is-open');
-          lightbox.setAttribute('aria-hidden', 'false');
-          document.body.style.overflow = 'hidden';
-        });
-      });
-
-      closeButton.addEventListener('click', closeLightbox);
-
-      lightbox.addEventListener('click', event => {
-        if (event.target === lightbox || event.target === lightboxImage) {
-          closeLightbox();
-        }
-      });
-
-      document.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && lightbox.classList.contains('is-open')) {
-          closeLightbox();
-        }
-      });
-
-      window.addEventListener('resize', () => {
-        if (!isDesktop()) closeLightbox();
-      });
-    })();
-  </script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const burger = document.querySelector('.top-nav__burger');
-      const links = document.querySelector('.top-nav__links');
-      if (!burger || !links) return;
-      burger.addEventListener('click', function(){
-        const open = links.classList.toggle('is-open');
-        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      links.addEventListener('click', function(e){
-        if (e.target.closest('a')) {
-          links.classList.remove('is-open');
-          burger.setAttribute('aria-expanded', 'false');
-        }
-      });
-    });
-  </script>
+  <dialog id="media-dialog" aria-label="Просмотр изображения"><button class="dialog-close" type="button" autofocus>Закрыть ×</button><img alt=""><p></p></dialog><noscript><style>.page{display:block!important}</style></noscript>
+<script src="enhancements.js" defer></script>
 </body>
 </html>
